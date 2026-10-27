@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="description" content="Portfolio of Nghiêm Hà Phương — sustainable finance, carbon markets, logistics, international trade, and operations analysis.">
+  <title>Nghiêm Hà Phương | Sustainable Finance, Logistics & Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ivory:#F6F3ED;--white:#fff;--ink:#18232D;--navy:#243B4A;--blue:#287A98;
+      --mist:#E3EFF3;--sand:#C89A62;--slate:#697681;--border:#D9DFE3;--risk:#C55D58;
+      --shadow:0 12px 30px rgba(24,35,45,.08);--max:1200px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Manrope,system-ui,-apple-system,sans-serif;background:var(--ivory);color:var(--ink);line-height:1.7}
+    a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit}
+    .shell{width:min(var(--max),calc(100% - 128px));margin:auto}.section{padding:112px 0}.section.white{background:var(--white)}.section.mist{background:#F1F7F8}
+    .nav{position:sticky;top:0;z-index:40;background:rgba(246,243,237,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,223,227,.75)}
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:800;font-size:19px;letter-spacing:-.02em;cursor:pointer}
+    .nav-links{display:flex;align-items:center;gap:34px;color:var(--slate);font-weight:600;font-size:14px}.nav-link{padding:26px 0 22px;position:relative;cursor:pointer}
+    .nav-link.active,.nav-link:hover{color:var(--ink)}.nav-link.active:after{content:"";position:absolute;left:0;right:0;bottom:15px;height:2px;background:var(--blue);border-radius:2px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:10px;border:1px solid transparent;font-weight:700;font-size:15px;transition:.2s ease;cursor:pointer}
+    .btn.primary{background:var(--blue);color:white}.btn.primary:hover{background:var(--navy);transform:translateY(-1px)}.btn.secondary{border-color:var(--navy);color:var(--navy);background:transparent}.btn.secondary:hover{background:var(--navy);color:#fff}
+    .eyebrow{font-size:12px;line-height:18px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+    h1,h2,h3,h4,p{margin-top:0}h1{font-size:64px;line-height:1.1;letter-spacing:-.045em;margin-bottom:26px}h2{font-size:40px;line-height:1.2;letter-spacing:-.035em;margin-bottom:18px}h3{font-size:25px;line-height:1.3;letter-spacing:-.025em;margin-bottom:12px}h4{font-size:17px;margin-bottom:8px}
+    .lead{font-size:18px;line-height:1.75;color:#45525D;max-width:720px}.muted{color:var(--slate)}.text-link{color:var(--blue);font-weight:700}.text-link:hover{text-decoration:underline}
+    .hero{padding:88px 0 104px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:72px}.hero-copy{max-width:690px}.hero-actions{display:flex;gap:12px;margin:32px 0 26px}.support-line{font-size:14px;color:var(--slate);font-weight:600}
+    .hero-visual{position:relative}.portrait{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:20px;border:1px solid var(--border);background:#edf1f3}
+    .float-card{position:absolute;background:rgba(255,255,255,.95);box-shadow:var(--shadow);border:1px solid rgba(217,223,227,.9);border-radius:15px;padding:16px 18px;max-width:250px}.float-card strong{display:block;font-size:13px;margin-bottom:4px}.float-card span{display:block;font-size:12px;line-height:1.5;color:var(--slate)}
+    .float-a{left:-38px;bottom:72px}.float-b{right:-28px;top:70px}
+    .about-grid{display:grid;grid-template-columns:.42fr .58fr;align-items:center;gap:72px}.about-photo{position:relative}.about-photo img{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:20px;border:1px solid var(--border)}
+    .photo-note{position:absolute;right:-28px;bottom:36px;background:var(--navy);color:#fff;border-radius:14px;padding:16px 20px;font-size:13px;line-height:1.65;box-shadow:var(--shadow)}.photo-note b{color:#b9e0ec}
+    .quick-facts{display:flex;flex-wrap:wrap;gap:12px 28px;padding-top:24px;margin-top:26px;border-top:1px solid var(--border);font-size:14px;color:var(--slate)}.quick-facts strong{color:var(--ink)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px}.section-head>div:first-child{max-width:790px}.section-head p{margin:0;color:var(--slate);max-width:680px}
+    .focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.focus-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px;min-height:250px}.focus-icon{width:40px;height:40px;border-radius:11px;background:var(--mist);display:grid;place-items:center;color:var(--blue);font-weight:800;margin-bottom:22px}.focus-card p{color:var(--slate);font-size:15px}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.tag{background:#F1F4F5;color:#43515C;border-radius:8px;padding:7px 10px;font-size:12px;font-weight:600}.proof{margin-top:20px;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--blue);font-weight:700}
+    .tools{margin-top:24px;padding:22px 26px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.7);display:flex;gap:10px 18px;align-items:center;flex-wrap:wrap}.tools b{margin-right:8px}.tool{font-size:13px;color:var(--slate)}
+    .research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.research-card{display:grid;grid-template-columns:150px 1fr;gap:22px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px;transition:.2s}.research-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.research-card img{width:150px;height:116px;object-fit:cover;border-radius:11px;border:1px solid var(--border);background:#f4f4f4}.research-card h3{font-size:18px}.research-meta{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-weight:700;margin-bottom:7px}.research-card p{font-size:13px;line-height:1.6;color:var(--slate);margin-bottom:10px}
+    .recognition-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:54px}.award-row{display:grid;grid-template-columns:120px 1fr 56px;align-items:center;gap:18px;padding:20px 6px;border-bottom:1px solid var(--border);transition:.2s}.award-row:hover{padding-left:12px;background:#faf8f3}.award-result{font-weight:800;color:var(--sand);font-size:13px}.award-title{font-weight:700;font-size:15px}.award-title small{display:block;font-weight:500;color:var(--slate);margin-top:3px}.award-year{text-align:right;color:var(--slate);font-size:13px}
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.cert-card{border:1px solid var(--border);background:#fff;border-radius:14px;overflow:hidden;transition:.2s}.cert-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.cert-card img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#f8f8f6;border-bottom:1px solid var(--border)}.cert-body{padding:13px}.cert-body strong{font-size:12px;line-height:1.45;display:block}.cert-body span{font-size:11px;color:var(--slate)}
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.project-card{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:.22s ease}.project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(40,122,152,.4)}.project-card:hover .project-thumb img{transform:scale(1.025)}.project-thumb{aspect-ratio:16/10;overflow:hidden;background:var(--mist)}.project-thumb img{width:100%;height:100%;object-fit:cover;transition:.25s}.project-body{padding:24px}.project-cat{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:8px}.project-body h3{font-size:23px}.project-body p{font-size:14px;line-height:1.65;color:var(--slate);min-height:46px}.method{font-size:12px;color:var(--navy);font-weight:700;margin-top:14px}.project-arrow{margin-top:18px;color:var(--blue);font-weight:800;font-size:13px}
+    .cta{background:var(--navy);color:#fff;padding:82px 0}.cta .shell{display:grid;grid-template-columns:1fr auto;align-items:center;gap:40px}.cta h2{max-width:760px;margin-bottom:14px}.cta p{color:#cfdae0;max-width:760px;margin:0}.cta-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.cta .btn.secondary{border-color:#d7e3e7;color:#fff}.cta .btn.secondary:hover{background:#fff;color:var(--navy)}
+    footer{padding:32px 0;border-top:1px solid var(--border);font-size:13px;color:var(--slate)}.footer-inner{display:flex;justify-content:space-between;gap:30px;align-items:center}.footer-name{font-weight:800;color:var(--ink)}.footer-links{display:flex;gap:18px}
+    .page-hero{padding:82px 0 62px}.page-hero h1{font-size:54px;max-width:980px}.page-hero .lead{max-width:860px}
+    .project-detail-hero{padding:76px 0 60px}.project-detail-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}.project-detail-hero h1{font-size:50px}.hero-project-image{border-radius:20px;background:var(--mist);padding:20px;border:1px solid var(--border)}.hero-project-image img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;background:#fff}
+    .meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 24px;margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}.meta-item span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--slate);font-weight:700}.meta-item strong{display:block;font-size:13px;margin-top:3px}
+    .output-strip{background:#eef6f7;border-top:1px solid #d5e5e9;border-bottom:1px solid #d5e5e9;padding:28px 0}.output-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.output-card{background:white;border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;gap:18px;align-items:center}.output-card b{font-size:13px}.output-card span{display:block;font-size:11px;color:var(--slate);margin-top:2px}.output-card .out-link{white-space:nowrap;color:var(--blue);font-size:12px;font-weight:800}
+    .case-section{padding:78px 0}.case-section.white{background:white}.case-grid{display:grid;grid-template-columns:.34fr .66fr;gap:64px}.case-index{font-size:12px;color:var(--sand);font-weight:800;letter-spacing:.11em}.case-copy{max-width:800px}.case-copy p{color:#45525D}.case-copy ul{padding-left:20px;color:#45525D}.case-copy li{margin:7px 0}
+    .framework{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}.frame{border:1px solid var(--border);border-radius:14px;padding:18px;background:#fff}.frame b{display:block;font-size:13px;margin-bottom:7px}.frame p{font-size:12px;line-height:1.55;color:var(--slate);margin:0}
+    .insight{background:#F4F8F9;border-left:4px solid var(--blue);padding:18px 22px;border-radius:0 12px 12px 0;margin:22px 0;color:#364650}.learning{background:var(--navy);color:#fff;border-radius:18px;padding:30px;margin-top:24px}.learning h3{color:#fff}.learning p{color:#d5e0e5;margin-bottom:14px}.learning p:last-child{margin:0}
+    .detail-nav{display:flex;justify-content:space-between;gap:12px;padding-top:28px;border-top:1px solid var(--border);margin-top:42px}.detail-nav button{border:0;background:transparent;color:var(--blue);font-weight:800;cursor:pointer}
+    .contact-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}.contact-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px}.contact-card span{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);font-weight:800}.contact-card strong{display:block;margin-top:8px;font-size:16px}.availability{margin-top:24px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px}.availability .tags{margin-top:12px}
+    .mobile-menu{display:none}
+    @media(max-width:980px){
+      .shell{width:min(100% - 48px,var(--max))}.section{padding:82px 0}.hero-grid,.about-grid,.project-detail-grid,.recognition-layout,.case-grid{grid-template-columns:1fr}.hero{padding-top:62px}.hero-visual{max-width:560px}.float-a{left:16px}.float-b{right:16px}.about-grid{gap:44px}.about-photo{max-width:520px}.photo-note{right:16px}.focus-grid,.research-grid,.project-grid{grid-template-columns:1fr 1fr}.cta .shell{grid-template-columns:1fr}.cta-actions{justify-content:flex-start}
+    }
+    @media(max-width:720px){
+      .shell{width:calc(100% - 40px)}.nav-inner{height:68px}.nav-links .nav-link{display:none}.nav-links{gap:10px}.nav-links .btn{min-height:40px;padding:0 14px;font-size:12px}h1{font-size:40px}.page-hero h1,.project-detail-hero h1{font-size:36px}h2{font-size:30px}.lead{font-size:16px}.hero-grid{gap:44px}.hero-actions{flex-direction:column;align-items:stretch}.float-card{display:none}.section{padding:62px 0}.focus-grid,.research-grid,.project-grid,.cert-grid,.contact-wrap,.framework,.output-grid{grid-template-columns:1fr}.research-card{grid-template-columns:110px 1fr}.research-card img{width:110px;height:96px}.section-head{align-items:flex-start;flex-direction:column;margin-bottom:32px}.recognition-layout{gap:42px}.award-row{grid-template-columns:92px 1fr 42px;gap:10px}.project-body p{min-height:0}.cta{padding:60px 0}.cta-actions{flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.meta-grid{grid-template-columns:1fr}.detail-nav{flex-direction:column}.case-grid{gap:16px}.case-index{margin-bottom:4px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell nav-inner">
+      <div class="brand" data-route="#/">Nghiêm Hà Phương</div>
+      <div class="nav-links">
+        <div class="nav-link" data-route="#/" data-nav="home">Home</div>
+        <div class="nav-link" data-route="#/projects" data-nav="projects">Projects</div>
+        <div class="nav-link" data-route="#/contact" data-nav="contact">Contact</div>
+        <a class="btn secondary" href="/assets/cv.pdf" target="_blank" rel="noopener">View My CV</a>
+      </div>
+    </div>
+  </nav>
+  <main id="app"></main>
+  <footer>
+    <div class="shell footer-inner">
+      <div><span class="footer-name">Nghiêm Hà Phương</span><br>Sustainable Finance · Logistics · Operations Analysis</div>
+      <div class="footer-links"><a href="#/">Home</a><a href="#/projects">Projects</a><a href="#/contact">Contact</a><a href="/assets/cv.pdf" target="_blank">View CV</a></div>
+      <div>© 2026 Nghiêm Hà Phương</div>
+    </div>
+  </footer>
+<script>
+const thumb=id=>`https://drive.google.com/thumbnail?id=${id}&sz=w1600`;
+const drive=id=>`https://drive.google.com/file/d/${id}/view`;
+const importCover="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000"><rect width="1600" height="1000" fill="#F6F3ED"/><rect x="80" y="80" width="1440" height="840" rx="36" fill="#FFFFFF" stroke="#D9DFE3" stroke-width="3"/><text x="150" y="250" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="#287A98">FOREIGN TRADE UNIVERSITY</text><text x="150" y="390" font-family="Arial,sans-serif" font-size="76" font-weight="800" fill="#18232D">Import Business Process</text><text x="150" y="490" font-family="Arial,sans-serif" font-size="76" font-weight="800" fill="#18232D">Analysis</text><text x="150" y="600" font-family="Arial,sans-serif" font-size="38" fill="#697681">Case of Vietnam’s other base metals importation</text><line x1="150" y1="690" x2="1450" y2="690" stroke="#D9DFE3" stroke-width="3"/><text x="150" y="780" font-family="Arial,sans-serif" font-size="32" font-weight="700" fill="#243B4A">Team Leader · International Trade Transactions · 2026</text></svg>`);
+
+
+
+
+const projects=[
+{
+ slug:"sustainable-finance-smes",
+ title:"Sustainable Finance for Vietnamese SMEs",
+ category:"SUSTAINABLE FINANCE · MARKET RESEARCH",
+ card:"Combining regional benchmarking and stakeholder interviews to identify why green capital remains difficult for Vietnamese SMEs to access.",
+ methods:"Desk Research · Interviews · Benchmarking · Gap Analysis",
+ image:thumb("1gAKqNPsOwi8k1EDPU_X32NuEvR40A5Yb"),
+ summary:"A mixed-method research project examining the gap between Vietnam’s sustainable-finance ambition and the practical ability of SMEs to access green capital.",
+ meta:[["Recognition","Winner — Agyra Student Challenge 2025"],["Role","Research Team Leader & Strategy Analyst"],["Focus","SME financing barriers · green investment · policy design"],["Methods","Desk research · interviews · regional benchmarking"]],
+ outputs:[{title:"Full research paper",note:"Agyra Student Challenge 2025 · Challenge #1",url:"https://drive.google.com/file/d/1gAKqNPsOwi8k1EDPU_X32NuEvR40A5Yb/view?usp=drive_link"}],
+ situation:"Vietnam has increasingly ambitious green-growth and sustainable-finance priorities, yet SMEs still face a very different reality from large corporates. The question was not simply whether green capital existed, but why smaller firms still struggled to identify, qualify for, and use it.",
+ approach:[
+   ["Regulatory gap","Mapped how taxonomies, reporting expectations and policy coordination affect whether banks and SMEs can identify eligible green activities."],
+   ["Financial-market gap","Compared loans, guarantees, blended finance and risk-sharing tools to understand why conventional bank requirements often exclude smaller projects."],
+   ["SME capability gap","Used stakeholder interviews to examine ESG awareness, documentation readiness, certification costs and internal capacity."]
+ ],
+ findings:[
+   "The access problem was structural: fragmented rules, conservative lending requirements and weak SME readiness reinforced one another.",
+   "Regional benchmarks showed that guarantees, capacity support and phased regulation can reduce both the financial and non-financial cost of participation.",
+   "SMEs need project-level support — such as energy-efficiency and rooftop-solar financing pathways — rather than a generic promise of 'green finance'."
+ ],
+ recommendations:[
+   "Build a phased SME-oriented green taxonomy with clearer qualification criteria and simplified reporting.",
+   "Expand guarantees, blended-finance mechanisms and bank incentives that reduce perceived risk for smaller green projects.",
+   "Pair financing with technical assistance so SMEs can become finance-ready rather than leaving capability building to individual firms.",
+   "Develop the market in stages so regulation, financial products and SME capacity mature together."
+ ],
+ contribution:"I helped structure the access problem, led the desk research and regional comparison, supported the stakeholder interview design and synthesis, and translated evidence into a phased financing roadmap. My focus was on keeping the recommendations implementable for both financial institutions and SMEs rather than treating sustainable finance as a purely policy-level topic.",
+ learned:[
+   "This project changed how I think about sustainable finance. Availability of capital is only one layer; access depends on whether rules, risk assessment and firm capability fit together. A technically sophisticated financing product can still fail if a small business cannot document its project, absorb certification costs or understand what qualifies.",
+   "I also learned to use interviews to challenge desk research rather than simply confirm it. Policy documents suggested that sustainable finance was expanding, while stakeholder conversations exposed the frictions hidden behind those aggregate trends. If I extended the study, I would add more lenders, sector-specific SME cases and actual financing applications to test the roadmap against real approval decisions."
+ ]
+},
+{
+ slug:"import-business-process",
+ title:"Import Business Process Analysis: Vietnam’s Base Metals",
+ category:"LOGISTICS · INTERNATIONAL TRADE · PROCESS ANALYSIS",
+ card:"Mapping a high-value import transaction from purchase to payment to identify documentary, customs and infrastructure bottlenecks.",
+ methods:"Business Process Analysis · Trade Documentation · Bottleneck Analysis",
+ image:importCover,
+ summary:"A team-led International Trade Transactions project that mapped the import of base metals into Vietnam and diagnosed why a standard transaction can become a long, document-heavy operational process.",
+ meta:[["Course","International Trade Transactions — FTU"],["Role","Team Leader"],["Scope","Buy · Ship · Pay"],["Focus","Trade documents · customs · L/C · logistics bottlenecks"]],
+ outputs:[],
+ situation:"Vietnam’s industrial growth depends heavily on imported non-ferrous metals, but moving a high-value shipment through purchase, shipping, customs and payment involves far more than physical transport. Our project used a simulated copper transaction to understand where time, documentation and financial risk accumulate across the end-to-end import process.",
+ approach:[
+   ["Buy","Mapped contracting, quotation, L/C opening and risk allocation before cargo movement."],
+   ["Ship","Mapped export documents, inspection, insurance, manifest, customs clearance, D/O, tax settlement and inland delivery."],
+   ["Pay","Mapped documentary presentation, bank compliance checks and payment under an irrevocable L/C."]
+ ],
+ findings:[
+   "The process relied on more than twenty distinct document types across commercial, logistics, customs, inspection and banking activities.",
+   "Manual cross-checking and physical endorsements created clerical-error risk and contributed to a total process lead time of roughly 43 days.",
+   "A small discrepancy between documents such as CoA and B/L could delay bank payment and cargo release, exposing the importer to both storage cost and LME price volatility.",
+   "Repeated quality checks and port/infrastructure constraints created operational delay even when international inspection evidence already existed."
+ ],
+ recommendations:[
+   "Standardise key fields across contract, L/C, commercial invoice, packing list, B/L and customs declarations before document submission.",
+   "Use realistic lead-time planning and price-risk management when LME-linked settlement windows interact with uncertain clearance time.",
+   "Increase digital synchronization across internal compliance systems, customs and trade-finance workflows; use automated document auditing where appropriate.",
+   "At policy level, strengthen risk-based inspection, digital C/O verification and recognition of accredited pre-shipment inspection to reduce duplicate controls."
+ ],
+ contribution:"As team leader, I structured the report around the end-to-end import flow, coordinated the market, contract and process-analysis workstreams, and ensured that operational findings connected back to commercial and financial consequences. The project required integrating Incoterms, documentary trade, customs procedures, port operations and banking controls into one coherent process view.",
+ learned:[
+   "The main lesson was that logistics performance can be constrained by information flow as much as by physical movement. A vessel or truck may be ready, yet the shipment can still stop because a document field, endorsement, inspection result or bank requirement is misaligned. That made me see trade documentation as part of operations design, not an administrative afterthought.",
+   "I also became more attentive to cross-functional trade-offs. Tight controls reduce compliance risk, but duplicated checks create lead time and working-capital costs. A better process does not simply remove controls; it places verification earlier, standardises data and applies stronger checks where risk is highest. If I continued the project, I would validate the 43-day process map with importers, freight forwarders and customs brokers across more ports and product categories."
+ ]
+},
+{
+ slug:"ecommerce-operations",
+ title:"E-commerce Operations Analytics",
+ category:"OPERATIONS ANALYSIS · E-COMMERCE LOGISTICS",
+ card:"Diagnosing revenue decline through delivery reliability, seller performance and logistics constraints rather than treating it as a purely commercial problem.",
+ methods:"Root-Cause Analysis · Seller Segmentation · Logistics Strategy",
+ image:thumb("1XpPyB28lXf4tlHPbHHNnDoTp6-5WNsgd"),
+ summary:"A runner-up case project linking commercial performance with logistics reliability, seller quality and customer experience to identify what was preventing post-peak revenue from being retained.",
+ meta:[["Competition","Tomorrow Marketers BACC 2025"],["Recognition","Runner-up"],["Role","Operations & Business Analyst"],["Focus","Revenue drivers · delivery · sellers · carrier strategy"]],
+ outputs:[{title:"Full competition deck",note:"Final Round — E-commerce Operations Analytics",url:"https://drive.google.com/file/d/1XpPyB28lXf4tlHPbHHNnDoTp6-5WNsgd/view?usp=drive_link"}],
+ situation:"Revenue fell after a strong peak, but the decline could not be explained by one commercial metric. We needed to determine whether the platform was facing weaker demand, poor seller execution, delivery unreliability, high freight costs or a combination of those issues.",
+ approach:[
+   ["Commercial performance","Separated order volume and order value to identify where the top-line decline started."],
+   ["Operational reliability","Connected delivery performance with review and repurchase behaviour to understand customer impact."],
+   ["Seller quality","Segmented sellers so operational support and standards could differ by seller profile."],
+   ["Logistics strategy","Evaluated how delivery-risk information could support more targeted carrier and service allocation."]
+ ],
+ findings:[
+   "The revenue problem was partly a retention problem: growth during the peak period was not being converted into stable repeat performance.",
+   "Late delivery and logistics inconsistency affected customer experience, making service reliability a commercial issue rather than only an operations KPI.",
+   "Seller quality mattered more than simply increasing the number of sellers; different seller profiles required different support and control."
+ ],
+ recommendations:[
+   "Use risk-based delivery tiers and allocate service levels according to shipment profile rather than one uniform logistics policy.",
+   "Manage seller segments differently across onboarding, operational support and performance interventions.",   "Prioritise high-risk orders and regions before delays become customer-facing failures.",
+   "Use product bundling and seller actions alongside logistics improvements so the commercial and operational levers reinforce each other."
+ ],
+ contribution:"I contributed to problem framing, root-cause analysis, interpretation of operational patterns and recommendation development. Predictive and clustering work was developed by the team; my role was to connect those outputs to the business problem and use them to shape practical logistics and seller-management actions.",
+ learned:[
+   "This case reinforced that operations analysis should start from the customer and business outcome, then work backward into the process. A late-delivery metric becomes more meaningful when it is connected to reviews, repurchase behaviour, seller characteristics and regional constraints.",
+   "I also learned to distinguish between a technically interesting model and an operationally useful decision rule. A forecast only creates value when the team knows what to do differently for a high-risk order. If I continued the project, I would test the proposed interventions in a pilot and compare operational gains against incremental logistics cost instead of relying only on projected impact."
+ ]
+},
+{
+ slug:"blockchain-traceability",
+ title:"Blockchain Traceability & Consumer Trust",
+ category:"SUSTAINABLE SUPPLY CHAINS · CONSUMER RESEARCH",
+ card:"Leading an end-to-end research project on how traceability information can turn sustainability claims into credible consumer trust.",
+ methods:"Research Leadership · Desk Research · Survey Design",
+ image:"/assets/blockchain-cover.png",
+ summary:"A First-Prize research project examining how blockchain-enabled traceability information influences food-safety perceptions, product trust and organic-food purchase intention.",
+ meta:[["Recognition","First Prize — FTU Student Scientific Research 2026"],["Role","Project Leader & Lead Researcher"],["Scope","Hanoi & Ho Chi Minh City"],["Focus","Desk research · survey design · research coordination"]],
+ outputs:[],
+ situation:"Organic-food demand is growing, but false labels, inconsistent certification and food-safety concerns weaken consumer trust. Rather than asking whether blockchain is 'good technology', I framed the research around a behavioural question: what kind of traceability information actually helps consumers believe a sustainability and safety claim?",
+ approach:[
+   ["Desk research","Synthesised academic literature, market evidence, regulation and traceability applications to locate the research gap."],
+   ["Conceptual design","Connected information quality to perceived food safety, product trust and purchase intention instead of assuming a direct technology effect."],
+   ["Survey design","Translated abstract constructs into consumer-friendly questions and coordinated fieldwork for 369 valid urban responses."],
+   ["Research coordination","Managed workstreams, terminology, quality review and integration of the final 112-page paper."]
+ ],
+ findings:[
+   "Consumers responded to the quality and credibility of traceability information, not to the blockchain label by itself.",
+   "Trust formed sequentially: information improved perceived food safety, which strengthened trust, which then influenced purchase intention.",
+   "Health consciousness strengthened how trust translated into action, but health concern alone was not enough to generate purchase intention."
+ ],
+ recommendations:[
+   "Design traceability interfaces around verified origin, certification, testing and product information before technical blockchain detail.",
+   "Use a two-layer information experience: an immediate trust layer for most consumers and deeper technical records for those who want verification detail.",
+   "Support standardised minimum traceability fields and independent verification so sustainability claims are comparable and credible."
+ ],
+ contribution:"As project leader, I shaped the research direction, coordinated the literature and survey work, reviewed the team’s outputs, and integrated the final argument from research gap to recommendations. My strongest contribution was building a coherent research process — not one statistical technique — and ensuring that each stage answered the same consumer-trust question.",
+ learned:[
+   "The project taught me that traceability is not valuable simply because more information exists. Information has to reduce uncertainty for the user. That shifted my thinking from 'technology adoption' toward the design of credible evidence across the supply chain.",
+   "Leadership was another major lesson. I did not need to personally perform every task, but I did need to maintain one standard of logic and evidence across the work. If I extended the study, I would add QR-scanning behaviour and actual purchase data so the research could test whether stated intention becomes real consumer action."
+ ]
+},
+{
+ slug:"carbon-market-strategy",
+ title:"Carbon Market Strategy & Governance",
+ category:"SUSTAINABLE FINANCE · CARBON MARKETS",
+ card:"Comparing Singapore and Vietnam to understand how credible carbon assets can connect climate outcomes with international finance.",
+ methods:"Comparative Research · Article 6 · Governance · Green Finance",
+ image:thumb("1AoHc_bMTi_k0RrNppGAipZhfCCkmYX2e"),
+ summary:"A research stream on international carbon-credit trade and market integrity, combining a Singapore–Vietnam comparative study with work on fraud prevention and carbon-market governance.",
+ meta:[["Primary role","Co-author & Researcher — Singapore–Vietnam study"],["Second output","Co-author — Fraud Prevention in Vietnam’s Emerging Carbon Market"],["Focus","Carbon rights · registry integrity · MRV · financing"],["Research lens","Comparative policy & market infrastructure"]],
+ outputs:[
+  {title:"International Carbon Markets Conference evidence",note:"Singapore–Vietnam carbon-credit trade research",url:"https://drive.google.com/file/d/1AoHc_bMTi_k0RrNppGAipZhfCCkmYX2e/view?usp=drive_link"},
+  {title:"Carbon-market fraud publication evidence",note:"EU lessons for Vietnam",url:"https://drive.google.com/file/d/1SVoXxHQ-uYwKYaxG0gZso1n2D_LBo-HT/view?usp=drive_link"}
+ ],
+ situation:"Vietnam has strong mitigation potential in forestry, agriculture and renewable energy, but producing carbon credits is not the same as creating investable, internationally trusted assets. The research asked what Vietnam could learn from Singapore’s role as a financial and carbon-market hub, and what governance safeguards were needed as Vietnam’s own market develops.",
+ approach:[
+   ["Comparative market structure","Compared Singapore’s internationally integrated financial-hub model with Vietnam’s more centralized, state-supervised market architecture."],
+   ["Asset credibility","Examined carbon rights, Article 6 authorization, registry interoperability and domestic verification capacity."],
+   ["Financing link","Studied how clearer asset recognition and contracted future carbon revenues could improve project-finance assessment."],
+   ["Integrity & fraud","Used EU ETS lessons to examine VAT fraud, double-counting, data manipulation, registry security and enforcement."]
+ ],
+ findings:[
+   "Singapore and Vietnam have complementary strengths: Singapore brings financial infrastructure and international buyers, while Vietnam can supply mitigation assets from lower-cost projects.",
+   "Vietnam’s constraint is not only credit supply; unclear carbon ownership, fragmented MRV and limited verification capacity reduce buyer confidence and create a 'capital lock'.",
+   "Market credibility requires both transaction infrastructure and enforcement. Weak registries or ambiguous ownership can undermine financing even when the underlying mitigation is genuine."
+ ],
+ recommendations:[
+   "Build an Article 6-compatible registry with unique credit serialization, authorization tags and interoperability with international data systems.",
+   "Clarify carbon ownership, benefit sharing and the legal treatment of verified credits and contracted future revenues.",
+   "Expand domestic validation and verification capacity while using digital MRV to lower monitoring cost and improve traceability.",
+   "Develop stronger anti-fraud architecture: standardized MRV, secure registries, proportionate sanctions and coordination between environmental and financial regulators."
+ ],
+ contribution:"For the Singapore–Vietnam study, I led the research direction and served as corresponding author, connecting comparative market design with sustainable-finance implications. In the fraud-prevention paper, I contributed as a co-author to the EU–Vietnam governance comparison. Across both outputs, my focus was the same: how market integrity, legal certainty and financial access have to develop together.",
+ learned:[
+   "This research moved my interest in sustainable finance from product-level financing to market infrastructure. A carbon credit only becomes financeable when ownership, verification, transfer rules and registry data are credible enough for another party to price the risk.",
+   "I also learned that 'transparency' needs an operational definition. It is not merely publishing more information; it means traceable asset identity, consistent MRV, clear accountability and controls that make manipulation difficult. If I continued this work, I would study project-level cash flows and lender due diligence to connect policy reform more directly with financing decisions."
+ ]
+},
+{
+ slug:"sales-performance",
+ title:"Sales Performance & Forecasting Dashboard",
+ category:"OPERATIONS PLANNING · FORECASTING",
+ card:"Using an Excel decision model to diagnose sales drivers and turn historical performance into inventory and planning priorities.",
+ methods:"Advanced Excel · Issue Tree · Dashboarding · Forecasting",
+ image:"/assets/sales-dashboard.png",
+ summary:"An individual end-to-end Excel project that decomposed revenue performance, built an interactive management dashboard and forecast demand for planning decisions.",
+ meta:[["Project type","Individual Advanced Excel Project"],["Role","Business & Operations Analyst"],["Tools","Excel · Power Query · Power Pivot · PivotTables"],["Focus","Sales drivers · customer behaviour · planning · forecasting"]],
+ outputs:[{title:"Project files",note:"Dashboard and forecasting workbook / analytical materials",url:"https://drive.google.com/drive/folders/18gcuNrIpCkyHXmlWPlrFMwerIk3hgFiM?usp=drive_link"}],
+ situation:"Revenue declined after a 2020 peak and later recovered, but top-line change alone could not tell management whether the movement came from customers, order frequency, quantity, price, discounting or product mix. I built the analysis around those operational drivers before designing the dashboard.",
+ approach:[
+   ["Problem decomposition","Used Revenue = Orders × Average Order Value to separate demand from transaction-value drivers."],
+   ["Connected workbook","Structured sales and dimension tables so performance could be analysed across products, customers, salespeople and fulfilment conditions."],
+   ["Diagnostic dashboard","Built interactive views that moved from executive KPIs into category, customer, shipping and sales-driver analysis."],
+   ["Forecasting","Used historical patterns to forecast Q1 2024 demand and identify category/SKU planning priorities."]
+ ],
+ findings:[
+   "The earlier decline was not simply a customer-acquisition problem; weaker average order value was an important part of the deterioration.",
+   "The 2023 recovery was demand-led but uneven, with growth concentrated in selected categories and salespeople.",
+   "The forecast suggested recovery rather than broad acceleration, which supported selective inventory and commercial planning rather than uniform expansion."
+ ],
+ recommendations:[
+   "Protect Components as a core growth category through inventory availability and repeat-purchase management.",
+   "Use Accessories more deliberately for cross-sell and basket-value growth.",
+   "Repair Bike performance selectively by prioritising stronger SKUs and reviewing discount/value erosion.",
+   "Track retention and purchase frequency alongside acquisition so growth quality is visible."
+ ],
+ contribution:"This was an individual project. I structured the business problem, cleaned and connected the data, built the Excel model and dashboard, analysed historical performance, produced the forecast and translated the results into planning recommendations.",
+ learned:[
+   "The biggest lesson was that dashboard design should follow the logic of the operating question. Building the issue tree first prevented me from creating a visually busy report that simply repeated metrics without explaining their relationship.",
+   "Forecasting also taught me to be careful about the difference between prediction and planning. A forecast should change inventory, category or customer actions; otherwise it is only a number. With more data, I would add margin, inventory position and forecast-error tracking so the dashboard could balance service, working capital and profitability."
+ ]
+},
+{
+ slug:"banking-performance",
+ title:"Vietnamese Banking Performance Analysis",
+ category:"FINANCIAL ANALYSIS · SYSTEM PERFORMANCE",
+ card:"Evaluating growth, profitability and resilience together to distinguish balance-sheet expansion from genuinely sustainable banking performance.",
+ methods:"Financial Ratios · Regression · Segmentation",
+ image:thumb("12M0mePiggSwtoJj9Q2-UkLA749PeQAo5"),
+ summary:"A banking-industry analysis of whether post-COVID growth translated into stronger efficiency and resilience, followed by performance-based bank segmentation and differentiated strategies.",
+ meta:[["Competition","G’Contest 2026 — Round 2"],["Role","Financial Analysis & Business Interpretation"],["Scope","Vietnamese commercial banks · 2020–2024"],["Framework","Growth · Efficiency · Resilience"]],
+ outputs:[{title:"Full analytical deck",note:"Vietnamese Banking Performance Analysis",url:"https://drive.google.com/file/d/12M0mePiggSwtoJj9Q2-UkLA749PeQAo5/view?usp=drive_link"}],
+ situation:"Vietnam’s banking system grew rapidly through and after COVID, but higher profit could reflect a larger balance sheet rather than stronger efficiency. The project therefore analysed growth, profitability and risk together rather than ranking banks by one headline metric.",
+ approach:[
+   ["Growth","Tracked assets, lending, deposits, operating income and profit."],
+   ["Efficiency","Compared ROA, ROE, NIM, CIR and income composition."],
+   ["Resilience","Reviewed funding pressure, asset quality, coverage and capital/risk indicators."],
+   ["Segmentation","Grouped banks by recovery and risk profile to develop different strategic priorities."]
+ ],
+ findings:[
+   "Absolute profit recovered faster than some efficiency measures, showing the importance of separating scale effects from operating quality.",
+   "Loan growth outpacing deposit growth increased funding pressure across parts of the system.",
+   "Bank size supported resilience in some periods, but did not automatically imply better efficiency or risk quality."
+ ],
+ recommendations:[
+   "Rapid-recovery banks should protect momentum while preventing credit growth from outrunning asset quality.",
+   "Sustainable-growth banks can scale selectively through income diversification, CASA and disciplined sector allocation.",
+   "Higher-risk banks should prioritise NPL resolution, capital and cost control before aggressive expansion."
+ ],
+ contribution:"Within a three-member team, I contributed to structuring the analysis around growth, efficiency and resilience, interpreting financial indicators, and translating the segmentation into different strategic priorities rather than one generic recommendation.",
+ learned:[
+   "The project strengthened my ability to read financial performance as a system of trade-offs. More lending can support profit while simultaneously increasing funding and credit risk; lower provisioning can support earnings while weakening buffers.",
+   "I also learned that segmentation is useful only when it changes the action. Grouping banks by performance created value because each group received a different sequence of priorities. If I extended the work, I would add sector-level loan exposures and stress scenarios to test how the groups respond under renewed macro or interest-rate shocks."
+ ]
+},
+{
+ slug:"digital-marketing",
+ title:"Digital Marketing Campaign Analytics & Customer Segmentation",
+ category:"MARKETING ANALYTICS · CUSTOMER SEGMENTATION",
+ card:"Evaluating seven campaigns across financial and funnel metrics, then identifying core and growth customer segments.",
+ methods:"Advanced Excel · Campaign Economics · Segmentation",
+ image:"/assets/marketing-dashboard.png",
+ summary:"An Advanced Excel project connecting campaign economics with customer behaviour to improve budget allocation, retention and remarketing decisions.",
+ meta:[["Programme","Tomorrow Marketers Advanced Excel"],["Project","Midterm Project"],["Focus","Campaign performance · customer segmentation"],["Tools","Advanced Excel · PivotTables · slicers"]],
+ outputs:[{title:"Project files",note:"Dashboard, analysis and supporting materials",url:"https://drive.google.com/drive/folders/1oSGTOB1la0_QsqxR2c7XJoHsl_t-bP50?usp=drive_link"}],
+ situation:"Seven campaigns produced different combinations of reach, clicks, conversion, revenue and profit. The central challenge was to avoid calling a campaign successful because one funnel metric looked strong.",
+ approach:[
+   ["Financial value","Compared revenue, profit, ROI and average order value."],
+   ["Funnel efficiency","Compared CTR, conversion rate and cost per acquisition."],
+   ["Channel efficiency","Compared how advertising channels translated engagement into commercial outcomes."],
+   ["Customer value","Segmented customers by age, location, spending, engagement and purchase behaviour."]
+ ],
+ findings:[
+   "Black Friday and Cyber Monday delivered the strongest financial performance.",
+   "Back-to-School Promo offered a stronger balance between profitability and reach.",
+   "Customers aged 46–55 formed the core revenue segment, while 26–35 represented a strong growth opportunity.",
+   "High engagement did not always translate into healthy economics when acquisition cost or order value was weak."
+ ],
+ recommendations:[
+   "Allocate campaign budget by strategic role rather than one ranking: scale, efficiency and experimental campaigns.",
+   "Protect the 46–55 core segment through loyalty and retention programmes.",
+   "Use more targeted digital communication and remarketing to convert the 26–35 segment.",
+   "Evaluate campaigns with a balanced scorecard that connects financial value, funnel efficiency and customer value."
+ ],
+ contribution:"I structured the campaign-performance framework, compared the core financial and funnel metrics, segmented customers and translated the results into budget-allocation, loyalty and remarketing recommendations.",
+ learned:[
+   "The main lesson was that marketing metrics form a chain, not a leaderboard. CTR, conversion and revenue can each look strong while unit economics remain weak. Connecting them prevented me from optimising a funnel stage at the expense of profit.",
+   "Customer segmentation also became more useful once each segment had a different job in the strategy: protect current value, convert future value or re-engage inactive users. With richer data, I would add cohort retention, lifetime value and incremental attribution."
+ ]},
+{
+ slug:"fraud-dashboard",
+ title:"Digital Bank Fraud Detection Dashboard",
+ category:"RISK MONITORING · DASHBOARD DESIGN",
+ card:"Turning complex fraud-model outputs into a monitoring interface for risk concentration, diagnosis and case prioritisation.",
+ methods:"Dashboard Design · Risk Interpretation · Decision Support",
+ image:thumb("1UrNBOwVr2tizRIN_VN2BBIwApWBYFUmC"),
+ summary:"A team fraud-risk project in which my contribution focused on dashboard structure, visualisation, interpretation and recommendations — not model coding.",
+ meta:[["Competition","G’Contest 2026"],["Recognition","Top 15"],["Role","Dashboard Designer & Business Analyst"],["Focus","Risk monitoring · prioritisation · business interpretation"]],
+ outputs:[{title:"Full project deck",note:"Digital Bank Fraud Detection Dashboard",url:"https://drive.google.com/file/d/1UrNBOwVr2tizRIN_VN2BBIwApWBYFUmC/view?usp=drive_link"}],
+ situation:"The team developed a rule-based fraud-risk framework across a large set of transaction and activity data. My problem was different: how do you turn those outputs into a view that Risk, Fraud Operations, Compliance and management can actually use?",
+ approach:[
+   ["Monitor","Designed the top layer around overall exposure and severity."],
+   ["Diagnose","Separated fraud types and behavioural patterns so teams could understand why alerts were created."],
+   ["Locate","Built views for time, customer, channel and cash-flow concentration."],
+   ["Act","Connected severity and context to prioritisation and intervention recommendations."]
+ ],
+ findings:[
+   "Alert volume alone was not enough; severity and concentration were needed to protect investigation capacity.",
+   "External-bank transfer flows showed much higher alert concentration than the mobile channel in the analysed outputs.",
+   "Different risk patterns required contextual controls rather than one blanket intervention."
+ ],
+ recommendations:[
+   "Use severity-based intervention so the strongest friction is reserved for the highest-risk cases.",
+   "Apply additional controls to high-risk channels and flows while avoiding unnecessary friction for normal customers.",
+   "Create a feedback loop between investigation outcomes, alert rules and dashboard monitoring."
+ ],
+ contribution:"I did not develop the model code. My role was to design the dashboard hierarchy, decide which risk measures and comparisons should be visible, interpret the output patterns and translate them into recommendations and a management story.",
+ learned:[
+   "This project taught me that a risk dashboard is an operational product, not simply a collection of charts. The user needs to move from exposure to diagnosis to prioritisation without mentally reconstructing the model logic.",
+   "It also reinforced the importance of stating uncertainty clearly. An alert is not confirmed fraud, and flagged transaction value is not prevented loss. If I continued the work, I would add investigator feedback, case-resolution time and false-positive tracking so the dashboard could measure the quality of the control system itself."
+ ]
+}
+];
+
+
+
+
+const publications=[
+ {tag:"CARBON MARKETS · CONFERENCE",title:"Strategies for Accelerating International Carbon Credit Trade",desc:"Corresponding-author research comparing Singapore’s financial-hub model with Vietnam’s carbon-asset potential and institutional gaps.",img:thumb("1AoHc_bMTi_k0RrNppGAipZhfCCkmYX2e"),url:"https://drive.google.com/file/d/1AoHc_bMTi_k0RrNppGAipZhfCCkmYX2e/view?usp=drivesdk"},
+ {tag:"CARBON GOVERNANCE · PUBLICATION",title:"Fraud Prevention in Vietnam’s Emerging Carbon Market",desc:"Co-authored EU–Vietnam comparative research on double-counting, data manipulation, registry security and enforcement.",img:thumb("1SVoXxHQ-uYwKYaxG0gZso1n2D_LBo-HT"),url:"https://drive.google.com/file/d/1SVoXxHQ-uYwKYaxG0gZso1n2D_LBo-HT/view?usp=drivesdk"},
+ {tag:"TRACEABILITY · PUBLICATION",title:"Blockchain Traceability & Organic Food Purchasing",desc:"Research output on how traceability information quality, safety perceptions and trust shape organic-food purchase intention.",img:thumb("1PpkB0PzIqUvFD6nm27TrAY4KVyYMkc6M"),url:"https://drive.google.com/file/d/1PpkB0PzIqUvFD6nm27TrAY4KVyYMkc6M/view?usp=drivesdk"},
+ {tag:"RESEARCH MODEL · PUBLICATION",title:"Blockchain Traceability Information Quality — Research Model",desc:"Published conceptual work extending the research stream on traceability and health-conscious consumer behaviour.",img:thumb("1D8hFwCvZrIEnVwfDCYbH3o1Ykbg6YfMk"),url:"https://drive.google.com/file/d/1D8hFwCvZrIEnVwfDCYbH3o1Ykbg6YfMk/view?usp=drivesdk"}
+];
+
+
+
+
+const awards=[
+ ["First Prize","FTU Student Scientific Research Competition","2026","https://drive.google.com/file/d/1YLy2E_SKfsPI3-B1J5uDkU65g9UAevic/view?usp=drivesdk"],
+ ["Top 15","G’Contest — Data Analytics Competition","2026","https://drive.google.com/file/d/1rlWDUIJIcBTHGgZy81JFIPa7_N8dovwK/view?usp=drivesdk"],
+ ["Runner-up","Tomorrow Marketers Business Analytics & Consulting Case Competition","2025","https://drive.google.com/file/d/1F2KbviEn0_jKlY6OyL9PDo_JhXm9tUAA/view?usp=drivesdk"],
+ ["Winner","Agyra Student Challenge — Sustainable Finance Challenge","2025","https://drive.google.com/file/d/1dNHgYoIKYyqDCqEbvRC04M5cdSvkecJU/view?usp=drivesdk"],
+ ["Champion","VNUIS Business Case Competition","2025","https://drive.google.com/file/d/1Ia1IB2trG4ERQO06pO7WRMfnU190cozP/view?usp=drivesdk"],
+ ["Champion","The EconomAIst","2024","https://drive.google.com/file/d/1fQEP1exJNPZMrq5G9CUg2hYhZMdA9PrD/view?usp=drivesdk"],
+ ["Third Prize","International Business Integration Competition","2023","https://drive.google.com/file/d/1wmUKvPxTts_BSZ9PGCljAd02L4kgWUlm/view?usp=drivesdk"]
+];
+
+
+
+
+const certs=[
+ {title:"Tomorrow Marketers BACC — Runner-up",issuer:"Tomorrow Marketers · 2025",id:"1F2KbviEn0_jKlY6OyL9PDo_JhXm9tUAA"},
+ {title:"VNUIS Business Case Competition — Champion",issuer:"VNU International School · 2025",id:"1Ia1IB2trG4ERQO06pO7WRMfnU190cozP"},
+ {title:"Agyra Student Challenge — Winner",issuer:"Agyra Capital · 2025",id:"1dNHgYoIKYyqDCqEbvRC04M5cdSvkecJU"},
+ {title:"The EconomAIst — Champion",issuer:"National Economics University · 2024",id:"1fQEP1exJNPZMrq5G9CUg2hYhZMdA9PrD"},
+ {title:"First Prize — FTU Student Scientific Research",issuer:"Foreign Trade University · 2026",id:"1YLy2E_SKfsPI3-B1J5uDkU65g9UAevic"},
+ {title:"Top 15 — G’Contest",issuer:"G’Contest · 2026",id:"1rlWDUIJIcBTHGgZy81JFIPa7_N8dovwK"},
+ {title:"Third Prize — International Business Integration",issuer:"International Business Integration · 2023",id:"1wmUKvPxTts_BSZ9PGCljAd02L4kgWUlm"},
+ {title:"IELTS 8.0",issuer:"English proficiency",id:"13E-yS0VWjbExHZfGVTSkAnMOJcjGItM2"},
+ {title:"Microsoft Office Specialist — Excel",issuer:"Microsoft Office Specialist",id:"1dT6X-MMsizGjrNt7e6gDpIRJuLqf0OwO"},
+ {title:"Microsoft Office Specialist — PowerPoint",issuer:"Microsoft Office Specialist",id:"1ES-emAVvmxnDoir_GNndshc_t9U7YLQo"},
+ {title:"Microsoft Office Specialist — Word",issuer:"Microsoft Office Specialist",id:"10EMt-aucOVZyQtpz-oAugepdor-SbQ1S"},
+ {title:"Foundations of Project Management",issuer:"Google via Coursera",id:"1yw0PkcViHowEyc2ZpV4VijsdN7JDQMFl"},
+ {title:"Prepare, Clean, Transform & Load Data using Power BI",issuer:"Coursera Project Network",id:"1PrfwGrI--2vmEE577vfo9HI7PowTCGYR"},
+ {title:"Get Started With Tableau",issuer:"Coursera",id:"1Z4t_UaCFk36w4ilxDbJlt5O7KI2bOWVH"},
+ {title:"Create a Mockup in Figma",issuer:"Coursera Project Network",id:"1otXVd0YzMWfHFWrQUJQJ3GB9U7i_aqPz"}
+];
+
+function projectCard(p){
+ return `<article class="project-card" data-project="${p.slug}">
+   <div class="project-thumb"><img loading="lazy" src="${p.image}" alt="First-page or dashboard preview for ${p.title}"></div>
+   <div class="project-body"><div class="project-cat">${p.category}</div><h3>${p.title}</h3><p>${p.card}</p><div class="method">${p.methods}</div><div class="project-arrow">View case study →</div></div>
+ </article>`;
+}
+function home(){
+ const featured=["sustainable-finance-smes","import-business-process","ecommerce-operations","blockchain-traceability","carbon-market-strategy","sales-performance"].map(s=>projects.find(p=>p.slug===s));
+ return `
+ <section class="hero"><div class="shell hero-grid">
+   <div class="hero-copy"><div class="eyebrow">Sustainable finance · Logistics · Operations analysis</div>
+     <h1>I study how finance, trade, and operations can work more efficiently — and more sustainably.</h1>
+     <p class="lead">Hi, I’m Nghiêm Hà Phương, an International Business Economics student at Foreign Trade University. I work across sustainable finance, carbon markets, international trade, logistics, and operations analysis — structuring complex systems, identifying bottlenecks, and turning research into practical recommendations.</p>
+     <div class="hero-actions"><button class="btn primary" data-route="#/projects">View My Projects →</button><a class="btn secondary" href="/assets/cv.pdf" target="_blank">View My CV</a></div>
+     <div class="support-line">Based in Hanoi, Vietnam · GPA 3.97/4.0 · IELTS 8.0</div>
+   </div>
+   <div class="hero-visual"><img class="portrait" src="/assets/portrait-hero.png" alt="Portrait of Nghiêm Hà Phương">
+     <div class="float-card float-a"><strong>Research + systems thinking</strong><span>From policy and market structure to process-level execution.</span></div>
+     <div class="float-card float-b"><strong>End-to-end problem solving</strong><span>Research · process mapping · diagnosis · recommendations.</span></div>
+   </div>
+ </div></section>
+
+
+
+
+ <section class="section white"><div class="shell about-grid">
+   <div class="about-photo"><img loading="lazy" src="/assets/portrait-about.jpg" alt="Nghiêm Hà Phương">
+     <div class="photo-note"><b>My recurring question:</b><br>Where does the system break —<br>and what would make it work better?</div>
+   </div>
+   <div><div class="eyebrow">About me</div><h2>I’m most interested in the systems behind sustainable growth.</h2>
+     <p class="lead">I study International Business Economics at Foreign Trade University, and my work increasingly sits at the intersection of sustainable finance, international trade, logistics, and operations. Across carbon-market research, sustainable-finance studies, import-process analysis, e-commerce cases, and forecasting projects, I tend to approach problems the same way: understand the system first, identify where incentives or processes are misaligned, then use evidence to decide what should change. Data is one of the tools I use, but the goal is not analysis for its own sake — it is to make financing, trade flows, and operating decisions clearer and more workable.</p>
+     <div class="quick-facts"><span><strong>3.97/4.0</strong> GPA</span><span><strong>Research leadership</strong> across sustainable-finance and traceability studies</span><span><strong>Hanoi</strong>, Vietnam</span></div>
+   </div>
+ </div></section>
+
+
+
+
+ <section class="section"><div class="shell">
+   <div class="section-head"><div><div class="eyebrow">Focus & capabilities</div><h2>From market structure to operational execution.</h2><p>I combine research, trade and process thinking to understand both the institutional rules around a system and the day-to-day mechanics that make it work.</p></div></div>
+   <div class="focus-grid">
+    <div class="focus-card"><div class="focus-icon">01</div><h3>Sustainable Finance & Carbon Markets</h3><p>Researching how capital, regulation, market integrity and institutional design shape the transition to lower-carbon business models.</p><div class="tags"><span class="tag">Sustainable Finance</span><span class="tag">Carbon Markets</span><span class="tag">Policy Benchmarking</span><span class="tag">Green Finance</span><span class="tag">MRV & Governance</span></div><div class="proof">Proof → SME sustainable-finance study · Singapore–Vietnam carbon research</div></div>
+    <div class="focus-card"><div class="focus-icon">02</div><h3>Logistics & International Trade</h3><p>Mapping how goods, documents, money and responsibilities move across borders — and where delays, compliance risks or handover failures arise.</p><div class="tags"><span class="tag">Import–Export</span><span class="tag">Process Mapping</span><span class="tag">Trade Documentation</span><span class="tag">Customs & Clearance</span><span class="tag">Trade Finance</span></div><div class="proof">Proof → Vietnam base-metals import Business Process Analysis</div></div>
+    <div class="focus-card"><div class="focus-icon">03</div><h3>Operations Analysis</h3><p>Breaking operating problems into measurable drivers and turning diagnosis into process, service and planning decisions.</p><div class="tags"><span class="tag">Root-Cause Analysis</span><span class="tag">Process Improvement</span><span class="tag">KPI Design</span><span class="tag">Forecasting</span><span class="tag">Segmentation</span></div><div class="proof">Proof → E-commerce operations · sales planning & forecasting</div></div>
+    <div class="focus-card"><div class="focus-icon">04</div><h3>Research & Decision Communication</h3><p>Designing research that is defensible enough for academic work and clear enough to support practical decisions.</p><div class="tags"><span class="tag">Desk Research</span><span class="tag">Survey Design</span><span class="tag">Interviews</span><span class="tag">Literature Review</span><span class="tag">Executive Storytelling</span></div><div class="proof">Proof → First-Prize research · publications · competition cases</div></div>
+   </div>
+   <div class="tools"><b>Supporting tools</b><span class="tool">Advanced Excel</span><span class="tool">Power Query</span><span class="tool">Power Pivot</span><span class="tool">Power BI</span><span class="tool">SmartPLS</span><span class="tool">PowerPoint</span><span class="tool">Canva</span><span class="tool">Figma</span></div>
+ </div></section>
+
+
+
+
+ <section class="section white"><div class="shell">
+  <div class="section-head"><div><div class="eyebrow">Research & publications</div><h2>Researching the infrastructure behind trustworthy sustainable markets.</h2><p>My recent research has focused on carbon-market integrity, sustainable finance and traceability — especially the rules and evidence required to turn environmental claims into credible, financeable outcomes.</p></div></div>
+  <div class="research-grid">${publications.map(x=>`<a class="research-card" href="${x.url}" target="_blank" rel="noopener"><img loading="lazy" src="${x.img}" alt="${x.title}"><div><div class="research-meta">${x.tag}</div><h3>${x.title}</h3><p>${x.desc}</p><span class="text-link">View evidence / publication ↗</span></div></a>`).join("")}</div>
+ </div></section>
+
+
+
+
+ <section class="section"><div class="shell">
+   <div class="section-head"><div><div class="eyebrow">Recognition & credentials</div><h2>Built through research, trade analysis, and applied business problem-solving.</h2><p>Selected academic awards, competition results and professional credentials that support the work shown in this portfolio.</p></div></div>
+   <div class="recognition-layout">
+    <div><h3>Selected recognition</h3>${awards.map(a=>`<a class="award-row" href="${a[3]}" target="_blank"><div class="award-result">${a[0]}</div><div class="award-title">${a[1]}</div><div class="award-year">${a[2]}</div></a>`).join("")}</div>
+    <div><h3>Selected certifications</h3><div class="cert-grid">${certs.map(c=>`<a class="cert-card" href="${drive(c.id)}" target="_blank"><img loading="lazy" src="${thumb(c.id)}" alt="${c.title} certificate"><div class="cert-body"><strong>${c.title}</strong><span>${c.issuer} · View credential ↗</span></div></a>`).join("")}</div></div>
+   </div>
+ </div></section>
+
+
+
+
+ <section class="section white"><div class="shell">
+   <div class="section-head"><div><div class="eyebrow">Selected projects</div><h2>Research and analysis across sustainable finance, trade, and operations.</h2><p>Each project page focuses on the question, reasoning process, evidence, recommendations, and what I learned — not just the final slides.</p></div><button class="text-link" style="border:0;background:none;cursor:pointer" data-route="#/projects">View all projects →</button></div>
+   <div class="project-grid">${featured.map(projectCard).join("")}</div>
+ </div></section>
+
+
+
+
+ <section class="cta"><div class="shell"><div><div class="eyebrow" style="color:#91c7d7">Let’s connect</div><h2>Interested in sustainable finance, logistics, trade, or operations?</h2><p>I am open to internship, research, and project opportunities involving sustainable finance, carbon markets, logistics, international trade, operations analysis, and business research.</p></div><div class="cta-actions"><button class="btn primary" data-route="#/contact">Get in Touch →</button><a class="btn secondary" href="/assets/cv.pdf" target="_blank">View My CV</a></div></div></section>
+ `;
+}
+function projectsPage(){
+ return `<section class="page-hero"><div class="shell"><div class="eyebrow">Projects</div><h1>Selected work across sustainable finance, logistics, operations, and business research.</h1><p class="lead">The projects are ordered by the direction I want to build on most. Data tools appear where they help answer the business question, but the focus is on systems, processes, financing and decisions.</p></div></section>
+ <section class="section white" style="padding-top:48px"><div class="shell"><div class="project-grid">${projects.map(projectCard).join("")}</div></div></section>`;
+}
+function contactPage(){
+ return `<section class="page-hero"><div class="shell"><div class="eyebrow">Contact</div><p class="lead">I am open to internship, research, and project opportunities in sustainable finance, carbon markets, logistics, international trade, operations analysis, and business research. Feel free to reach out if you would like to discuss an opportunity, collaborate on a project, or learn more about my work.</p>
+ <div class="contact-wrap">
+  <a class="contact-card" href="mailto:nghiemphuong263@gmail.com"><span>Email</span><strong>nghiemphuong263@gmail.com</strong><div class="text-link" style="margin-top:12px">Send an email ↗</div></a>
+  <a class="contact-card" href="https://www.linkedin.com/in/nghiemphuong/" target="_blank"><span>LinkedIn</span><strong>linkedin.com/in/nghiemphuong/</strong><div class="text-link" style="margin-top:12px">Connect on LinkedIn ↗</div></a>
+  <div class="contact-card"><span>Location</span><strong>Hanoi, Vietnam</strong><div class="muted" style="margin-top:12px;font-size:13px">Open to remote and international opportunities</div></div>
+ </div>
+ <div class="availability"><div class="eyebrow" style="margin-bottom:4px">Currently open to</div><div class="tags"><span class="tag">Sustainable Finance</span><span class="tag">Carbon Markets</span><span class="tag">Logistics & Trade</span><span class="tag">Operations Analysis</span><span class="tag">Research Collaboration</span></div><div style="margin-top:22px"><a class="btn primary" href="/assets/cv.pdf" target="_blank">View My CV</a> <button class="btn secondary" data-route="#/projects">Explore Projects</button></div></div>
+ </div></section>`;
+}
+function projectDetail(p){
+ const idx=projects.findIndex(x=>x.slug===p.slug),prev=projects[(idx-1+projects.length)%projects.length],next=projects[(idx+1)%projects.length];
+ return `<section class="project-detail-hero"><div class="shell project-detail-grid"><div>
+  <div class="eyebrow">${p.category}</div><h1>${p.title}</h1><p class="lead">${p.summary}</p>
+  <div class="meta-grid">${p.meta.map(m=>`<div class="meta-item"><span>${m[0]}</span><strong>${m[1]}</strong></div>`).join("")}</div>
+ </div><div class="hero-project-image"><img src="${p.image}" alt="Project preview for ${p.title}"></div></div></section>
+ ${p.outputs.length?`<section class="output-strip"><div class="shell"><div class="eyebrow" style="margin-bottom:12px">Project output</div><div class="output-grid">${p.outputs.map(o=>`<a class="output-card" href="${o.url}" target="_blank" rel="noopener"><div><b>${o.title}</b><span>${o.note}</span></div><div class="out-link">Open ↗</div></a>`).join("")}</div></div></section>`:""}
+ <section class="case-section white"><div class="shell case-grid"><div><div class="case-index">01 · SITUATION</div><h3>The question behind the project</h3></div><div class="case-copy"><p class="lead">${p.situation}</p></div></div></section>
+ <section class="case-section"><div class="shell case-grid"><div><div class="case-index">02 · APPROACH</div><h3>How I structured the problem</h3></div><div class="case-copy"><div class="framework">${p.approach.map(a=>`<div class="frame"><b>${a[0]}</b><p>${a[1]}</p></div>`).join("")}</div></div></div></section>
+ <section class="case-section white"><div class="shell case-grid"><div><div class="case-index">03 · FINDINGS</div><h3>What the evidence changed</h3></div><div class="case-copy"><ul>${p.findings.map(x=>`<li>${x}</li>`).join("")}</ul><div class="insight"><b>Analytical principle:</b> The purpose of the analysis was to narrow the decision — not to produce the largest possible number of metrics.</div></div></div></section>
+ <section class="case-section"><div class="shell case-grid"><div><div class="case-index">04 · RECOMMENDATIONS</div><h3>From finding to action</h3></div><div class="case-copy"><ul>${p.recommendations.map(x=>`<li>${x}</li>`).join("")}</ul></div></div></section>
+ <section class="case-section white"><div class="shell case-grid"><div><div class="case-index">05 · MY CONTRIBUTION</div><h3>What I was responsible for</h3></div><div class="case-copy"><p>${p.contribution}</p></div></div></section>
+ <section class="case-section"><div class="shell case-grid"><div><div class="case-index">06 · REFLECTION</div><h3>What I learned</h3></div><div class="case-copy"><div class="learning"><h3>Beyond the final deliverable</h3>${p.learned.map(x=>`<p>${x}</p>`).join("")}</div><div class="detail-nav"><button data-project="${prev.slug}">← ${prev.title}</button><button data-route="#/projects">All projects</button><button data-project="${next.slug}">${next.title} →</button></div></div></div></section>`;
+}
+function setActive(section){
+ document.querySelectorAll("[data-nav]").forEach(x=>x.classList.toggle("active",x.dataset.nav===section));
+}
+function bind(){
+ document.querySelectorAll("[data-route]").forEach(el=>el.onclick=()=>location.hash=el.dataset.route);
+ document.querySelectorAll("[data-project]").forEach(el=>el.onclick=()=>location.hash="#/project/"+el.dataset.project);
+}
+function render(){
+ const hash=location.hash||"#/";
+ const app=document.getElementById("app");
+ if(hash==="#/"||hash==="#"){app.innerHTML=home();setActive("home")}
+ else if(hash==="#/projects"){app.innerHTML=projectsPage();setActive("projects")}
+ else if(hash==="#/contact"){app.innerHTML=contactPage();setActive("contact")}
+ else if(hash.startsWith("#/project/")){const p=projects.find(x=>x.slug===hash.split("/")[2]);app.innerHTML=p?projectDetail(p):projectsPage();setActive("projects")}
+ else{app.innerHTML=home();setActive("home")}
+ bind();window.scrollTo({top:0,behavior:"instant"});
+}
+window.addEventListener("hashchange",render);render();
+</script>
+</body></html>
