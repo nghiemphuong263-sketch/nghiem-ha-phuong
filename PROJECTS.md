@@ -2,7 +2,7 @@
 
 This list records the complete current collection. Keep it in sync when changing the portfolio.
 
-## Applied projects (13)
+## Applied projects (11)
 
 - E-commerce Operations Analytics (`ecommerce-operations`)
 - HappyTime HR SaaS growth strategy (`happytime`)
@@ -15,8 +15,6 @@ This list records the complete current collection. Keep it in sync when changing
 - IONPIA Vietnam market strategy (`ionpia`)
 - Cỏ Cây Hoa Lá: Bơ Nghệ growth proposal (`co-cay-hoa-la`)
 - Suki market & growth strategy (`suki`)
-- DH Foods international expansion (`dh-foods`)
-- BWG Mai Châu: North America export strategy (`bwg-bamboo`)
 
 ## Research studies (2) — home page only
 
@@ -57,3 +55,16 @@ The root has 10 files and 2 subfolders. Both subfolders were listed; together th
 | CV and cover letter | Supporting documents, not project cards |
 
 HappyTime, The EconomAIst, Suki, Vua Giặt and IONPIA now link to their full Drive source reports, rather than only a locally rendered preview. The two Excel projects expose PDF, workbook and folder links separately. No new duplicate project records were created from repeated file formats.
+
+
+## Content review
+
+DH Foods and BWG Mai Châu were removed at the owner’s request. The remaining 11 applied projects and 2 research studies were reviewed against their source materials.
+
+Each detailed case now includes the specific business question, source-based evidence, a substantive explanation of the analysis, a decision/action comparison and case-specific limitations. Repeated generic principles and reflection paragraphs were removed.
+
+Numerical checks: HappyTime’s six-month ROI follows its financial table (VND 91m / VND 1.225bn ≈ 7.4%); inconsistent workload-saving figures were not adopted. Marketing’s revenue-minus-ad-spend result is called campaign contribution, not net profit. Fraud alert value is distinguished from confirmed fraud and prevented loss. The retail selling-price percentage annotation does not reconcile and is omitted. Observational associations are not described as causal effects.
+
+## Award image restoration
+
+HSBC and G’Contest use their original result-announcement images; Marketing Big Day uses its original certificate. All nine recognition cards show local images, and clicking an image opens the full-size asset. Source Drive links are retained for verification.

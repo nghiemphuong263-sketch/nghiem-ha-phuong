@@ -72,6 +72,8 @@
   
 /* Show original workbook and source-page previews without cropping. */
 .project-thumb{background:#f1f5f5;padding:12px;display:grid;place-items:center}.project-thumb img{object-fit:contain;width:100%;height:100%;min-height:0}.project-card:hover .project-thumb img{transform:none}.dashboard-thumb{background:#fff;padding:4px}.hero-project-image img{aspect-ratio:auto;height:auto;object-fit:contain}.image-open-link{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--blue)}.evidence-note{font-size:13px;color:var(--slate)}.project-card{display:block}.project-card:focus-visible{outline:3px solid var(--blue);outline-offset:4px}.hero-project-image a{display:block}
+
+.case-status{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);background:#e5eff2;padding:8px 12px;border-radius:8px;margin-bottom:0}.case-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px;background:#fff}.case-table{width:100%;border-collapse:collapse;font-size:14px;text-align:left;min-width:620px}.case-table th{background:#edf4f6;color:var(--navy);font-size:12px;padding:17px 20px;vertical-align:top}.case-table td{padding:20px;vertical-align:top;border-top:1px solid var(--border);line-height:1.75;color:#45525d}.case-table td:first-child{width:23%;font-weight:700;color:var(--ink)}.case-table td:nth-child(2){width:34%}.analysis-reading{max-width:850px}.analysis-part+ .analysis-part{margin-top:54px;padding-top:44px;border-top:1px solid var(--border)}.analysis-part h2{font-size:31px;line-height:1.3;max-width:760px}.analysis-part p{font-size:17px;line-height:1.95;color:#45525d}.case-boundary{border-left:3px solid var(--blue);padding:22px 28px;background:#eaf2f4;border-radius:0 12px 12px 0;max-width:950px}.case-boundary h3{font-size:19px}.case-boundary p{font-size:14px;line-height:1.85;color:#45525d;margin:0}@media(max-width:720px){.analysis-part h2{font-size:25px}.analysis-part p{font-size:16px}.case-table th,.case-table td{padding:14px}.case-boundary{padding:20px}}
 </style>
 </head>
 <body>
@@ -102,15 +104,15 @@ const drive=id=>`https://drive.google.com/file/d/${id}/view`;
 
 
 
-const additionalProjects=[
+const allWork=[
  {
   "slug": "happytime",
   "title": "HappyTime HR SaaS growth strategy",
   "category": "BUSINESS STRATEGY · RESOURCE ALLOCATION",
-  "card": "Reallocating sales effort across customer segments and redesigning the go-to-market model for TopCV’s HR software.",
+  "card": "Redesigning HappyTime’s customer targeting, lead routing and sales workloads, with a six-month financial model and a pilot using the existing team.",
   "methods": "Customer segmentation · Unit economics · Sales process design",
   "image": "assets/project-happytime.webp",
-  "summary": "Reallocating sales effort across customer segments and redesigning the go-to-market model for TopCV’s HR software.",
+  "summary": "A team proposal for TopCV’s HappyTime that connected segment economics to lead qualification, a three-tier sales model, team allocation and a six-month implementation and financial plan.",
   "meta": [
    [
     "Competition",
@@ -152,27 +154,97 @@ const additionalProjects=[
    ]
   ],
   "findings": [
-   "The proposal identified excessive attention to low-value Micro leads and insufficiently differentiated workflows for larger accounts.",
-   "The team estimated that restructuring could save 883 work-hours per month. This was a proposal estimate, not a measured implementation result.",
-   "The financial plan projected 7.4% ROI over six months."
+   "The case concentrated too much sales attention on the Micro segment relative to its lifetime value.",
+   "The team proposed a differentiated service model with the existing headcount.",
+   "The six-month model forecast VND 91m profit on VND 1.225bn total cost; the initial phase was loss-making."
   ],
   "recommendations": [
-   "Use self-service and automation for Micro accounts, junior sales for SMEs, and senior consultative support for Mid-market accounts.",
-   "Introduce Happy Starter, Happy Growth and Happy Premium packages suited to different customer needs.",
-   "Track win rate, workload, acquisition cost and payback together when evaluating the redesign."
+   "Route Micro demand to automation, SME demand to junior inside sales and Mid-market demand to senior consultative sales.",
+   "Pilot and refine lead scoring before treating its thresholds as fixed rules.",
+   "Track realised conversion, workload and contribution alongside revenue as the plan progresses."
   ],
   "contribution": null,
   "learned": [],
-  "evidenceNote": "Original team proposal, executive summary; forecast benefits are not realised results."
+  "evidenceNote": "Original team proposal, executive summary; forecast benefits are not realised results.",
+  "caseQuestion": "How can the same sales team serve more valuable customers without adding headcount?",
+  "caseStatus": "Team competition proposal & financial model",
+  "evidence": [
+   [
+    "Resource allocation",
+    "About 80% of effort on Micro leads in the case",
+    "The lowest-value segment was absorbing capacity needed for SMEs and Mid-market accounts."
+   ],
+   [
+    "Lead qualification",
+    "100-point score and differentiated routing",
+    "Company size, authority and buying signals were used to decide the level of sales attention."
+   ],
+   [
+    "Six-month model",
+    "VND 1.316bn revenue; VND 1.225bn cost",
+    "The proposal estimated VND 91m profit, or approximately 7.4% ROI on total cost."
+   ],
+   [
+    "Early cash requirement",
+    "Phase 1 projected a VND 168m loss",
+    "The model depended on later conversion gains and needed funding through the initial setup period."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "The problem was how sales capacity was being used",
+    "paragraphs": [
+     "HappyTime had access to TopCV’s corporate audience, but lead volume was not translating into attractive economics. The team compared customer lifetime value, acquisition cost, workload and buying requirements across Micro, SME and Mid-market segments. Micro firms offered reach, while SMEs were the main scalable growth opportunity and Mid-market accounts offered higher contract value.",
+     "The proposed organisational change retained five junior salespeople and one senior. Micro accounts moved to an automated service path, juniors concentrated on SME qualification and group demonstrations, and the senior handled complex Mid-market discovery and negotiation. This connected segmentation to actual work allocation, rather than ending with a list of target customers."
+    ]
+   },
+   {
+    "title": "Making the recommendation executable and financially testable",
+    "paragraphs": [
+     "The lead-scoring design combined headcount, relevance, authority, engagement and TopCV account information. The action matrix routed low scores to automated education, SME prospects to inside sales and stronger Mid-market prospects to consultative selling. Inactivity reduced scores so the pipeline would not preserve stale leads indefinitely. These were proposed routing rules requiring calibration during the pilot.",
+     "The six-month roadmap sequenced team assignment and training, a pilot of the SME workflow, a small Mid-market pilot, then standardisation and expansion. The financial model made the cost of that transition visible. ROI was calculated as (VND 1.316bn − VND 1.225bn) / VND 1.225bn ≈ 7.4%. With only VND 91m of forecast profit and an initial loss, conversion quality and the timing of revenue mattered to the recommendation."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Segment / stage",
+    "Proposed operating model",
+    "What must work"
+   ],
+   "rows": [
+    [
+     "Micro",
+     "Automated onboarding, Zalo and self-service",
+     "Prevent low-value enquiries from continually returning to the human sales queue."
+    ],
+    [
+     "SME",
+     "Junior-led contextual calls, standard packages and group demos",
+     "Improve qualification and conversion without recreating the original overload."
+    ],
+    [
+     "Mid-market",
+     "Senior-led discovery, demonstrations and ecosystem bundles",
+     "Protect senior capacity for larger accounts and explain the value of the full solution."
+    ],
+    [
+     "Rollout review",
+     "Review workloads, win rates and economics before expansion",
+     "Use conversion and margin evidence to adjust routing, training and incentives."
+    ]
+   ]
+  },
+  "limitations": "The financial model depends on the assumed win rates, contract values and sales productivity. Phase 1 requires funding before later revenue is earned. The forecast profit is sensitive to weaker conversion or a longer sales cycle, so the pilot needs to test those assumptions before expansion."
  },
  {
   "slug": "restaurant-experience",
   "title": "Restaurant experience & operations analysis",
   "category": "OPERATIONS · CUSTOMER EXPERIENCE",
-  "card": "Testing whether weather explains restaurant ratings, then using review evidence to prioritise food freshness and service improvements.",
+  "card": "Testing weather against Las Vegas restaurant ratings, then using review text to develop changes to ingredient freshness, kitchen flow and service.",
   "methods": "Yelp data · Weather comparison · Review analysis · Process improvement",
   "image": "assets/project-restaurant-experience.webp",
-  "summary": "Testing whether weather explains restaurant ratings, then using review evidence to prioritise food freshness and service improvements.",
+  "summary": "A team case linking Yelp reviews and weather data to restaurant operations. The analysis moved from the weather hypothesis to customer feedback on food quality and service, then developed operating and relaunch proposals.",
   "meta": [
    [
     "Competition",
@@ -214,26 +286,97 @@ const additionalProjects=[
    ]
   ],
   "findings": [
-   "The team’s analysis did not identify weather as the key explanation for customer experience in the analysed data.",
-   "Food freshness and service quality emerged as the priorities in the proposal."
+   "The weather charts did not show a clear relationship with star ratings in the analysed sample.",
+   "Review text made food quality and service more useful areas for operational investigation.",
+   "Different complaints required different process changes, from ingredient storage to kitchen handoffs and staff coverage."
   ],
   "recommendations": [
-   "Collect more specific feedback on dishes and service so complaints can be traced to a process.",
-   "Improve the supply chain for ingredient freshness and review cooking, ordering and service routines.",
-   "Use the proposed “We Are Listening” campaign to close the feedback loop with customers."
+   "Use structured feedback on dishes and service to investigate recurring complaints.",
+   "Prioritise freshness, temperature and service-flow changes before a relaunch campaign.",
+   "Test the operating changes and examine subsequent feedback before expanding them."
   ],
   "contribution": null,
   "learned": [],
-  "evidenceNote": "Original The EconomAIst team deck; findings describe this case dataset."
+  "evidenceNote": "Original The EconomAIst team deck; findings describe this case dataset.",
+  "caseQuestion": "Which parts of restaurant operations should change when customer reviews point beyond the original weather hypothesis?",
+  "caseStatus": "Team competition analysis & operating proposal",
+  "evidence": [
+   [
+    "Starting datasets",
+    "174,000 businesses; 5.2m reviews; 28,241 weather rows",
+    "These were the raw source sizes, before the Las Vegas restaurant filters."
+   ],
+   [
+    "Restaurant subset",
+    "4,651 rows reported after business filtering",
+    "The analysis narrowed the source data to the case geography and category."
+   ],
+   [
+    "Weather comparison",
+    "No clear relationship with review stars in the case charts",
+    "The team moved to cuisine categories and review text to investigate other explanations."
+   ],
+   [
+    "Review themes",
+    "Food taste, freshness, temperature and attentive service",
+    "The proposal translated customer language into kitchen, sourcing and service changes."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Following the evidence after the first hypothesis",
+    "paragraphs": [
+     "The case began with a specific question: did temperature or rainfall explain restaurant ratings in Las Vegas? Preparing a comparable dataset required filtering out closed businesses, retaining restaurant categories, matching dates and correcting weather fields where minimum and maximum values appeared reversed.",
+     "The visual comparisons did not show a clear weather-rating relationship. The team then examined cuisine categories and review text. It cleaned text, applied a bag-of-words approach and compared recurring positive and negative terms. Positive reviews often referred to food being delicious or fresh and service being friendly or attentive. Negative terms differed by cuisine, including bland, cold and slow-service experiences."
+    ]
+   },
+   {
+    "title": "Connecting each review theme to a controllable process",
+    "paragraphs": [
+     "The operating proposal traced freshness back through supplier choice, seasonal menus, transport and storage practices. Food temperature and waiting complaints led to kitchen-layout and ordering recommendations. The proposed preparation, cooking and plating zones followed the sequence of work, while online reservations and ordering tools were intended to reduce avoidable queues and handoff delays.",
+     "For service, the team proposed clearer responsibility by restaurant zone and more specific feedback on staff and dishes. Lower-rated restaurants also received a two-phase “We Are Listening” relaunch proposal: show what had changed, then invite customers to experience the changes. The communication plan depended on real improvements in the meal and service experience."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Customer evidence",
+    "Operational response in the proposal",
+    "Business logic"
+   ],
+   "rows": [
+    [
+     "Freshness and taste appear frequently in positive reviews",
+     "Supplier checks, seasonal ingredients, storage controls and staff training",
+     "Protect the product experience before spending more to attract traffic."
+    ],
+    [
+     "Cold food and waiting complaints",
+     "Review kitchen flow, ordering and service handoffs",
+     "Reduce the points where prepared food waits or orders become delayed."
+    ],
+    [
+     "Friendly and attentive service",
+     "Assign zone leaders and collect specific service feedback",
+     "Make responsibility and coaching more precise."
+    ],
+    [
+     "Weak ratings and negative feedback",
+     "Publish improvements and run a relaunch experience",
+     "Give returning customers a concrete reason to reassess the restaurant."
+    ]
+   ]
+  },
+  "limitations": "Word frequency and visual correlations identify themes in the analysed reviews; they do not prove what caused ratings or measure the effect of the proposed changes. Dataset availability also led the team to use a Yelp version appropriate to Las Vegas."
  },
  {
   "slug": "suki",
   "title": "Suki market & growth strategy",
   "category": "MARKET STRATEGY · CHANNEL DEVELOPMENT",
-  "card": "Connecting customer insight, product bundles, pricing, distribution and communications for a sunscreen brand in Vietnam.",
+  "card": "Developing a one-year plan across product bundles, pricing, retail, e-commerce and communications for Suki’s working-consumer segment.",
   "methods": "Market research · Customer targeting · Marketing mix · Channel planning",
   "image": "assets/project-suki.webp",
-  "summary": "Connecting customer insight, product bundles, pricing, distribution and communications for a sunscreen brand in Vietnam.",
+  "summary": "A Marketing Big Day team proposal for Suki sunscreen. The plan connected customer insight and marketing-mix gaps to product bundles, channel development, promotions and a phased annual campaign.",
   "meta": [
    [
     "Competition",
@@ -275,9 +418,9 @@ const additionalProjects=[
    ]
   ],
   "findings": [
-   "The proposal identified limited product choice and underused direct and e-commerce channels.",
-   "The team linked functional protection with the emotional benefit of enjoying time outside with confidence.",
-   "The VND 200 billion annual revenue figure was the case objective, not an achieved outcome."
+   "The proposal treated product range, channel coverage and purchase mechanics as constraints on growth.",
+   "Its customer insight linked skin protection to ease and enjoyment of social activities.",
+   "The annual roadmap assigned different communication and activation roles to three phases."
   ],
   "recommendations": [
    "Introduce convenient seasonal bundles and a wider set of price options.",
@@ -286,16 +429,86 @@ const additionalProjects=[
   ],
   "contribution": null,
   "learned": [],
-  "evidenceNote": "Original Marketing Big Day team deck; objectives and KPIs are proposed."
+  "evidenceNote": "Original Marketing Big Day team deck; objectives and KPIs are proposed.",
+  "caseQuestion": "How could Suki compete for working consumers when growth required changes across the full marketing mix?",
+  "caseStatus": "Marketing Big Day team proposal",
+  "evidence": [
+   [
+    "Case ambition",
+    "VND 200bn revenue in one year; top-three awareness objective",
+    "These were the goals used to frame the proposal."
+   ],
+   [
+    "Target customer",
+    "Working consumers aged 25–30",
+    "The insight connected skin-care concerns with preparation effort and social activities."
+   ],
+   [
+    "Channel gaps",
+    "Underused direct and e-commerce presence",
+    "The plan linked awareness with places where people could see and buy the offer."
+   ],
+   [
+    "Execution sequence",
+    "Trigger, engage and amplify, each lasting four months",
+    "Activities and budgets were organised across a full-year roadmap."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Connecting the customer insight to commercial constraints",
+    "paragraphs": [
+     "The proposal reviewed the sunscreen market and Suki’s product, price, place and promotion choices. Its target customer was beginning to worry about skin ageing, was willing to pay for quality and wanted to enjoy time outside with less preparation and concern about sensitive skin.",
+     "The team used that insight to connect protection and skin care with the benefit of enjoying social activities. However, the growth plan also required practical changes: a broader set of product and bundle options, price points that suited the audience, stronger retail visibility and better use of e-commerce. These made the communications promise easier to act on."
+    ]
+   },
+   {
+    "title": "Sequencing a year of activity around trial and availability",
+    "paragraphs": [
+     "The first four-month phase introduced the proposition through content and a video concept. The second phase used a themed exhibition and engagement activities. The final phase extended participation through Shopee gamification and anniversary activity. Each phase had proposed budgets and audience or sales measures.",
+     "The distribution recommendations included shelf visibility, pop-up activity and product bundles around high-traffic occasions. Limited summer combinations were intended to offer convenience and more price choices. Promotions used vouchers, delivery incentives and event mechanics to support trial. The plan therefore needed retail and e-commerce execution to progress alongside media activity."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Marketing-mix issue",
+    "Proposed action",
+    "Expected role"
+   ],
+   "rows": [
+    [
+     "Limited product choice",
+     "Introduce seasonal and convenience bundles",
+     "Give consumers relevant combinations and more price options."
+    ],
+    [
+     "Weak purchase stimulation",
+     "Use targeted vouchers and delivery incentives",
+     "Support trial and reduce friction at purchase."
+    ],
+    [
+     "Underused direct channels",
+     "Improve displays and run pop-up activity",
+     "Make the proposition visible and available where consumers shop."
+    ],
+    [
+     "Awareness and participation",
+     "Sequence content, experience and e-commerce activity",
+     "Connect communication with trial and channel conversion."
+    ]
+   ]
+  },
+  "limitations": "Revenue, awareness and campaign KPIs are proposed targets. The one-year outcome depends on budget, distribution and product execution; the deck does not report a completed implementation."
  },
  {
   "slug": "vua-giat",
   "title": "Vua Giặt luxury client system",
   "category": "SERVICE OPERATIONS · CUSTOMER RETENTION",
-  "card": "Designing a client system to turn occasional premium garment-care visits into recurring customer relationships.",
+  "card": "Designing membership tiers, garment-history records and Zalo follow-up to address irregular usage, with a proposed 90-day retention review.",
   "methods": "Business model analysis · Customer journey · Retention design · Zalo OA",
   "image": "assets/project-vua-giat.webp",
-  "summary": "Designing a client system to turn occasional premium garment-care visits into recurring customer relationships.",
+  "summary": "A group proposal for a Luxury Client System at Vua Giặt. The report connected occasional service usage to membership design, planned wardrobe care, customer records and an evaluation framework for retention and service quality.",
   "meta": [
    [
     "Course",
@@ -310,8 +523,8 @@ const additionalProjects=[
     "Group report"
    ],
    [
-    "Role evidence",
-    "Listed team member · 10% contribution in the report"
+    "Participation",
+    "Group project team member"
    ]
   ],
   "outputs": [
@@ -337,26 +550,97 @@ const additionalProjects=[
    ]
   ],
   "findings": [
-   "The report framed retention and regular usage as the main opportunities rather than relying only on higher transaction value.",
-   "Premium customers needed reassurance and garment-care expertise, not just generic points or discounts."
+   "A premium perception coexisted with occasional, problem-triggered usage.",
+   "The proposal connected membership tiers, garment history and reminders to a more regular service routine.",
+   "Its evaluation plan combined repeat behaviour with service-quality measures."
   ],
   "recommendations": [
-   "Build a tiered client system around customer needs, usage and relationship value.",
-   "Use Zalo OA and relevant care content to support regular reminders and personalised follow-up.",
-   "Evaluate repeat usage, customer retention and lifetime value while protecting service quality and margins."
+   "Pilot the LCS with relevant customer groups and record each member’s care plan and service history.",
+   "Use targeted reminders and reactivation flows based on behaviour.",
+   "Review retention and frequency alongside complaints and member experience before expanding."
   ],
   "contribution": null,
   "learned": [],
-  "evidenceNote": "Original Business in Practice group report; the recommendations are proposed, not implemented results."
+  "evidenceNote": "Original Business in Practice group report; the recommendations are proposed, not implemented results.",
+  "caseQuestion": "How can premium garment care become a recurring habit for customers who currently return only when a problem occurs?",
+  "caseStatus": "Business in Practice group proposal",
+  "evidence": [
+   [
+    "Retention definition",
+    "Customers placing at least three orders",
+    "The proposal used repeat behaviour, not enrolment alone, to define retention."
+   ],
+   [
+    "Baseline and target",
+    "25% to 35% core retention",
+    "A proposed increase of 10 percentage points, to be assessed by client cycle."
+   ],
+   [
+    "Client system",
+    "Care, Preservation and Heritage tiers",
+    "The service relationship was organised around wardrobe needs and value."
+   ],
+   [
+    "Pilot review",
+    "90-day member review in the plan",
+    "Frequency, AOV, complaints and service experience were intended to be checked together."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Separating high perceived quality from a repeatable usage routine",
+    "paragraphs": [
+     "The group report examined Vua Giặt’s business model, customer journey and current performance. Customers valued specialist care, but many used the service reactively for stains, delicate garments or seasonal needs. A positive first experience did not automatically create a regular care routine.",
+     "The report identified core retention at 25% under its three-order definition and proposed a Luxury Client System to move toward 35%. The system combined membership structure, planned wardrobe care and communication through Facebook and Zalo OA. Its commercial purpose was to increase regular use and customer lifetime value while protecting a premium service proposition."
+    ]
+   },
+   {
+    "title": "Designing the operating system behind the membership",
+    "paragraphs": [
+     "The proposed Care, Preservation and Heritage tiers were connected to wardrobe value and service needs. A Wardrobe DNA record would retain garment and order history so follow-up could be relevant to the customer’s actual items. Prepaid plans and timely care reminders were intended to make the next visit easier to plan.",
+     "The report also specified a review mechanism. A member whose order frequency fell below half of the scheduled commitment would trigger re-engagement. The 90-day cycle would assess the share completing three orders, while complaint rate, AOV and NPS would check whether a higher purchase frequency came at the expense of quality. The proposed client system therefore required clean records and reliable service handoffs, as well as a membership offer."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Client behaviour",
+    "Proposed response",
+    "Measure"
+   ],
+   "rows": [
+    [
+     "High-value, multi-item customers",
+     "Offer an appropriate LCS tier and personalised wardrobe care",
+     "Membership conversion and service experience."
+    ],
+    [
+     "Active but irregular users",
+     "Use a care schedule and relevant follow-up",
+     "Orders per member and gaps between orders."
+    ],
+    [
+     "Customers inactive for 90+ days",
+     "Run targeted reactivation through Zalo OA",
+     "Return to a paid service, not message engagement alone."
+    ],
+    [
+     "Pilot quality review",
+     "Review records, complaints and member feedback",
+     "Three-order retention, frequency, AOV and complaint rate."
+    ]
+   ]
+  },
+  "limitations": "The retention and financial benefits are proposal estimates. The report’s continuation rules, including a 35% retention threshold and a complaint-rate review above 3%, would need a consistently defined customer cohort and accurate service records."
  },
  {
   "slug": "ionpia",
   "title": "IONPIA Vietnam market strategy",
   "category": "INTERNATIONAL MARKETING · CUSTOMER TRUST",
-  "card": "Examining why premium water-purifier technology was not translating into purchase confidence, and proposing a clearer customer journey.",
+  "card": "Using 61 survey responses and six interviews to connect premium positioning with product demonstrations, clearer ownership costs and after-sales care.",
   "methods": "Competitor analysis · Survey and interviews · Positioning · Channel strategy",
   "image": "assets/project-ionpia.webp",
-  "summary": "Examining why premium water-purifier technology was not translating into purchase confidence, and proposing a clearer customer journey.",
+  "summary": "A group international-marketing study of IONPIA in Vietnam. The analysis used customer research and competitor comparison to develop a staged plan for communication, consultation, channel consistency and filter-care services.",
   "meta": [
    [
     "Course",
@@ -371,8 +655,8 @@ const additionalProjects=[
     "Group report"
    ],
    [
-    "Role evidence",
-    "Listed team member · 18% contribution in the report"
+    "Participation",
+    "Group project team member"
    ]
   ],
   "outputs": [
@@ -398,8 +682,9 @@ const additionalProjects=[
    ]
   ],
   "findings": [
-   "The report diagnosed a trust-to-value gap: technical claims were difficult for customers to translate into credible personal value.",
-   "Existing service and product strengths were not consistently organised into visible proof across the customer journey."
+   "The customer research identified a need for clearer value explanation and credible service proof.",
+   "The proposal separated near-term communication improvements from more resource-intensive customer-experience changes.",
+   "Filter replacement and maintenance were treated as part of the continuing offer."
   ],
   "recommendations": [
    "Use clearer education, demonstrations, customer reviews and service evidence in near-term communication.",
@@ -408,16 +693,86 @@ const additionalProjects=[
   ],
   "contribution": null,
   "learned": [],
-  "evidenceNote": "Original International Marketing group report; marketing analysis does not validate product health claims."
+  "evidenceNote": "Original International Marketing group report; marketing analysis does not validate product health claims.",
+  "caseQuestion": "What would make a premium water-purifier offer easier for households to understand, verify and continue using?",
+  "caseStatus": "International Marketing group research & proposal",
+  "evidence": [
+   [
+    "Primary research",
+    "61 survey respondents and six in-depth interviews",
+    "The report combined broad patterns with more detailed household decision stories."
+   ],
+   [
+    "Sample concentration",
+    "91.8% urban survey respondents",
+    "The findings are most relevant to the urban customer profile studied."
+   ],
+   [
+    "Core diagnosis",
+    "A gap between technical claims and perceived value",
+    "The proposed strategy addressed purchase confidence and service proof."
+   ],
+   [
+    "Offer extension",
+    "Machine, installation, education and filter care",
+    "Customer value continued through after-sales service, not only the purchase."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Tracing hesitation through the purchase journey",
+    "paragraphs": [
+     "The group reviewed the Korean brand, its Vietnam channels, competing offers and household concerns, then used an online survey and six interviews to investigate how buyers evaluated a premium machine. Customer profiles included parents, multigenerational households, wellness-oriented consumers and price-sensitive families.",
+     "The report concluded that technical features and Korean origin did not make the premium price self-explanatory. Customers wanted credible evidence, understandable comparisons and confidence in ongoing service. The proposed response organised existing assets, such as consultants, demonstrations, warranty support and official channels, into a clearer path from interest to purchase."
+    ]
+   },
+   {
+    "title": "Sequencing communication and service changes",
+    "paragraphs": [
+     "The near-term plan focused on clearer education and consistent consultation materials, with demonstrations, reviews and visible service evidence. Droppii remained an important sales channel. The proposal supported sellers with common scripts and proof materials while using brand-owned channels to reinforce credibility.",
+     "The longer-term offer added a filter-replacement roadmap, tiered care plans and a QR-linked service record for warranty, reminders and booking. Pricing communication would explain installation, maintenance and recurring costs together with the machine. This connected the acquisition message to the service experience customers would receive after purchase."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Customer barrier",
+    "Proposed response",
+    "Purpose"
+   ],
+   "rows": [
+    [
+     "Complex technical language",
+     "Use plain explanations and demonstrations",
+     "Help households compare the offer in terms they can understand."
+    ],
+    [
+     "Uncertain credibility",
+     "Make service evidence, verified documentation and customer experience visible",
+     "Support purchase confidence without adding unsupported health claims."
+    ],
+    [
+     "Unclear recurring costs",
+     "Explain replacement schedules, care plans and maintenance",
+     "Make ownership costs and future service needs easier to plan."
+    ],
+    [
+     "Dependence on seller-led communication",
+     "Standardise channel materials and develop brand-owned contact points",
+     "Improve consistency from consultation to after-sales care."
+    ]
+   ]
+  },
+  "limitations": "The small, predominantly urban sample is exploratory. The work evaluates marketing and customer experience; it does not validate medical claims about alkaline or hydrogen water. Proposed service and channel changes were not evaluated through a rollout."
  },
  {
   "slug": "co-cay-hoa-la",
   "title": "Cỏ Cây Hoa Lá: Bơ Nghệ growth proposal",
   "category": "BRAND STRATEGY · CUSTOMER INSIGHT",
-  "card": "Connecting Bơ Nghệ’s functional skin-care proposition with customer confidence, supported by product trials, channel development and a two-phase campaign.",
+  "card": "Connecting Bơ Nghệ’s product benefits with customer confidence through trial sizes, channel choices and a campaign with sales and conversion objectives.",
   "methods": "Competitor mapping · Customer insight · Positioning · Go-to-market",
   "image": "assets/project-co-cay-hoa-la.webp",
-  "summary": "Connecting Bơ Nghệ’s functional skin-care proposition with customer confidence, supported by product trials, channel development and a two-phase campaign.",
+  "summary": "A VNU-IS competition strategy poster for Cỏ Cây Hoa Lá’s Bơ Nghệ range. The team linked category differentiation and customer insight to a product, trial, distribution and communication proposal.",
   "meta": [
    [
     "Competition",
@@ -459,8 +814,9 @@ const additionalProjects=[
    ]
   ],
   "findings": [
-   "The poster identified weak emotional linkage between the product benefits and the wider brand positioning.",
-   "The campaign’s stated 60% monthly revenue growth was a proposal target, not a measured result."
+   "The poster identified a disconnect between functional product claims and the parent brand’s emotional positioning.",
+   "The proposed response connected customer insight to product trials, packaging, channels and communications.",
+   "Campaign measures included trial and conversion objectives alongside reach."
   ],
   "recommendations": [
    "Communicate skin-barrier care together with confidence and reassurance.",
@@ -469,362 +825,1056 @@ const additionalProjects=[
   ],
   "contribution": null,
   "learned": [],
-  "evidenceNote": "Original team strategy poster; performance numbers are proposed campaign targets."
+  "evidenceNote": "Original team strategy poster; performance numbers are proposed campaign targets.",
+  "caseQuestion": "How can Bơ Nghệ connect a familiar “natural and gentle” offer to the parent brand’s promise of confidence for women?",
+  "caseStatus": "Team competition strategy poster",
+  "evidence": [
+   [
+    "Positioning issue",
+    "Weak linkage between product perception and women’s empowerment",
+    "Natural and gentle claims alone left the product close to competing offers."
+   ],
+   [
+    "Primary audience",
+    "Urban women with sensitive or easily irritated skin",
+    "The insight connected skin discomfort with confidence and daily routines."
+   ],
+   [
+    "Trial design",
+    "Mini-size products, bundles and a seven-day trial offer",
+    "The proposal gave customers a lower-commitment way to experience the range."
+   ],
+   [
+    "Campaign target",
+    "60% monthly revenue growth in the poster",
+    "This was a proposed campaign objective, not a realised outcome."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Diagnosing the product-brand disconnect",
+    "paragraphs": [
+     "The poster mapped common category claims around natural ingredients, safety and local origin. It argued that Bơ Nghệ’s product perception remained largely functional, while Cỏ Cây Hoa Lá’s broader positioning concerned women’s confidence and empowerment. That gap made it difficult for the product to communicate a distinct reason to choose it.",
+     "The proposed customer insight focused on women who wanted to continue their routines confidently while managing sensitive, stressed or easily irritated skin. The strategy connected reassurance about skin care to that daily experience. The benefit statement combined a gentle, restorative product proposition with an emotional reason to care, rather than replacing the functional offer."
+    ]
+   },
+   {
+    "title": "Making the positioning visible in product and channel choices",
+    "paragraphs": [
+     "The business proposal covered product information, mini-size trials, replenishment bundles and channels where customers could obtain advice or experience the product. Retail displays, spas, clinics, brand stores and e-commerce each had a role. Price points and trials addressed hesitation without relying only on a broad discount message.",
+     "The two-phase communications plan moved from awareness to experience and conversion. It included educational content, creator participation, seven-day trial activity and retail or online sales execution. The poster attached reach, engagement, trial-sales and conversion targets so the communications could be assessed beyond impressions."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Strategic choice",
+    "Execution in the poster",
+    "What it addresses"
+   ],
+   "rows": [
+    [
+     "Connect skin care with confidence",
+     "Functional reassurance paired with an empowerment message",
+     "The gap between product benefits and parent-brand positioning."
+    ],
+    [
+     "Reduce first-trial commitment",
+     "Mini-size products and a seven-day trial set",
+     "Purchase hesitation and perceived risk of trying an unfamiliar range."
+    ],
+    [
+     "Show the product in use",
+     "Advice-led retail and creator demonstrations",
+     "The need for experience and understandable product information."
+    ],
+    [
+     "Link awareness to purchase",
+     "Two campaign phases with trial and conversion measures",
+     "The handoff from communication to a paid product experience."
+    ]
+   ]
+  },
+  "limitations": "The available submission is a strategy poster. Customer insights, benefit statements and sales targets are part of the team’s case proposal. It does not establish clinical product efficacy or document the campaign’s realised results."
  },
  {
-  "slug": "dh-foods",
-  "title": "DH Foods international expansion",
-  "category": "INTERNATIONAL BUSINESS · GROWTH PLANNING",
-  "card": "A 12-month international expansion proposal linking revenue growth objectives with retail reach.",
-  "methods": "International expansion · Growth objectives · Retail development",
-  "image": "assets/project-dh-foods.svg",
-  "summary": "A 12-month international expansion proposal linking revenue growth objectives with retail reach.",
+  "slug": "sustainable-finance-smes",
+  "title": "Sustainable Finance for Vietnamese SMEs",
+  "category": "SUSTAINABLE FINANCE · MARKET RESEARCH",
+  "card": "Combining three interviews and regional benchmarking to examine SME financing barriers and sequence policy, risk-sharing and capability-building proposals.",
+  "methods": "Desk Research · Interviews · Benchmarking · Gap Analysis",
+  "image": "assets/research-sustainable-original.webp",
+  "summary": "A qualitative research project examining why small firms struggle to access sustainable finance. The study combined business and academic interviews with regional gap analysis to propose financial-access mechanisms and a phased roadmap.",
   "meta": [
    [
-    "Competition",
-    "International Business Integration 2023"
-   ],
-   [
     "Recognition",
-    "Third prize"
+    "Winner — Agyra Student Challenge 2025"
    ],
    [
-    "Format",
-    "Team business case"
+    "Role",
+    "Research Team Leader & Strategy Analyst"
    ],
    [
-    "Evidence",
-    "Public project summary on LinkedIn"
+    "Focus",
+    "SME financing barriers · green investment · policy design"
+   ],
+   [
+    "Methods",
+    "Desk research · interviews · regional benchmarking"
    ]
   ],
   "outputs": [
    {
-    "title": "Project record on LinkedIn",
-    "note": "Competition summary and stated objectives",
-    "url": "https://www.linkedin.com/in/nghiemphuong/"
+    "title": "Full research paper",
+    "note": "Agyra Student Challenge 2025 · Challenge #1",
+    "url": "https://drive.google.com/file/d/1gAKqNPsOwi8k1EDPU_X32NuEvR40A5Yb/view?usp=drive_link"
    }
   ],
-  "situation": "The published project record describes a 12-month global expansion strategy for DH Foods.",
+  "situation": "Vietnam has increasingly ambitious green-growth and sustainable-finance priorities, yet SMEs still face a very different reality from large corporates. The question was not simply whether green capital existed, but why smaller firms still struggled to identify, qualify for, and use it.",
   "approach": [
    [
-    "Planning horizon",
-    "Set a 12-month expansion plan."
+    "Regulatory gap",
+    "Mapped how taxonomies, reporting expectations and policy coordination affect whether banks and SMEs can identify eligible green activities."
    ],
    [
-    "Commercial objectives",
-    "Linked the growth ambition to revenue and retail distribution objectives."
+    "Financial-market gap",
+    "Compared loans, guarantees, blended finance and risk-sharing tools to understand why conventional bank requirements often exclude smaller projects."
+   ],
+   [
+    "SME capability gap",
+    "Used stakeholder interviews to examine ESG awareness, documentation readiness, certification costs and internal capacity."
    ]
   ],
   "findings": [
-   "The public summary states objectives of 30% revenue growth and 300 retail locations worldwide. These are proposal targets."
+   "Financing access depended on policy clarity, market instruments and firm readiness together.",
+   "Collateral, records and compliance cost could prevent SMEs from using instruments that were already available.",
+   "The proposal combined financial access mechanisms with technical support and a phased implementation sequence."
   ],
   "recommendations": [
-   "Evaluate the stated revenue and distribution objectives as planning targets, rather than treating them as realised business outcomes."
-  ],
-  "contribution": null,
-  "learned": [],
-  "evidenceNote": "Public project record · International Business Integration 2023. Objectives describe the proposal, not realised outcomes.",
-  "summaryOnly": true
- },
- {
-  "slug": "bwg-bamboo",
-  "title": "BWG Mai Châu: North America export strategy",
-  "category": "INTERNATIONAL TRADE · MARKET ENTRY",
-  "card": "A market-entry roadmap for outdoor bamboo flooring, supported by research into potential North American business buyers.",
-  "methods": "Export market research · B2B buyer research · Market-entry planning",
-  "image": "assets/project-bwg-bamboo.svg",
-  "summary": "A market-entry roadmap for outdoor bamboo flooring, supported by research into potential North American business buyers.",
-  "meta": [
-   [
-    "Competition",
-    "International Business Integration 2023"
-   ],
-   [
-    "Recognition",
-    "Third prize"
-   ],
-   [
-    "Format",
-    "Team business case"
-   ],
-   [
-    "Evidence",
-    "Public project summary on LinkedIn"
-   ]
-  ],
-  "outputs": [
-   {
-    "title": "Project record on LinkedIn",
-    "note": "Competition summary and stated objectives",
-    "url": "https://www.linkedin.com/in/nghiemphuong/"
-   }
-  ],
-  "situation": "The public project summary describes an export roadmap for BWG Mai Châu’s outdoor bamboo flooring in North America.",
-  "approach": [
-   [
-    "Market opportunity",
-    "Examined a North American export opportunity for outdoor bamboo flooring."
-   ],
-   [
-    "Buyer research",
-    "Supported the roadmap with a database of more than 20 potential corporate buyers."
-   ]
-  ],
-  "findings": [
-   "The project record identifies a 20+ buyer database and proposed improvements to sales strategy and operating processes. It does not report completed export sales."
-  ],
-  "recommendations": [
-   "Use the researched buyer list to guide market-entry outreach and sales-process planning."
-  ],
-  "contribution": null,
-  "learned": [],
-  "evidenceNote": "Public project record · International Business Integration 2023. Objectives describe the proposal, not realised outcomes.",
-  "summaryOnly": true
- }
-];
-
-const allWork=[
-...additionalProjects,
-{
- slug:"sustainable-finance-smes",
- title:"Sustainable Finance for Vietnamese SMEs",
- category:"SUSTAINABLE FINANCE · MARKET RESEARCH",
- card:"Combining regional benchmarking and stakeholder interviews to identify why green capital remains difficult for Vietnamese SMEs to access.",
- methods:"Desk Research · Interviews · Benchmarking · Gap Analysis",
- image:"assets/research-sustainable-original.webp",
- summary:"A mixed-method research project examining the gap between Vietnam’s sustainable-finance ambition and the practical ability of SMEs to access green capital.",
- meta:[["Recognition","Winner — Agyra Student Challenge 2025"],["Role","Research Team Leader & Strategy Analyst"],["Focus","SME financing barriers · green investment · policy design"],["Methods","Desk research · interviews · regional benchmarking"]],
- outputs:[{title:"Full research paper",note:"Agyra Student Challenge 2025 · Challenge #1",url:"https://drive.google.com/file/d/1gAKqNPsOwi8k1EDPU_X32NuEvR40A5Yb/view?usp=drive_link"}],
- situation:"Vietnam has increasingly ambitious green-growth and sustainable-finance priorities, yet SMEs still face a very different reality from large corporates. The question was not simply whether green capital existed, but why smaller firms still struggled to identify, qualify for, and use it.",
- approach:[
-   ["Regulatory gap","Mapped how taxonomies, reporting expectations and policy coordination affect whether banks and SMEs can identify eligible green activities."],
-   ["Financial-market gap","Compared loans, guarantees, blended finance and risk-sharing tools to understand why conventional bank requirements often exclude smaller projects."],
-   ["SME capability gap","Used stakeholder interviews to examine ESG awareness, documentation readiness, certification costs and internal capacity."]
- ],
- findings:[
-   "The access problem was structural: fragmented rules, conservative lending requirements and weak SME readiness reinforced one another.",
-   "Regional benchmarks showed that guarantees, capacity support and phased regulation can reduce both the financial and non-financial cost of participation.",
-   "SMEs need project-level support — such as energy-efficiency and rooftop-solar financing pathways — rather than a generic promise of 'green finance'."
- ],
- recommendations:[
    "Build a phased SME-oriented green taxonomy with clearer qualification criteria and simplified reporting.",
    "Expand guarantees, blended-finance mechanisms and bank incentives that reduce perceived risk for smaller green projects.",
    "Pair financing with technical assistance so SMEs can become finance-ready rather than leaving capability building to individual firms.",
    "Develop the market in stages so regulation, financial products and SME capacity mature together."
- ],
- contribution:"I helped structure the access problem, led the desk research and regional comparison, supported the stakeholder interview design and synthesis, and translated evidence into a phased financing roadmap. My focus was on keeping the recommendations implementable for both financial institutions and SMEs rather than treating sustainable finance as a purely policy-level topic.",
- learned:[
+  ],
+  "contribution": "I helped structure the access problem, led the desk research and regional comparison, supported the stakeholder interview design and synthesis, and translated evidence into a phased financing roadmap. My focus was on keeping the recommendations implementable for both financial institutions and SMEs rather than treating sustainable finance as a purely policy-level topic.",
+  "learned": [
    "This project changed how I think about sustainable finance. Availability of capital is only one layer; access depends on whether rules, risk assessment and firm capability fit together. A technically sophisticated financing product can still fail if a small business cannot document its project, absorb certification costs or understand what qualifies.",
    "I also learned to use interviews to challenge desk research rather than simply confirm it. Policy documents suggested that sustainable finance was expanding, while stakeholder conversations exposed the frictions hidden behind those aggregate trends. If I extended the study, I would add more lenders, sector-specific SME cases and actual financing applications to test the roadmap against real approval decisions."
- ]
-},
-{
- slug:"ecommerce-operations",
- title:"E-commerce Operations Analytics",
- category:"OPERATIONS ANALYSIS · E-COMMERCE LOGISTICS",
- card:"Diagnosing revenue decline through delivery reliability, seller performance and logistics constraints rather than treating it as a purely commercial problem.",
- methods:"Root-Cause Analysis · Seller Segmentation · Logistics Strategy",
- image:"assets/project-ecommerce-original.webp",
- summary:"A runner-up case project linking commercial performance with logistics reliability, seller quality and customer experience to identify what was preventing post-peak revenue from being retained.",
- meta:[["Competition","Tomorrow Marketers BACC 2025"],["Recognition","Runner-up"],["Role","Operations & Business Analyst"],["Focus","Revenue drivers · delivery · sellers · carrier strategy"]],
- outputs:[{title:"Full competition deck",note:"Final Round — E-commerce Operations Analytics",url:"https://drive.google.com/file/d/1XpPyB28lXf4tlHPbHHNnDoTp6-5WNsgd/view?usp=drive_link"}],
- situation:"Revenue fell after a strong peak, but the decline could not be explained by one commercial metric. We needed to determine whether the platform was facing weaker demand, poor seller execution, delivery unreliability, high freight costs or a combination of those issues.",
- approach:[
-   ["Commercial performance","Separated order volume and order value to identify where the top-line decline started."],
-   ["Operational reliability","Connected delivery performance with review and repurchase behaviour to understand customer impact."],
-   ["Seller quality","Segmented sellers so operational support and standards could differ by seller profile."],
-   ["Logistics strategy","Evaluated how delivery-risk information could support more targeted carrier and service allocation."]
- ],
- findings:[
-   "The revenue problem was partly a retention problem: growth during the peak period was not being converted into stable repeat performance.",
-   "Late delivery and logistics inconsistency affected customer experience, making service reliability a commercial issue rather than only an operations KPI.",
-   "Seller quality mattered more than simply increasing the number of sellers; different seller profiles required different support and control."
- ],
- recommendations:[
-   "Use risk-based delivery tiers and allocate service levels according to shipment profile rather than one uniform logistics policy.",
-   "Manage seller segments differently across onboarding, operational support and performance interventions.",   "Prioritise high-risk orders and regions before delays become customer-facing failures.",
-   "Use product bundling and seller actions alongside logistics improvements so the commercial and operational levers reinforce each other."
- ],
- contribution:"I contributed to problem framing, root-cause analysis, interpretation of operational patterns and recommendation development. Predictive and clustering work was developed by the team; my role was to connect those outputs to the business problem and use them to shape practical logistics and seller-management actions.",
- learned:[
+  ],
+  "caseQuestion": "Why can SMEs remain excluded from sustainable finance even when green capital and policy ambitions are expanding?",
+  "caseStatus": "Team qualitative research & policy proposal",
+  "evidence": [
+   [
+    "Primary evidence",
+    "Two Vietnamese SME leaders and one finance academic interviewed",
+    "The study examined access barriers through business and finance perspectives."
+   ],
+   [
+    "Comparative method",
+    "Regional policy, market and firm-capability benchmarking",
+    "The comparison looked for mechanisms that could improve access."
+   ],
+   [
+    "Gap framework",
+    "Policy clarity, financial-market access and SME readiness",
+    "The proposal addressed financing supply and firms’ ability to qualify."
+   ],
+   [
+    "Roadmap",
+    "2026–2030, 2031–2035 and 2036–2039",
+    "The phases sequenced regulatory foundations, scale and wider integration."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Following the access problem from policy to the firm",
+    "paragraphs": [
+     "The research combined semi-structured interviews with secondary evidence on sustainable finance. It examined how classification rules, financing instruments and lender requirements interacted with the realities of small firms: limited collateral, weaker records, certification cost and uncertainty about what qualified as green investment.",
+     "The regional comparison examined Singapore, Malaysia and Indonesia in the main gap-analysis section. The aim was to identify usable mechanisms, including clearer taxonomies, guarantees, technical support and proportionate processes for smaller firms. A financing instrument could exist in the market while remaining impractical for an SME that could not demonstrate eligibility or absorb the reporting cost."
+    ]
+   },
+   {
+    "title": "Sequencing inclusion before more demanding disclosure",
+    "paragraphs": [
+     "The recommendations connected financial products with the institutional conditions needed to use them. A clearer classification framework would help firms and banks identify eligible investment. Risk-sharing and guarantees could address part of the collateral problem. Training and support could improve project documentation and ESG readiness.",
+     "The proposed roadmap began with regulatory foundations in 2026–2030, moved to consolidation and wider use in 2031–2035, and then to deeper integration in 2036–2039. It was a phased policy proposal, not evidence that these changes had been adopted. Its inclusion logic depended on developing SME capacity alongside the requirements placed on firms."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Barrier",
+    "Mechanism explored",
+    "Intended effect"
+   ],
+   "rows": [
+    [
+     "Unclear eligibility",
+     "Common taxonomy and guidance",
+     "Reduce uncertainty for lenders and applicants."
+    ],
+    [
+     "Collateral and perceived credit risk",
+     "Guarantees and risk-sharing finance",
+     "Make eligible smaller projects easier to assess and fund."
+    ],
+    [
+     "Weak documentation or ESG readiness",
+     "Technical support and proportionate reporting",
+     "Help firms prepare the evidence needed to qualify."
+    ],
+    [
+     "Fragmented implementation",
+     "Phased roadmap and review",
+     "Build capability and scale before more demanding integration."
+    ]
+   ]
+  },
+  "limitations": "Three interviews provide exploratory insight rather than a representative estimate of Vietnamese SMEs. Regional mechanisms need to be assessed against Vietnam’s institutions and firm capabilities before adoption. The proposed policy effects and roadmap have not been evaluated through implementation."
+ },
+ {
+  "slug": "ecommerce-operations",
+  "title": "E-commerce Operations Analytics",
+  "category": "OPERATIONS ANALYSIS · E-COMMERCE LOGISTICS",
+  "card": "Diagnosing a 14.5% revenue decline through delivery, shipping cost and seller handling, then comparing carrier allocation and seller-support options.",
+  "methods": "Root-Cause Analysis · Seller Segmentation · Logistics Strategy",
+  "image": "assets/project-ecommerce-original.webp",
+  "summary": "A team analysis of an e-commerce platform’s stalled revenue, fulfilment problems and seller quality. The proposal combined delivery forecasting, four seller segments and differentiated carrier allocation.",
+  "meta": [
+   [
+    "Competition",
+    "Tomorrow Marketers BACC 2025"
+   ],
+   [
+    "Recognition",
+    "Runner-up"
+   ],
+   [
+    "Role",
+    "Operations & Business Analyst"
+   ],
+   [
+    "Focus",
+    "Revenue drivers · delivery · sellers · carrier strategy"
+   ]
+  ],
+  "outputs": [
+   {
+    "title": "Full competition deck",
+    "note": "Final Round — E-commerce Operations Analytics",
+    "url": "https://drive.google.com/file/d/1XpPyB28lXf4tlHPbHHNnDoTp6-5WNsgd/view?usp=drive_link"
+   }
+  ],
+  "situation": "The platform had lost momentum after its revenue peak. The case asked how to restore growth when late deliveries, expensive shipping and uneven seller handling were appearing together. The team analysed the links between those problems before proposing changes to delivery promises, carrier allocation and seller onboarding.",
+  "approach": [
+   [
+    "Commercial performance",
+    "Separated order volume and order value to identify where the top-line decline started."
+   ],
+   [
+    "Operational reliability",
+    "Connected delivery performance with review and repurchase behaviour to understand customer impact."
+   ],
+   [
+    "Seller quality",
+    "Segmented sellers so operational support and standards could differ by seller profile."
+   ],
+   [
+    "Logistics strategy",
+    "Evaluated how delivery-risk information could support more targeted carrier and service allocation."
+   ]
+  ],
+  "findings": [
+   "Revenue was about 14.5% below its monthly peak, while AOV lacked sustained improvement.",
+   "Late delivery concentrated in specific states and heavier goods, supporting more targeted operational changes.",
+   "The carrier scenarios exposed a cost-versus-service trade-off that a single exclusive carrier could not resolve."
+  ],
+  "recommendations": [
+   "Start with shipping bundles, seller readiness checks and remediation of the weakest seller groups.",
+   "Allocate carrier service by order value, weight, freight burden and buyer sensitivity.",
+   "Use delivery forecasting to flag risk and support more realistic promises, then validate the proposed policies through a pilot."
+  ],
+  "contribution": "I contributed to problem framing, root-cause analysis, interpretation of operational patterns and recommendation development. Predictive and clustering work was developed by the team; my role was to connect those outputs to the business problem and use them to shape practical logistics and seller-management actions.",
+  "learned": [
    "This case reinforced that operations analysis should start from the customer and business outcome, then work backward into the process. A late-delivery metric becomes more meaningful when it is connected to reviews, repurchase behaviour, seller characteristics and regional constraints.",
    "I also learned to distinguish between a technically interesting model and an operationally useful decision rule. A forecast only creates value when the team knows what to do differently for a high-risk order. If I continued the project, I would test the proposed interventions in a pilot and compare operational gains against incremental logistics cost instead of relying only on projected impact."
- ]
-},
-{
- slug:"blockchain-traceability",
- title:"Blockchain Traceability & Consumer Trust",
- category:"SUSTAINABLE SUPPLY CHAINS · CONSUMER RESEARCH",
- card:"Leading an end-to-end research project on how traceability information can turn sustainability claims into credible consumer trust.",
- methods:"Research Leadership · Desk Research · Survey Design",
- image:"assets/blockchain-cover.png",
- summary:"A First-Prize research project examining how blockchain-enabled traceability information influences food-safety perceptions, product trust and organic-food purchase intention.",
- meta:[["Recognition","First Prize — FTU Student Scientific Research 2026"],["Role","Project Leader & Lead Researcher"],["Scope","Hanoi & Ho Chi Minh City"],["Focus","Desk research · survey design · research coordination"]],
- outputs:[],
- situation:"Organic-food demand is growing, but false labels, inconsistent certification and food-safety concerns weaken consumer trust. Rather than asking whether blockchain is 'good technology', I framed the research around a behavioural question: what kind of traceability information actually helps consumers believe a sustainability and safety claim?",
- approach:[
-   ["Desk research","Synthesised academic literature, market evidence, regulation and traceability applications to locate the research gap."],
-   ["Conceptual design","Connected information quality to perceived food safety, product trust and purchase intention instead of assuming a direct technology effect."],
-   ["Survey design","Translated abstract constructs into consumer-friendly questions and coordinated fieldwork for 369 valid urban responses."],
-   ["Research coordination","Managed workstreams, terminology, quality review and integration of the final 112-page paper."]
- ],
- findings:[
-   "Consumers responded to the quality and credibility of traceability information, not to the blockchain label by itself.",
-   "Trust formed sequentially: information improved perceived food safety, which strengthened trust, which then influenced purchase intention.",
-   "Health consciousness strengthened how trust translated into action, but health concern alone was not enough to generate purchase intention."
- ],
- recommendations:[
+  ],
+  "caseQuestion": "Where should an e-commerce platform intervene when revenue stalls and delivery problems concentrate in specific orders?",
+  "caseStatus": "Historical data analysis & team proposal",
+  "evidence": [
+   [
+    "Revenue decline",
+    "About 14.5% below the monthly peak",
+    "The case needed a diagnosis of fulfilment and seller quality alongside commercial performance."
+   ],
+   [
+    "Geographic concentration",
+    "Late rates above 17% in the ten worst-performing states",
+    "A single delivery policy would miss local differences."
+   ],
+   [
+    "Forecast performance",
+    "Reported R² = 0.416; MAE = 4.33 days",
+    "The model could support risk prioritisation, with a substantial margin of prediction error."
+   ],
+   [
+    "Carrier alternatives",
+    "Carrier A: 20% lower cost; Carrier B: 20% higher cost",
+    "Service improvements had to be allocated to orders where they justified the premium."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Tracing the decline through the operating system",
+    "paragraphs": [
+     "The team connected sales, seller, delivery and review data to follow the order journey. Revenue peaked at roughly 993,000 in April and May in the case data, then settled around 850,000 to 870,000. Average order value showed little sustained improvement, so the next question was whether delivery experience and seller handling were limiting repeat demand.",
+     "Late deliveries were concentrated in particular states and heavier product groups. Seller handling times varied sharply, while acquisition was distributed almost evenly across revenue quartiles. Those findings pointed to two interventions: improve the routing of existing orders and screen the operational readiness of incoming sellers. The review comparisons show an association with delivery problems; they do not establish the causal effect on repurchase."
+    ]
+   },
+   {
+    "title": "Turning model output into an allocation decision",
+    "paragraphs": [
+     "The team used LightGBM for delivery-time prediction and K-Means to distinguish four seller profiles. The forecast’s reported explanatory power and average error made it more suitable for identifying risk than promising an exact delivery day. Seller segments were useful because they changed the support offered: protect strategic accounts, coach high-potential sellers with fulfilment problems, and automate lower-value support.",
+     "The carrier simulation rejected a platform-wide switch to either alternative. Carrier A reduced cost but added an estimated 4.6 days to out-of-state deliveries in the scenario. Carrier B improved speed, particularly for heavy goods, but raised shipping charges. Segment-level allocation preserved the cost benefit where buyers could accept a longer stated lead time and reserved expensive service for more sensitive orders."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Order / seller profile",
+    "Proposed response",
+    "Reason"
+   ],
+   "rows": [
+    [
+     "Price-sensitive orders below $50 or freight above 20% of value",
+     "Use Carrier A with a clearly stated longer ETA",
+     "Trade speed for a lower delivered price where the case identifies price sensitivity."
+    ],
+    [
+     "Goods above 15 kg or orders above $150",
+     "Prioritise Carrier B",
+     "Use the service premium to address heavy-goods reliability or protect higher-value orders."
+    ],
+    [
+     "Heavy, low-value products",
+     "Test bundles with higher-value, lighter products",
+     "Improve basket value and reduce the shipping-to-product-value ratio; below 20% is a proposal target."
+    ],
+    [
+     "New or operationally weak sellers",
+     "Require a mock shipping-label exercise and differentiated support",
+     "Check readiness before onboarding creates more fulfilment work."
+    ]
+   ]
+  },
+  "limitations": "The data describe one platform case. The delivery model’s errors remain material, and seller clusters were checked against business logic rather than validated through a live rollout. The proposed improvements to late deliveries and seller efficiency are targets."
+ },
+ {
+  "slug": "blockchain-traceability",
+  "title": "Blockchain Traceability & Consumer Trust",
+  "category": "SUSTAINABLE SUPPLY CHAINS · CONSUMER RESEARCH",
+  "card": "Leading a 369-response consumer study of how traceability information relates to perceived food safety, trust and organic-food purchase intention.",
+  "methods": "Research Leadership · Desk Research · Survey Design",
+  "image": "assets/blockchain-cover.png",
+  "summary": "A team survey study of traceability-information quality, perceived food safety, product trust and purchase intention among urban consumers. The work used PLS-SEM to examine mediation and the moderating role of health consciousness.",
+  "meta": [
+   [
+    "Recognition",
+    "First Prize — FTU Student Scientific Research 2026"
+   ],
+   [
+    "Role",
+    "Project Leader & Lead Researcher"
+   ],
+   [
+    "Scope",
+    "Hanoi & Ho Chi Minh City"
+   ],
+   [
+    "Focus",
+    "Desk research · survey design · research coordination"
+   ]
+  ],
+  "outputs": [],
+  "situation": "Organic-food demand is growing, but false labels, inconsistent certification and food-safety concerns weaken consumer trust. Rather than asking whether blockchain is 'good technology', I framed the research around a behavioural question: what kind of traceability information actually helps consumers believe a sustainability and safety claim?",
+  "approach": [
+   [
+    "Desk research",
+    "Synthesised academic literature, market evidence, regulation and traceability applications to locate the research gap."
+   ],
+   [
+    "Conceptual design",
+    "Connected information quality to perceived food safety, product trust and purchase intention instead of assuming a direct technology effect."
+   ],
+   [
+    "Survey design",
+    "Translated abstract constructs into consumer-friendly questions and coordinated fieldwork for 369 valid urban responses."
+   ],
+   [
+    "Research coordination",
+    "Managed workstreams, terminology, quality review and integration of the final 112-page paper."
+   ]
+  ],
+  "findings": [
+   "The study reported a positive pathway from traceability-information quality through perceived food safety and trust to purchase intention.",
+   "Health consciousness strengthened the trust–intention relationship in the analysed sample.",
+   "The findings support clearer, credible consumer information, with further testing needed for actual buying behaviour."
+  ],
+  "recommendations": [
    "Design traceability interfaces around verified origin, certification, testing and product information before technical blockchain detail.",
    "Use a two-layer information experience: an immediate trust layer for most consumers and deeper technical records for those who want verification detail.",
    "Support standardised minimum traceability fields and independent verification so sustainability claims are comparable and credible."
- ],
- contribution:"As project leader, I shaped the research direction, coordinated the literature and survey work, reviewed the team’s outputs, and integrated the final argument from research gap to recommendations. My strongest contribution was building a coherent research process — not one statistical technique — and ensuring that each stage answered the same consumer-trust question.",
- learned:[
+  ],
+  "contribution": "As project leader, I shaped the research direction, coordinated the literature and survey work, reviewed the team’s outputs, and integrated the final argument from research gap to recommendations. My strongest contribution was building a coherent research process — not one statistical technique — and ensuring that each stage answered the same consumer-trust question.",
+  "learned": [
    "The project taught me that traceability is not valuable simply because more information exists. Information has to reduce uncertainty for the user. That shifted my thinking from 'technology adoption' toward the design of credible evidence across the supply chain.",
    "Leadership was another major lesson. I did not need to personally perform every task, but I did need to maintain one standard of logic and evidence across the work. If I extended the study, I would add QR-scanning behaviour and actual purchase data so the research could test whether stated intention becomes real consumer action."
- ]
-},
-{
- slug:"sales-performance",
- title:"Sales Performance & Forecasting Dashboard",
- category:"OPERATIONS PLANNING · FORECASTING",
- card:"Using an Excel decision model to diagnose sales drivers and turn historical performance into inventory and planning priorities.",
- methods:"Advanced Excel · Issue Tree · Dashboarding · Forecasting",
- image:"assets/sales-dashboard-original.webp",
- summary:"An individual end-to-end Excel project that decomposed revenue performance, built an interactive management dashboard and forecast demand for planning decisions.",
- meta:[["Project type","Individual Advanced Excel Project"],["Role","Business & Operations Analyst"],["Tools","Excel · Power Query · Power Pivot · PivotTables"],["Focus","Sales drivers · customer behaviour · planning · forecasting"]],
- outputs:[{"title": "Analytical presentation (PDF)", "note": "Retail sales performance and 2024 forecast", "url": "https://drive.google.com/file/d/1b8JxXl8WBVqAdXwl42SCErs6h0JhB6oy/view?usp=drivesdk"},{"title": "Excel workbook", "note": "Original sales model, dashboard and forecast", "url": "https://docs.google.com/spreadsheets/d/1Tg3kD-T9hGeeCpn5s9dfgSTvLxR_Po3d/edit?usp=drivesdk&ouid=113194854433017532215&rtpof=true&sd=true"},{title:"Project files",note:"Dashboard and forecasting workbook / analytical materials",url:"https://drive.google.com/drive/folders/18gcuNrIpCkyHXmlWPlrFMwerIk3hgFiM?usp=drive_link"}],
- situation:"Revenue declined after a 2020 peak and later recovered, but top-line change alone could not tell management whether the movement came from customers, order frequency, quantity, price, discounting or product mix. I built the analysis around those operational drivers before designing the dashboard.",
- approach:[
-   ["Problem decomposition","Used Revenue = Orders × Average Order Value to separate demand from transaction-value drivers."],
-   ["Connected workbook","Structured sales and dimension tables so performance could be analysed across products, customers, salespeople and fulfilment conditions."],
-   ["Diagnostic dashboard","Built interactive views that moved from executive KPIs into category, customer, shipping and sales-driver analysis."],
-   ["Forecasting","Used historical patterns to forecast Q1 2024 demand and identify category/SKU planning priorities."]
- ],
- findings:[
-   "The earlier decline was not simply a customer-acquisition problem; weaker average order value was an important part of the deterioration.",
-   "The 2023 recovery was demand-led but uneven, with growth concentrated in selected categories and salespeople.",
-   "The forecast suggested recovery rather than broad acceleration, which supported selective inventory and commercial planning rather than uniform expansion."
- ],
- recommendations:[
+  ],
+  "caseQuestion": "How does the quality of traceability information relate to trust and purchase intention for organic food?",
+  "caseStatus": "Team survey research · FTU scientific research competition",
+  "evidence": [
+   [
+    "Sample",
+    "369 valid urban-consumer responses",
+    "The study focused on Hanoi and Ho Chi Minh City."
+   ],
+   [
+    "Sampling profile",
+    "Young adults aged 18–25 prioritised; 75.6% female",
+    "The findings reflect a specific digitally connected sample."
+   ],
+   [
+    "Analysis",
+    "PLS-SEM, measurement assessment and 5,000 bootstrap resamples",
+    "The team examined direct, mediated and moderated relationships."
+   ],
+   [
+    "Model logic",
+    "Information quality → perceived food safety → product trust → purchase intention",
+    "The study examined how consumers interpret traceability, rather than a blockchain’s technical performance."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Defining what consumers need from traceability",
+    "paragraphs": [
+     "The research treated blockchain-enabled traceability as information encountered by a consumer, often through a QR code or digital interface. Its question concerned the quality of that information and whether it helped consumers judge food safety, trust the product and express an intention to buy.",
+     "I led the research direction, desk research and gap identification, coordinated questionnaire development and survey collection, and aligned the team’s analysis and writing. The team assessed measurement reliability and validity before evaluating the structural paths, indirect effects and the interaction with health consciousness."
+    ]
+   },
+   {
+    "title": "Translating the model into a communication decision",
+    "paragraphs": [
+     "The report found positive relationships along the proposed information-quality, safety-perception and trust pathway. Health consciousness strengthened the relationship between trust and purchase intention in the analysed sample. This made the clarity and credibility of traceability information a practical design issue, rather than assuming that a blockchain label would be persuasive by itself.",
+     "The business implication was to make origin, production and verification information easy to understand and use. The research also suggested considering differences in health consciousness when developing communication. These are implications of a survey model; they do not establish that an interface change would increase actual purchases."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Research stage",
+    "Purpose",
+    "Why it matters"
+   ],
+   "rows": [
+    [
+     "Literature and gap definition",
+     "Connect traceability information quality with safety perception, trust and intention",
+     "Keep the question focused on consumer interpretation."
+    ],
+    [
+     "Measurement checks",
+     "Assess reliability, convergent validity and discriminant validity",
+     "Check the constructs before interpreting their relationships."
+    ],
+    [
+     "Structural analysis",
+     "Examine paths, mediation and health-consciousness moderation",
+     "Explain how the proposed relationships operate in the sample."
+    ],
+    [
+     "Business interpretation",
+     "Translate the findings into information and communication priorities",
+     "Keep recommendations tied to the variables actually studied."
+    ]
+   ]
+  },
+  "limitations": "The online, purposive sample is concentrated in young urban consumers and women. The study measures self-reported purchase intention, not observed purchases. Its cross-sectional relationships do not establish causal effects or represent all Vietnamese consumers."
+ },
+ {
+  "slug": "sales-performance",
+  "title": "Sales Performance & Forecasting Dashboard",
+  "category": "OPERATIONS PLANNING · FORECASTING",
+  "card": "Decomposing $14.85m of retail sales into order, customer and basket-value drivers, then using the Q1 forecast to set different category priorities.",
+  "methods": "Advanced Excel · Issue Tree · Dashboarding · Forecasting",
+  "image": "assets/sales-dashboard-original.webp",
+  "summary": "An individual Excel project connecting a revenue issue tree, a relational workbook, customer and fulfilment analysis, and a Q1 2024 forecast with category and inventory-planning recommendations.",
+  "meta": [
+   [
+    "Project type",
+    "Individual Advanced Excel Project"
+   ],
+   [
+    "Role",
+    "Business & Operations Analyst"
+   ],
+   [
+    "Tools",
+    "Excel · Power Query · Power Pivot · PivotTables"
+   ],
+   [
+    "Focus",
+    "Sales drivers · customer behaviour · planning · forecasting"
+   ]
+  ],
+  "outputs": [
+   {
+    "title": "Analytical presentation (PDF)",
+    "note": "Retail sales performance and 2024 forecast",
+    "url": "https://drive.google.com/file/d/1b8JxXl8WBVqAdXwl42SCErs6h0JhB6oy/view?usp=drivesdk"
+   },
+   {
+    "title": "Excel workbook",
+    "note": "Original sales model, dashboard and forecast",
+    "url": "https://docs.google.com/spreadsheets/d/1Tg3kD-T9hGeeCpn5s9dfgSTvLxR_Po3d/edit?usp=drivesdk&ouid=113194854433017532215&rtpof=true&sd=true"
+   },
+   {
+    "title": "Project files",
+    "note": "Dashboard and forecasting workbook / analytical materials",
+    "url": "https://drive.google.com/drive/folders/18gcuNrIpCkyHXmlWPlrFMwerIk3hgFiM?usp=drive_link"
+   }
+  ],
+  "situation": "Revenue declined after a 2020 peak and later recovered, but top-line change alone could not tell management whether the movement came from customers, order frequency, quantity, price, discounting or product mix. I built the analysis around those operational drivers before designing the dashboard.",
+  "approach": [
+   [
+    "Problem decomposition",
+    "Used Revenue = Orders × Average Order Value to separate demand from transaction-value drivers."
+   ],
+   [
+    "Connected workbook",
+    "Structured sales and dimension tables so performance could be analysed across products, customers, salespeople and fulfilment conditions."
+   ],
+   [
+    "Diagnostic dashboard",
+    "Built interactive views that moved from executive KPIs into category, customer, shipping and sales-driver analysis."
+   ],
+   [
+    "Forecasting",
+    "Used historical patterns to forecast Q1 2024 demand and identify category/SKU planning priorities."
+   ]
+  ],
+  "findings": [
+   "The decline combined a 5.8% fall in orders with a larger 12.7% reduction in AOV in the presentation’s comparison.",
+   "The forecast recovery was uneven across categories, with Components stronger and Bikes still below its prior-year level.",
+   "The recommendations connect category roles and repeat purchasing to inventory and commercial priorities."
+  ],
+  "recommendations": [
    "Protect Components as a core growth category through inventory availability and repeat-purchase management.",
    "Use Accessories more deliberately for cross-sell and basket-value growth.",
    "Repair Bike performance selectively by prioritising stronger SKUs and reviewing discount/value erosion.",
    "Track retention and purchase frequency alongside acquisition so growth quality is visible."
- ],
- contribution:"This was an individual project. I structured the business problem, cleaned and connected the data, built the Excel model and dashboard, analysed historical performance, produced the forecast and translated the results into planning recommendations.",
- learned:[
+  ],
+  "contribution": "This was an individual project. I structured the business problem, cleaned and connected the data, built the Excel model and dashboard, analysed historical performance, produced the forecast and translated the results into planning recommendations.",
+  "learned": [
    "The biggest lesson was that dashboard design should follow the logic of the operating question. Building the issue tree first prevented me from creating a visually busy report that simply repeated metrics without explaining their relationship.",
    "Forecasting also taught me to be careful about the difference between prediction and planning. A forecast should change inventory, category or customer actions; otherwise it is only a number. With more data, I would add margin, inventory position and forecast-error tracking so the dashboard could balance service, working capital and profitability."
- ]
-},
-{
- slug:"banking-performance",
- title:"Vietnamese Banking Performance Analysis",
- category:"FINANCIAL ANALYSIS · SYSTEM PERFORMANCE",
- card:"Evaluating growth, profitability and resilience together to distinguish balance-sheet expansion from genuinely sustainable banking performance.",
- methods:"Financial Ratios · Regression · Segmentation",
- image:"assets/project-banking-original.webp",
- summary:"A banking-industry analysis of whether post-COVID growth translated into stronger efficiency and resilience, followed by performance-based bank segmentation and differentiated strategies.",
- meta:[["Competition","G’Contest 2026 — Round 2"],["Role","Financial Analysis & Business Interpretation"],["Scope","Vietnamese commercial banks · 2020–2024"],["Framework","Growth · Efficiency · Resilience"]],
- outputs:[{title:"Full analytical deck",note:"Vietnamese Banking Performance Analysis",url:"https://drive.google.com/file/d/12M0mePiggSwtoJj9Q2-UkLA749PeQAo5/view?usp=drive_link"}],
- situation:"Vietnam’s banking system grew rapidly through and after COVID, but higher profit could reflect a larger balance sheet rather than stronger efficiency. The project therefore analysed growth, profitability and risk together rather than ranking banks by one headline metric.",
- approach:[
-   ["Growth","Tracked assets, lending, deposits, operating income and profit."],
-   ["Efficiency","Compared ROA, ROE, NIM, CIR and income composition."],
-   ["Resilience","Reviewed funding pressure, asset quality, coverage and capital/risk indicators."],
-   ["Segmentation","Grouped banks by recovery and risk profile to develop different strategic priorities."]
- ],
- findings:[
-   "Absolute profit recovered faster than some efficiency measures, showing the importance of separating scale effects from operating quality.",
-   "Loan growth outpacing deposit growth increased funding pressure across parts of the system.",
-   "Bank size supported resilience in some periods, but did not automatically imply better efficiency or risk quality."
- ],
- recommendations:[
+  ],
+  "caseQuestion": "Was the retailer losing customers, selling less per order, or earning less from the same basket?",
+  "caseStatus": "Individual Excel analysis & forecast",
+  "evidence": [
+   [
+    "Historical scale",
+    "About $14.85m revenue; 5,516 distinct orders; 795 distinct customers",
+    "The dashboard joins commercial performance with customer, product and fulfilment views."
+   ],
+   [
+    "Decline diagnosis",
+    "Orders fell 5.8%; AOV fell 12.7% over the decline comparison",
+    "The larger deterioration was in value per order."
+   ],
+   [
+    "Q1 2024 forecast",
+    "6.1% above Q4 2023; 1.2% below Q1 2023",
+    "Sequential recovery still left performance below the comparable prior-year quarter."
+   ],
+   [
+    "Category outlook",
+    "Components +6.7% year on year; Bikes −18.5% in the forecast",
+    "Inventory and sales priorities needed to differ by category."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Building an issue tree before the dashboard",
+    "paragraphs": [
+     "I decomposed revenue into order count and average order value, then separated customer count, purchase frequency, quantity, selling price, discounts and shipping. The workbook connected sales records to category, customer, shipping-mode and order-priority dimensions so a change could be examined from several directions.",
+     "The earlier decline combined fewer orders with weaker AOV. Customer numbers and purchasing activity were comparatively flat, so the analysis moved toward price, discounting and category mix. The dashboard also retained shipping and service views, including average days to ship and differences by mode and priority, because planning decisions affect both revenue and execution."
+    ]
+   },
+   {
+    "title": "Using the forecast to make different category decisions",
+    "paragraphs": [
+     "The Q1 2024 forecast described a modest sequential recovery, not a return to broad growth. Components remained the strongest base, Accessories had scope to support basket value, Bikes remained below its prior-year comparison and Sports Clothing showed weaker momentum. That pattern did not support increasing inventory uniformly.",
+     "The recommendations therefore assigned a different commercial role to each category. Protect availability in Components; use Accessories for relevant cross-selling; review weaker Bike SKUs and discounting; and connect repeat purchasing to category and SKU planning. The workbook provides a planning estimate. Inventory decisions would also require stock position, margins, lead times and forecast-error monitoring."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Category / driver",
+    "Interpretation",
+    "Planning implication"
+   ],
+   "rows": [
+    [
+     "Components",
+     "Largest and comparatively stable contributor",
+     "Protect availability and give it priority in replenishment planning."
+    ],
+    [
+     "Accessories",
+     "Short-term rebound and basket-building potential",
+     "Test relevant bundles with Components and Bikes."
+    ],
+    [
+     "Bikes",
+     "Forecast still 18.5% below Q1 2023",
+     "Review SKU demand, discounts and inventory selectively."
+    ],
+    [
+     "Repeat purchasing",
+     "Order frequency contributes to the recovery story",
+     "Track purchase frequency and reorders alongside new-customer acquisition."
+    ]
+   ]
+  },
+  "limitations": "The forecast covers Q1 2024 and is a planning estimate. The historical workbook does not include all the stock, margin, supplier lead-time and forecast-error information needed for a final replenishment decision. The page uses reconciled order, AOV and forecast comparisons."
+ },
+ {
+  "slug": "banking-performance",
+  "title": "Vietnamese Banking Performance Analysis",
+  "category": "FINANCIAL ANALYSIS · SYSTEM PERFORMANCE",
+  "card": "Reviewing bank growth, profitability and credit risk across 2020–2024, then developing different priorities for recovery, stable-growth and higher-risk groups.",
+  "methods": "Financial Ratios · Regression · Segmentation",
+  "image": "assets/project-banking-original.webp",
+  "summary": "A team analysis of whether banking growth translated into stronger returns and resilience. The work combined financial ratios, cycle comparisons, OLS analysis and bank segmentation to develop differentiated operating priorities.",
+  "meta": [
+   [
+    "Competition",
+    "G’Contest 2026 — Round 2"
+   ],
+   [
+    "Role",
+    "Financial Analysis & Business Interpretation"
+   ],
+   [
+    "Scope",
+    "Vietnamese commercial banks · 2020–2024"
+   ],
+   [
+    "Framework",
+    "Growth · Efficiency · Resilience"
+   ]
+  ],
+  "outputs": [
+   {
+    "title": "Full analytical deck",
+    "note": "Vietnamese Banking Performance Analysis",
+    "url": "https://drive.google.com/file/d/12M0mePiggSwtoJj9Q2-UkLA749PeQAo5/view?usp=drive_link"
+   }
+  ],
+  "situation": "Vietnam’s banking system grew rapidly through and after COVID, but higher profit could reflect a larger balance sheet rather than stronger efficiency. The project therefore analysed growth, profitability and risk together rather than ranking banks by one headline metric.",
+  "approach": [
+   [
+    "Growth",
+    "Tracked assets, lending, deposits, operating income and profit."
+   ],
+   [
+    "Efficiency",
+    "Compared ROA, ROE, NIM, CIR and income composition."
+   ],
+   [
+    "Resilience",
+    "Reviewed funding pressure, asset quality, coverage and capital/risk indicators."
+   ],
+   [
+    "Segmentation",
+    "Grouped banks by recovery and risk profile to develop different strategic priorities."
+   ]
+  ],
+  "findings": [
+   "Profit growth needed to be separated from asset growth and changes in return on assets.",
+   "Credit-risk cost and net-interest-income generation were important to the report’s interpretation of sustainable profitability.",
+   "The three performance groups required different priorities for growth, funding, income diversification and balance-sheet repair."
+  ],
+  "recommendations": [
    "Rapid-recovery banks should protect momentum while preventing credit growth from outrunning asset quality.",
    "Sustainable-growth banks can scale selectively through income diversification, CASA and disciplined sector allocation.",
    "Higher-risk banks should prioritise NPL resolution, capital and cost control before aggressive expansion."
- ],
- contribution:"Within a three-member team, I contributed to structuring the analysis around growth, efficiency and resilience, interpreting financial indicators, and translating the segmentation into different strategic priorities rather than one generic recommendation.",
- learned:[
+  ],
+  "contribution": "Within a three-member team, I contributed to structuring the analysis around growth, efficiency and resilience, interpreting financial indicators, and translating the segmentation into different strategic priorities rather than one generic recommendation.",
+  "learned": [
    "The project strengthened my ability to read financial performance as a system of trade-offs. More lending can support profit while simultaneously increasing funding and credit risk; lower provisioning can support earnings while weakening buffers.",
    "I also learned that segmentation is useful only when it changes the action. Grouping banks by performance created value because each group received a different sequence of priorities. If I extended the work, I would add sector-level loan exposures and stress scenarios to test how the groups respond under renewed macro or interest-rate shocks."
- ]
-},
-{
- slug:"digital-marketing",
- title:"Digital Marketing Campaign Analytics & Customer Segmentation",
- category:"MARKETING ANALYTICS · CUSTOMER SEGMENTATION",
- card:"Evaluating seven campaigns across financial and funnel metrics, then identifying core and growth customer segments.",
- methods:"Advanced Excel · Campaign Economics · Segmentation",
- image:"assets/marketing-dashboard-original.webp",
- summary:"An Advanced Excel project connecting campaign economics with customer behaviour to improve budget allocation, retention and remarketing decisions.",
- meta:[["Programme","Tomorrow Marketers Advanced Excel"],["Project","Midterm Project"],["Focus","Campaign performance · customer segmentation"],["Tools","Advanced Excel · PivotTables · slicers"]],
- outputs:[{"title": "Analytical presentation (PDF)", "note": "Campaign performance and customer segmentation", "url": "https://drive.google.com/file/d/160b4vTbyp2DimCu7AbT_0V5-bB4wIThq/view?usp=drivesdk"},{"title": "Excel workbook", "note": "Original marketing analysis and dashboard", "url": "https://docs.google.com/spreadsheets/d/1S7lPgR2OXdVkxjg2xK1Bwue8gjaW1OUd/edit?usp=drivesdk&ouid=113194854433017532215&rtpof=true&sd=true"},{title:"Project files",note:"Dashboard, analysis and supporting materials",url:"https://drive.google.com/drive/folders/1oSGTOB1la0_QsqxR2c7XJoHsl_t-bP50?usp=drive_link"}],
- situation:"Seven campaigns produced different combinations of reach, clicks, conversion, revenue and profit. The central challenge was to avoid calling a campaign successful because one funnel metric looked strong.",
- approach:[
-   ["Financial value","Compared revenue, profit, ROI and average order value."],
-   ["Funnel efficiency","Compared CTR, conversion rate and cost per acquisition."],
-   ["Channel efficiency","Compared how advertising channels translated engagement into commercial outcomes."],
-   ["Customer value","Segmented customers by age, location, spending, engagement and purchase behaviour."]
- ],
- findings:[
-   "Black Friday and Cyber Monday delivered the strongest financial performance.",
-   "Back-to-School Promo offered a stronger balance between profitability and reach.",
-   "Customers aged 46–55 formed the core revenue segment, while 26–35 represented a strong growth opportunity.",
-   "High engagement did not always translate into healthy economics when acquisition cost or order value was weak."
- ],
- recommendations:[
+  ],
+  "caseQuestion": "Did post-COVID balance-sheet growth improve profitability without weakening funding and asset quality?",
+  "caseStatus": "Team financial analysis of 2020–2024 case data",
+  "evidence": [
+   [
+    "Analytical structure",
+    "Growth, efficiency and resilience",
+    "Scale was reviewed alongside ROA, ROE, margins, operating cost and credit quality."
+   ],
+   [
+    "Cycle comparison",
+    "2022 was the strongest efficiency point in the report",
+    "The later profit recovery needed to be separated from pressure on margins and provisions."
+   ],
+   [
+    "Diagnostic model",
+    "ROA regressed on capital, credit risk, liquidity, efficiency and other ratios",
+    "The team used associations to investigate differences in bank performance."
+   ],
+   [
+    "Stable-growth segment",
+    "2024 median CR 1.93%; up 0.85 percentage points in its comparison",
+    "A growing credit-risk measure supported more selective expansion."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Reading bank performance as a set of connected constraints",
+    "paragraphs": [
+     "The team assembled balance-sheet, income-statement and ratio data, then compared banks through the pandemic and recovery. The growth view covered assets, loans, deposits, income and profit. The efficiency view examined ROA, ROE, NIM and cost-to-income. The resilience view added credit risk, provisions, liquidity and capital.",
+     "That structure changed the interpretation of recovery. A bank can report more absolute profit because its asset base is larger while earning less on each unit of assets or carrying more credit risk. The report therefore grouped banks by both size and performance, distinguishing rapid recovery, stable growth and elevated risk."
+    ]
+   },
+   {
+    "title": "Using the diagnosis to change the sequence of action",
+    "paragraphs": [
+     "The OLS work examined the relationships between ROA and capital, credit-risk cost, liquidity, operating efficiency, lending intensity, deposits, income diversification and income generation. Net interest income relative to assets and credit-risk cost were central to the interpretation. They explain why lending growth and margin management needed to be considered together with loan quality.",
+     "The resulting recommendations differed by group. Rapid-recovery banks could protect momentum while monitoring asset quality. Stable-growth banks could improve income generation and diversify fees while controlling credit-risk cost. Higher-risk banks needed balance-sheet repair and stronger buffers before further aggressive lending. The segmentation was used to set priorities, rather than simply rank banks by profit."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Performance group",
+    "Priority",
+    "Examples in the proposal"
+   ],
+   "rows": [
+    [
+     "Rapid recovery",
+     "Protect the quality of further growth",
+     "Diversify non-interest income and monitor credit growth against early loan-quality indicators."
+    ],
+    [
+     "Stable growth",
+     "Improve returns from the existing asset base",
+     "Manage credit-risk cost, strengthen fee income and protect funding economics through transactional deposits."
+    ],
+    [
+     "Elevated risk",
+     "Stabilise before expanding",
+     "Resolve weak loans, reinforce capital and review operating costs and risk concentration."
+    ]
+   ]
+  },
+  "limitations": "The regression describes associations in the case data. Several accounting ratios share income or asset components, so high fit does not establish independent causal effects. Credit risk (CR) in the model is based on provision cost relative to loans; it is not interchangeable with the NPL ratio."
+ },
+ {
+  "slug": "digital-marketing",
+  "title": "Digital Marketing Campaign Analytics & Customer Segmentation",
+  "category": "MARKETING ANALYTICS · CUSTOMER SEGMENTATION",
+  "card": "Comparing seven campaigns by advertising return, conversion and order value, then separating customer-retention priorities from opportunities to grow.",
+  "methods": "Advanced Excel · Campaign Economics · Segmentation",
+  "image": "assets/marketing-dashboard-original.webp",
+  "summary": "An Excel analysis of seven campaigns and their customer segments. The work connected reach and conversion with order value, advertising spend and customer behaviour to develop budget, loyalty and remarketing recommendations.",
+  "meta": [
+   [
+    "Programme",
+    "Tomorrow Marketers Advanced Excel"
+   ],
+   [
+    "Project",
+    "Midterm Project"
+   ],
+   [
+    "Focus",
+    "Campaign performance · customer segmentation"
+   ],
+   [
+    "Tools",
+    "Advanced Excel · PivotTables · slicers"
+   ]
+  ],
+  "outputs": [
+   {
+    "title": "Analytical presentation (PDF)",
+    "note": "Campaign performance and customer segmentation",
+    "url": "https://drive.google.com/file/d/160b4vTbyp2DimCu7AbT_0V5-bB4wIThq/view?usp=drivesdk"
+   },
+   {
+    "title": "Excel workbook",
+    "note": "Original marketing analysis and dashboard",
+    "url": "https://docs.google.com/spreadsheets/d/1S7lPgR2OXdVkxjg2xK1Bwue8gjaW1OUd/edit?usp=drivesdk&ouid=113194854433017532215&rtpof=true&sd=true"
+   },
+   {
+    "title": "Project files",
+    "note": "Dashboard, analysis and supporting materials",
+    "url": "https://drive.google.com/drive/folders/1oSGTOB1la0_QsqxR2c7XJoHsl_t-bP50?usp=drive_link"
+   }
+  ],
+  "situation": "Seven campaigns produced different combinations of reach, clicks, conversion, revenue and profit. The central challenge was to avoid calling a campaign successful because one funnel metric looked strong.",
+  "approach": [
+   [
+    "Financial value",
+    "Compared revenue, profit, ROI and average order value."
+   ],
+   [
+    "Funnel efficiency",
+    "Compared CTR, conversion rate and cost per acquisition."
+   ],
+   [
+    "Channel efficiency",
+    "Compared how advertising channels translated engagement into commercial outcomes."
+   ],
+   [
+    "Customer value",
+    "Segmented customers by age, location, spending, engagement and purchase behaviour."
+   ]
+  ],
+  "findings": [
+   "Six of seven campaigns had positive revenue less advertising spend; portfolio ROI on that spend was 29.61%.",
+   "The highest-CTR campaign was loss-making, while Black Friday / Cyber Monday led the financial comparison.",
+   "The report identified different retention and growth roles for the 46–55 and 26–35 customer groups."
+  ],
+  "recommendations": [
    "Allocate campaign budget by strategic role rather than one ranking: scale, efficiency and experimental campaigns.",
    "Protect the 46–55 core segment through loyalty and retention programmes.",
    "Use more targeted digital communication and remarketing to convert the 26–35 segment.",
    "Evaluate campaigns with a balanced scorecard that connects financial value, funnel efficiency and customer value."
- ],
- contribution:"I structured the campaign-performance framework, compared the core financial and funnel metrics, segmented customers and translated the results into budget-allocation, loyalty and remarketing recommendations.",
- learned:[
+  ],
+  "contribution": "I structured the campaign-performance framework, compared the core financial and funnel metrics, segmented customers and translated the results into budget-allocation, loyalty and remarketing recommendations.",
+  "learned": [
    "The main lesson was that marketing metrics form a chain, not a leaderboard. CTR, conversion and revenue can each look strong while unit economics remain weak. Connecting them prevented me from optimising a funnel stage at the expense of profit.",
    "Customer segmentation also became more useful once each segment had a different job in the strategy: protect current value, convert future value or re-engage inactive users. With richer data, I would add cohort retention, lifetime value and incremental attribution."
- ]},
-{
- slug:"fraud-dashboard",
- title:"Digital Bank Fraud Detection Dashboard",
- category:"RISK MONITORING · DASHBOARD DESIGN",
- card:"Turning complex fraud-model outputs into a monitoring interface for risk concentration, diagnosis and case prioritisation.",
- methods:"Dashboard Design · Risk Interpretation · Decision Support",
- image:"assets/project-fraud-original.webp",
- summary:"A team fraud-risk project in which my contribution focused on dashboard structure, visualisation, interpretation and recommendations — not model coding.",
- meta:[["Competition","G’Contest 2026"],["Recognition","Top 15"],["Role","Dashboard Designer & Business Analyst"],["Focus","Risk monitoring · prioritisation · business interpretation"]],
- outputs:[{title:"Full project deck",note:"Digital Bank Fraud Detection Dashboard",url:"https://drive.google.com/file/d/1UrNBOwVr2tizRIN_VN2BBIwApWBYFUmC/view?usp=drive_link"}],
- situation:"The team developed a rule-based fraud-risk framework across a large set of transaction and activity data. My problem was different: how do you turn those outputs into a view that Risk, Fraud Operations, Compliance and management can actually use?",
- approach:[
-   ["Monitor","Designed the top layer around overall exposure and severity."],
-   ["Diagnose","Separated fraud types and behavioural patterns so teams could understand why alerts were created."],
-   ["Locate","Built views for time, customer, channel and cash-flow concentration."],
-   ["Act","Connected severity and context to prioritisation and intervention recommendations."]
- ],
- findings:[
-   "Alert volume alone was not enough; severity and concentration were needed to protect investigation capacity.",
-   "External-bank transfer flows showed much higher alert concentration than the mobile channel in the analysed outputs.",
-   "Different risk patterns required contextual controls rather than one blanket intervention."
- ],
- recommendations:[
+  ],
+  "caseQuestion": "Which campaigns produced useful customer growth after advertising cost and order value were considered?",
+  "caseStatus": "Individual Excel campaign & customer analysis",
+  "evidence": [
+   [
+    "Portfolio performance",
+    "$9,410,941 revenue; $7,266,565 advertising spend",
+    "The report’s campaign contribution was $2,144,376, or 29.61% ROI on advertising spend."
+   ],
+   [
+    "Black Friday / Cyber Monday",
+    "Reported ROI 66.67%; AOV about $298",
+    "Higher transaction value supported financial performance despite weak CTR."
+   ],
+   [
+    "Winter Collection",
+    "Highest CTR at 18.05%, but a reported loss",
+    "Engagement did not compensate for weak order value and advertising cost."
+   ],
+   [
+    "Customer priorities",
+    "Age 46–55 conversion 10.32%; age 26–35 about 10.09%",
+    "The proposal separated retention of current value from expansion of a larger growth segment."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Connecting the funnel to the economics of each campaign",
+    "paragraphs": [
+     "The analysis compared seven campaigns through impressions, clicks, purchases, revenue, advertising spend, AOV and acquisition cost. Across the portfolio, six campaigns generated a positive result under the report’s revenue-minus-advertising-spend calculation. That comparison made the definition of return important: it measured campaign contribution before product costs and other overheads.",
+     "Winter Collection illustrated the weakness of ranking campaigns by CTR alone. It attracted the most clicks and the highest CTR but had the lowest AOV in the comparison and was the only loss-making campaign. Black Friday and Cyber Monday had lower CTR but attracted higher-value purchases. Back-to-School provided the more balanced combination of financial return and reach in the report."
+    ]
+   },
+   {
+    "title": "Giving customer segments a different job in the growth plan",
+    "paragraphs": [
+     "The customer analysis compared age, geography, spending, engagement and purchase behaviour. Customers aged 46–55 had the highest conversion rate and average spend in the presented demographic comparison. The 26–35 group was larger and digitally engaged, making it a separate growth opportunity.",
+     "The recommendations followed those differences. Loyalty and relevant offers protect the established 46–55 segment. Targeted campaigns and remarketing develop the 26–35 group. Christianfort had a stronger spending profile, while West Town combined a large customer base with lower average spend. The proposed response for West Town was to improve basket value through appropriate upselling and cross-selling."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Campaign / segment",
+    "Evidence-based interpretation",
+    "Proposed action"
+   ],
+   "rows": [
+    [
+     "Black Friday / Cyber Monday",
+     "Strongest financial return in the case comparison",
+     "Use higher-value products and evaluate AOV against acquisition cost."
+    ],
+    [
+     "Winter Collection",
+     "Strong attention with weak campaign contribution",
+     "Review offer economics and duration before increasing spend."
+    ],
+    [
+     "Customers aged 46–55",
+     "High conversion and spending",
+     "Prioritise retention, loyalty and relevant repeat-purchase offers."
+    ],
+    [
+     "Customers aged 26–35 / West Town",
+     "Scale and engagement with room to improve value",
+     "Use targeted remarketing and relevant basket-building offers."
+    ]
+   ]
+  },
+  "limitations": "The report labels revenue minus advertising spend as profit. This page calls it campaign contribution because product cost and overheads are not included in that calculation. Campaign attribution and segment comparisons do not establish incremental impact without an experiment."
+ },
+ {
+  "slug": "fraud-dashboard",
+  "title": "Digital Bank Fraud Detection Dashboard",
+  "category": "RISK MONITORING · DASHBOARD DESIGN",
+  "card": "Turning rules across 1.4m+ transactions into views of alert severity, flagged value and channel concentration, with a plan for review and intervention.",
+  "methods": "Dashboard Design · Risk Interpretation · Decision Support",
+  "image": "assets/project-fraud-original.webp",
+  "summary": "A team fraud-risk project focused on turning explainable rule outputs into a dashboard for monitoring exposure, investigating patterns and prioritising cases. My work covered visualisation, interpretation and recommendations.",
+  "meta": [
+   [
+    "Competition",
+    "G’Contest 2026"
+   ],
+   [
+    "Recognition",
+    "Top 15"
+   ],
+   [
+    "Role",
+    "Dashboard Designer & Business Analyst"
+   ],
+   [
+    "Focus",
+    "Risk monitoring · prioritisation · business interpretation"
+   ]
+  ],
+  "outputs": [
+   {
+    "title": "Full project deck",
+    "note": "Digital Bank Fraud Detection Dashboard",
+    "url": "https://drive.google.com/file/d/1UrNBOwVr2tizRIN_VN2BBIwApWBYFUmC/view?usp=drive_link"
+   }
+  ],
+  "situation": "The team developed a rule-based fraud-risk framework across a large set of transaction and activity data. My problem was different: how do you turn those outputs into a view that Risk, Fraud Operations, Compliance and management can actually use?",
+  "approach": [
+   [
+    "Monitor",
+    "Designed the top layer around overall exposure and severity."
+   ],
+   [
+    "Diagnose",
+    "Separated fraud types and behavioural patterns so teams could understand why alerts were created."
+   ],
+   [
+    "Locate",
+    "Built views for time, customer, channel and cash-flow concentration."
+   ],
+   [
+    "Act",
+    "Connected severity and context to prioritisation and intervention recommendations."
+   ]
+  ],
+  "findings": [
+   "A large share of flags belonged to a watchlist rather than a specific confirmed fraud category.",
+   "Severity, transaction value and channel context changed the proposed order of investigation.",
+   "The dashboard needed to show why a rule fired and connect that explanation to a proportionate operating action."
+  ],
+  "recommendations": [
    "Use severity-based intervention so the strongest friction is reserved for the highest-risk cases.",
    "Apply additional controls to high-risk channels and flows while avoiding unnecessary friction for normal customers.",
    "Create a feedback loop between investigation outcomes, alert rules and dashboard monitoring."
- ],
- contribution:"I did not develop the model code. My role was to design the dashboard hierarchy, decide which risk measures and comparisons should be visible, interpret the output patterns and translate them into recommendations and a management story.",
- learned:[
+  ],
+  "contribution": "My work covered the dashboard hierarchy, visualisation, interpretation of risk patterns and recommendations. The team developed the model and rule logic; I connected its outputs to the decisions needed by risk teams, operations and management.",
+  "learned": [
    "This project taught me that a risk dashboard is an operational product, not simply a collection of charts. The user needs to move from exposure to diagnosis to prioritisation without mentally reconstructing the model logic.",
    "It also reinforced the importance of stating uncertainty clearly. An alert is not confirmed fraud, and flagged transaction value is not prevented loss. If I continued the work, I would add investigator feedback, case-resolution time and false-positive tracking so the dashboard could measure the quality of the control system itself."
- ]
-}
+  ],
+  "caseQuestion": "How should a bank turn a large alert population into a workable queue of explainable interventions?",
+  "caseStatus": "Team rule-based case model; dashboard & interpretation contribution",
+  "evidence": [
+   [
+    "Transaction scope",
+    "More than 1.4m transactions; about VND 12.44tn in value",
+    "The operating question concerned risk prioritisation at scale."
+   ],
+   [
+    "Alert output",
+    "More than 200,000 alerts; about 162,000 on a watchlist",
+    "Most flags needed triage and follow-up, not an automatic fraud verdict."
+   ],
+   [
+    "Flagged value",
+    "About VND 1.801tn in the report",
+    "This is flagged transaction value, not confirmed fraud or prevented loss."
+   ],
+   [
+    "Channel concentration",
+    "16.91% of outside-bank transfers flagged in the output",
+    "The case proposed more targeted review of channels where money leaves the bank."
+   ]
+  ],
+  "analysisSections": [
+   {
+    "title": "Designing the view around the decisions each team needed to make",
+    "paragraphs": [
+     "The underlying team model used weighted rules and combinations of behavioural signals across account takeover, authorised push-payment scams, identity or new-account abuse, and card fraud. The dataset did not contain confirmed fraud labels, so the proposal favoured explainable rules and a staged validation process over claiming supervised classification accuracy.",
+     "My contribution focused on the dashboard hierarchy, visualisation, interpretation and recommendations. The view had to answer how much exposure had been flagged, which patterns created it, where it concentrated and which cases needed attention first. Counts were paired with severity and value because a large watchlist could otherwise overwhelm investigators."
+    ]
+   },
+   {
+    "title": "Connecting alerts to service capacity and customer friction",
+    "paragraphs": [
+     "The output showed different concentrations by fraud type, hour and transaction channel. APP alerts had higher average flagged value in the case than ATO alerts, while outside-bank transfers had the highest flagged rate among the displayed channels. These patterns informed the proposed priority order; they were not treated as confirmed descriptions of criminal behaviour.",
+     "The rollout began with shadow scoring, a documented playbook and reviewer feedback. Higher-risk cases could receive additional verification, a callback or a delay, while lower-risk cases remained under observation. Rule thresholds had to reflect review capacity and the cost of disrupting legitimate transactions. Feedback from reviewed cases would then support calibration and future labelled data."
+    ]
+   }
+  ],
+  "decisionTable": {
+   "columns": [
+    "Risk level / operating need",
+    "Proposed response",
+    "Control to monitor"
+   ],
+   "rows": [
+    [
+     "Low / Medium",
+     "Observation or proportionate warning",
+     "Legitimate-customer friction and the rate of escalation."
+    ],
+    [
+     "High",
+     "Additional verification, callback or delay",
+     "Review time, investigator capacity and outcomes."
+    ],
+    [
+     "Critical",
+     "Hold or block under an approved playbook",
+     "Reason codes, escalation ownership and resolution."
+    ],
+    [
+     "Large watchlist",
+     "Segment, sample and investigate recurring patterns",
+     "Backlog, rule firing rates and feedback-based threshold changes."
+    ]
+   ]
+  },
+  "limitations": "No confirmed fraud labels were available for evaluating precision or recall. Alert counts can include different risk categories, and flagged value is not a loss estimate. The proposed intervention and monitoring results require a live pilot and reviewed outcomes."
+ }
 ];
 
-
-
-
 const researchProjects=allWork.filter(p=>["sustainable-finance-smes","blockchain-traceability"].includes(p.slug));
-const projects=allWork.filter(p=>!researchProjects.includes(p)).sort((a,b)=>{const order=["ecommerce-operations","happytime","restaurant-experience","sales-performance","digital-marketing","banking-performance","fraud-dashboard","vua-giat","ionpia","co-cay-hoa-la","suki","dh-foods","bwg-bamboo"];return order.indexOf(a.slug)-order.indexOf(b.slug)});
+const projects=allWork.filter(p=>!researchProjects.includes(p)).sort((a,b)=>{const order=["ecommerce-operations","happytime","restaurant-experience","sales-performance","digital-marketing","banking-performance","fraud-dashboard","vua-giat","ionpia","co-cay-hoa-la","suki"];return order.indexOf(a.slug)-order.indexOf(b.slug)});
 
 const publications=[
  {tag:"CARBON MARKETS · CONFERENCE",title:"Strategies for Accelerating International Carbon Credit Trade",desc:"Corresponding-author research comparing Singapore’s financial-hub model with Vietnam’s carbon-asset potential and institutional gaps.",img:thumb("1AoHc_bMTi_k0RrNppGAipZhfCCkmYX2e"),url:"https://drive.google.com/file/d/1AoHc_bMTi_k0RrNppGAipZhfCCkmYX2e/view?usp=drivesdk"},
@@ -837,13 +1887,13 @@ const publications=[
 
 
 const awards=[
- ["Top 10","HSBC BCC 2027 — FTU Hanoi campus round","2026","https://www.linkedin.com/in/nghiemphuong/"],
+ ["Top 10","HSBC BCC 2027 — FTU Hanoi campus round","2026","https://drive.google.com/file/d/1m039DE4Ldx4G463X5_T7keY-CQLoYdvL/view?usp=drivesdk"],
  ["First Prize","FTU Student Scientific Research Competition","2026","https://drive.google.com/file/d/1YLy2E_SKfsPI3-B1J5uDkU65g9UAevic/view?usp=drivesdk"],
  ["Top 15","G’Contest — Data Analytics Competition","2026","https://drive.google.com/file/d/1rlWDUIJIcBTHGgZy81JFIPa7_N8dovwK/view?usp=drivesdk"],
  ["Runner-up","Tomorrow Marketers Business Analytics & Consulting Case Competition","2025","https://drive.google.com/file/d/1F2KbviEn0_jKlY6OyL9PDo_JhXm9tUAA/view?usp=drivesdk"],
  ["Winner","Agyra Student Challenge — Sustainable Finance Challenge","2025","https://drive.google.com/file/d/1dNHgYoIKYyqDCqEbvRC04M5cdSvkecJU/view?usp=drivesdk"],
  ["Champion","VNUIS Business Case Competition","2025","https://drive.google.com/file/d/1Ia1IB2trG4ERQO06pO7WRMfnU190cozP/view?usp=drivesdk"],
- ["Top 10","Marketing Big Day","2024","https://www.linkedin.com/in/nghiemphuong/"],
+ ["Top 10","Marketing Big Day","2024","https://drive.google.com/file/d/14p1aWylbzRcg67caAZuq-IxKX9LsGDbb/view?usp=drivesdk"],
  ["Champion","The EconomAIst","2024","https://drive.google.com/file/d/1fQEP1exJNPZMrq5G9CUg2hYhZMdA9PrD/view?usp=drivesdk"],
  ["Third Prize","International Business Integration Competition","2023","https://drive.google.com/file/d/1wmUKvPxTts_BSZ9PGCljAd02L4kgWUlm/view?usp=drivesdk"]
 ];
@@ -865,11 +1915,14 @@ function blogPage(){
 }
 function blogPostPage(p){return `<article class="section white"><div class="shell blog-article"><a class="text-link" href="#/blog">← All posts</a><div class="eyebrow" style="margin-top:32px">${escapeHtml(p.category||'Notes')}</div><h1>${escapeHtml(p.title)}</h1>${p.date?`<p class="muted">${escapeHtml(p.date)}</p>`:''}${(p.paragraphs||[]).map(t=>`<p class="lead">${escapeHtml(t)}</p>`).join('')}</div></article>`;}
 function awardCard(a){
- const hasImage=!['Top 10','Top 15'].includes(a[0]);
  const id=a[3].match(/\/d\/([^/]+)/)?.[1];
- return `<article class="recognition-card ${hasImage?'':'text-award'}">${hasImage?`<a class="recognition-image" href="${a[3]}" target="_blank" rel="noopener" aria-label="View certificate: ${a[1]}"><img loading="lazy" src="${awardImages[id]||thumb(id)}" alt="${a[1]} — ${a[0]} certificate"></a>`:''}<div class="recognition-copy"><div class="award-top"><span class="award-badge">${a[0]}</span><span class="award-year">${a[2]}</span></div><h3>${a[1]}</h3><a class="text-link" href="${a[3]}" target="_blank" rel="noopener">${hasImage?'View certificate':'View recognition'} ↗</a></div></article>`;
+ const image=awardImages[id];
+ const resultAnnouncement=['1m039DE4Ldx4G463X5_T7keY-CQLoYdvL','1rlWDUIJIcBTHGgZy81JFIPa7_N8dovwK'].includes(id);
+ const evidenceType=resultAnnouncement?'result announcement':'certificate';
+ return `<article class="recognition-card">${image?`<a class="recognition-image" href="${image}" target="_blank" rel="noopener" aria-label="Open full-size ${evidenceType}: ${a[1]}"><img loading="lazy" decoding="async" src="${image}" alt="${a[1]} — ${a[0]} ${evidenceType}"></a>`:''}<div class="recognition-copy"><div class="award-top"><span class="award-badge">${a[0]}</span><span class="award-year">${a[2]}</span></div><h3>${a[1]}</h3><a class="text-link" href="${a[3]}" target="_blank" rel="noopener">${resultAnnouncement?'View result':'View certificate'} ↗</a></div></article>`;
 }
-const awardImages={"1YLy2E_SKfsPI3-B1J5uDkU65g9UAevic": "assets/award-1YLy2E_SKfsPI3-B1J5uDkU65g9UAevic.webp", "1F2KbviEn0_jKlY6OyL9PDo_JhXm9tUAA": "assets/award-1F2KbviEn0_jKlY6OyL9PDo_JhXm9tUAA.webp", "1dNHgYoIKYyqDCqEbvRC04M5cdSvkecJU": "assets/award-1dNHgYoIKYyqDCqEbvRC04M5cdSvkecJU.webp", "1Ia1IB2trG4ERQO06pO7WRMfnU190cozP": "assets/award-1Ia1IB2trG4ERQO06pO7WRMfnU190cozP.webp", "1wmUKvPxTts_BSZ9PGCljAd02L4kgWUlm": "assets/award-1wmUKvPxTts_BSZ9PGCljAd02L4kgWUlm.webp", "1fQEP1exJNPZMrq5G9CUg2hYhZMdA9PrD": "assets/award-economaist.webp"};
+
+const awardImages={"1YLy2E_SKfsPI3-B1J5uDkU65g9UAevic": "assets/award-1YLy2E_SKfsPI3-B1J5uDkU65g9UAevic.webp", "1F2KbviEn0_jKlY6OyL9PDo_JhXm9tUAA": "assets/award-1F2KbviEn0_jKlY6OyL9PDo_JhXm9tUAA.webp", "1dNHgYoIKYyqDCqEbvRC04M5cdSvkecJU": "assets/award-1dNHgYoIKYyqDCqEbvRC04M5cdSvkecJU.webp", "1Ia1IB2trG4ERQO06pO7WRMfnU190cozP": "assets/award-1Ia1IB2trG4ERQO06pO7WRMfnU190cozP.webp", "1wmUKvPxTts_BSZ9PGCljAd02L4kgWUlm": "assets/award-1wmUKvPxTts_BSZ9PGCljAd02L4kgWUlm.webp", "1fQEP1exJNPZMrq5G9CUg2hYhZMdA9PrD": "assets/award-economaist.webp", "1m039DE4Ldx4G463X5_T7keY-CQLoYdvL": "assets/award-hsbc.webp", "14p1aWylbzRcg67caAZuq-IxKX9LsGDbb": "assets/award-marketing-big-day.webp", "1rlWDUIJIcBTHGgZy81JFIPa7_N8dovwK": "assets/award-gcontest.webp"};
 function projectCard(p){
  return `<a class="project-card" href="#/project/${p.slug}">
    <div class="project-thumb ${["sales-performance","digital-marketing"].includes(p.slug)?'dashboard-thumb':''}"><img loading="lazy" src="${p.image}" alt="First-page or dashboard preview for ${p.title}"></div>
@@ -966,21 +2019,25 @@ function contactPage(){
  </div></section>`;
 }
 function projectDetail(p){
- if(p.summaryOnly){return `<section class="page-hero"><div class="shell"><a class="text-link" href="#/projects">← All projects</a><div class="eyebrow" style="margin-top:32px">${p.category}</div><h1>${p.title}</h1><p class="lead">${p.summary}</p><div class="meta-grid">${p.meta.map(m=>`<div class="meta-item"><span>${m[0]}</span><strong>${m[1]}</strong></div>`).join("")}</div></div></section><section class="case-section white"><div class="shell case-grid"><div><div class="case-index">CASE OVERVIEW</div><h3>Scope & objectives</h3></div><div class="case-copy"><p>${p.situation}</p><div class="framework">${p.approach.map(a=>`<div class="frame"><b>${a[0]}</b><p>${a[1]}</p></div>`).join("")}</div>${p.findings.map(f=>`<p>${f}</p>`).join("")}<p class="evidence-note">${p.evidenceNote}</p><a class="btn secondary" href="${p.outputs[0].url}" target="_blank" rel="noopener">View project record ↗</a></div></div></section>`;}
+ if(p.summaryOnly){return `<section class="page-hero"><div class="shell"><a class="text-link" href="#/projects">← All projects</a><div class="eyebrow" style="margin-top:32px">${p.category}</div><h1>${p.title}</h1><p class="lead">${p.summary}</p>${p.caseStatus?`<p class="case-status">${p.caseStatus}</p>`:""}<div class="meta-grid">${p.meta.map(m=>`<div class="meta-item"><span>${m[0]}</span><strong>${m[1]}</strong></div>`).join("")}</div></div></section><section class="case-section white"><div class="shell case-grid"><div><div class="case-index">CASE OVERVIEW</div><h3>Scope & objectives</h3></div><div class="case-copy"><p>${p.situation}</p><div class="framework">${p.approach.map(a=>`<div class="frame"><b>${a[0]}</b><p>${a[1]}</p></div>`).join("")}</div>${p.findings.map(f=>`<p>${f}</p>`).join("")}<p class="evidence-note">${p.evidenceNote}</p><a class="btn secondary" href="${p.outputs[0].url}" target="_blank" rel="noopener">View project record ↗</a></div></div></section>`;}
 
  const pool=researchProjects.includes(p)?researchProjects:projects;
  const idx=pool.findIndex(x=>x.slug===p.slug),prev=pool[(idx-1+pool.length)%pool.length],next=pool[(idx+1)%pool.length];
  return `<section class="project-detail-hero"><div class="shell project-detail-grid"><div>
-  <div class="eyebrow">${p.category}</div><h1>${p.title}</h1><p class="lead">${p.summary}</p>
+  <div class="eyebrow">${p.category}</div><h1>${p.title}</h1><p class="lead">${p.summary}</p>${p.caseStatus?`<p class="case-status">${p.caseStatus}</p>`:""}
   <div class="meta-grid">${p.meta.map(m=>`<div class="meta-item"><span>${m[0]}</span><strong>${m[1]}</strong></div>`).join("")}</div>
  </div><div class="hero-project-image"><a href="${p.image}" target="_blank" rel="noopener" aria-label="Open full preview for ${p.title}"><img src="${p.image}" alt="Project preview for ${p.title}"></a><a class="image-open-link" href="${p.image}" target="_blank" rel="noopener">Open full-size image ↗</a></div></div></section>
  ${p.outputs.length?`<section class="output-strip"><div class="shell"><div class="eyebrow" style="margin-bottom:12px">Project output</div><div class="output-grid">${p.outputs.map(o=>`<a class="output-card" href="${o.url}" target="_blank" rel="noopener"><div><b>${o.title}</b><span>${o.note}</span></div><div class="out-link">Open ↗</div></a>`).join("")}</div></div></section>`:""}
- <section class="case-section white"><div class="shell case-grid"><div><div class="case-index">01 · SITUATION</div><h3>The question behind the project</h3></div><div class="case-copy"><p class="lead">${p.situation}</p></div></div></section>
+ <section class="case-section white"><div class="shell case-grid"><div><div class="case-index">01 · SITUATION</div><h3>${p.caseQuestion||"The question behind the project"}</h3></div><div class="case-copy"><p class="lead">${p.situation}</p></div></div></section>
  <section class="case-section"><div class="shell case-grid"><div><div class="case-index">02 · APPROACH</div><h3>${p.contribution?"How I structured the problem":"How the team approached it"}</h3></div><div class="case-copy"><div class="framework">${p.approach.map(a=>`<div class="frame"><b>${a[0]}</b><p>${a[1]}</p></div>`).join("")}</div></div></div></section>
- <section class="case-section white"><div class="shell case-grid"><div><div class="case-index">03 · FINDINGS</div><h3>What the evidence changed</h3></div><div class="case-copy"><ul>${p.findings.map(x=>`<li>${x}</li>`).join("")}</ul><div class="insight"><b>Analytical principle:</b> The purpose of the analysis was to narrow the decision — not to produce the largest possible number of metrics.</div></div></div></section>
+ ${p.evidence?`<section class="case-section white"><div class="shell"><div class="eyebrow">Evidence & interpretation</div><h2>What the analysis shows</h2><div class="case-table-wrap"><table class="case-table"><thead><tr><th>Area</th><th>Evidence</th><th>Interpretation</th></tr></thead><tbody>${p.evidence.map(r=>`<tr>${r.map(v=>`<td>${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div></div></section>`:""}
+ ${p.analysisSections?`<section class="case-section"><div class="shell analysis-reading">${p.analysisSections.map(a=>`<section class="analysis-part"><h2>${a.title}</h2>${a.paragraphs.map(t=>`<p>${t}</p>`).join("")}</section>`).join("")}</div></section>`:""}
+ <section class="case-section white"><div class="shell case-grid"><div><div class="case-index">03 · FINDINGS</div><h3>What the evidence changed</h3></div><div class="case-copy"><ul>${p.findings.map(x=>`<li>${x}</li>`).join("")}</ul></div></div></section>
  <section class="case-section"><div class="shell case-grid"><div><div class="case-index">04 · RECOMMENDATIONS</div><h3>From finding to action</h3></div><div class="case-copy"><ul>${p.recommendations.map(x=>`<li>${x}</li>`).join("")}</ul></div></div></section>
+ ${p.decisionTable?`<section class="case-section white"><div class="shell"><div class="eyebrow">Decisions & execution</div><h2>How the recommendations translate into action</h2><div class="case-table-wrap"><table class="case-table"><thead><tr>${p.decisionTable.columns.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${p.decisionTable.rows.map(r=>`<tr>${r.map(v=>`<td>${v}</td>`).join("")}</tr>`).join("")}</tbody></table></div></div></section>`:""}
+ ${p.limitations?`<section class="case-section"><div class="shell"><div class="case-boundary"><h3>Scope & limitations</h3><p>${p.limitations}</p></div></div></section>`:""}
  ${p.contribution?`<section class="case-section white"><div class="shell case-grid"><div><div class="case-index">05 · MY CONTRIBUTION</div><h3>What I was responsible for</h3></div><div class="case-copy"><p>${p.contribution}</p></div></div></section>`:""}
- ${p.learned?.length?`<section class="case-section"><div class="shell case-grid"><div><div class="case-index">06 · REFLECTION</div><h3>What I learned</h3></div><div class="case-copy"><div class="learning"><h3>Beyond the final deliverable</h3>${p.learned.map(x=>`<p>${x}</p>`).join("")}</div></div></div></section>`:""}<section class="case-section"><div class="shell"><p class="evidence-note">${p.evidenceNote||""}</p><div class="detail-nav"><button data-project="${prev.slug}">← ${prev.title}</button><button data-route="${researchProjects.includes(p)?'#/':'#/projects'}">${researchProjects.includes(p)?'Home':'All projects'}</button><button data-project="${next.slug}">${next.title} →</button></div></div></section>`;
+ ${!p.analysisSections&&p.learned?.length?`<section class="case-section"><div class="shell case-grid"><div><div class="case-index">06 · REFLECTION</div><h3>What I learned</h3></div><div class="case-copy"><div class="learning"><h3>Beyond the final deliverable</h3>${p.learned.map(x=>`<p>${x}</p>`).join("")}</div></div></div></section>`:""}<section class="case-section"><div class="shell"><p class="evidence-note">${p.evidenceNote||""}</p><div class="detail-nav"><button data-project="${prev.slug}">← ${prev.title}</button><button data-route="${researchProjects.includes(p)?'#/':'#/projects'}">${researchProjects.includes(p)?'Home':'All projects'}</button><button data-project="${next.slug}">${next.title} →</button></div></div></section>`;
 }
 function setActive(section){
  document.querySelectorAll("[data-nav]").forEach(x=>x.classList.toggle("active",x.dataset.nav===section));
