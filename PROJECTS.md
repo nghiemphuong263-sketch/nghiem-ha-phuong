@@ -35,3 +35,25 @@ Do not restore Vietnam base-metals import Business Process Analysis or the separ
 - Sales and marketing preview images are the authentic screenshots recovered from v3.3-fast, with contain sizing and full-size image links.
 - All project preview images are local repository assets.
 - Insurance/logistics/course lecture notes, transcripts and CVs are not separate project submissions. Shopee.pdf describes Nghiem Minh Phuong (RMIT), so it is not attributed to this FTU portfolio.
+
+## Complete Drive folder audit
+
+Source: https://drive.google.com/drive/folders/1EBMoD4Fi5X5apYmc-ScTWUXmz7ba8mbv?usp=sharing
+
+The root has 10 files and 2 subfolders. Both subfolders were listed; together they contain 2 PDFs and 2 Excel workbooks. Total: 14 files, 2 folders.
+
+| Source work | Portfolio location |
+| --- | --- |
+| The EconomAIst restaurant case | Projects · restaurant-experience |
+| Suki / Marketing Big Day | Projects · suki |
+| Vua Giặt luxury client system | Projects · vua-giat |
+| IONPIA international marketing | Projects · ionpia |
+| HappyTime HR SaaS | Projects · happytime |
+| Sustainable finance for SMEs | Research · sustainable-finance-smes |
+| E-commerce operations final round | Projects · ecommerce-operations |
+| Marketing PDF + workbook | Projects · digital-marketing |
+| Retail sales PDF + workbook | Projects · sales-performance |
+| Vietnam base-metals import report | Excluded at the owner’s request |
+| CV and cover letter | Supporting documents, not project cards |
+
+HappyTime, The EconomAIst, Suki, Vua Giặt and IONPIA now link to their full Drive source reports, rather than only a locally rendered preview. The two Excel projects expose PDF, workbook and folder links separately. No new duplicate project records were created from repeated file formats.
