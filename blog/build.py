@@ -33,12 +33,15 @@ def inline(text, sources):
         i = int(match[1])
         if i < 1 or i > len(sources):
             raise ValueError(f'Citation [{i}] has no source')
-        return f'<sup><a href="#source-{i}" aria-label="Source {i}">[{i}]</a></sup>'
+        source = sources[i - 1]
+        label = ESC(source.get('citeAuthor', source['publisher'])) + ', ' + ESC(source.get('year', 'n.d.'))
+        return f'<a class="harvard-citation" href="#source-{i}">({label})</a>'
     return re.sub(r'\[(\d+)\]', cite, text)
 
 
 def validate(posts):
     slugs = set()
+    how_to_weeks = {}
     for p in posts:
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', p['slug']) or p['slug'] in slugs:
             raise ValueError('Invalid or duplicate article slug')
@@ -48,9 +51,18 @@ def validate(posts):
                 raise ValueError(f'Missing {key} in {p["slug"]}')
         if p['category'] not in CATEGORIES:
             raise ValueError('Unknown category')
+        if p.get('articleType') not in ['how-to', 'research']:
+            raise ValueError('Declare articleType: how-to or research')
+        if p['articleType'] == 'research' and (not p.get('charts') or not p.get('evidenceAsOf')):
+            raise ValueError('Research articles require sourced charts and evidenceAsOf')
         datetime.fromisoformat(p['publishedAt'])
         if datetime.fromisoformat(p['publishedAt']).tzinfo is None:
             raise ValueError('Publication time needs a timezone')
+        if p['articleType'] == 'how-to' and p.get('published', True):
+            week = tuple(datetime.fromisoformat(p['publishedAt']).astimezone(ZoneInfo('Asia/Ho_Chi_Minh')).isocalendar()[:2])
+            how_to_weeks[week] = how_to_weeks.get(week, 0) + 1
+            if how_to_weeks[week] > 1:
+                raise ValueError('Only one how-to article is allowed per local ISO week')
         image = p['image']
         if urlparse(image['src']).hostname != 'images.pexels.com':
             raise ValueError('Use a verified Pexels photo')
@@ -61,7 +73,7 @@ def validate(posts):
                 raise ValueError('Incomplete photo attribution')
         for source in p['sources']:
             safe_url(source['url'])
-            if not source.get('title') or not source.get('publisher'):
+            if not all(source.get(k) for k in ['title', 'publisher', 'author', 'citeAuthor', 'year', 'accessed']):
                 raise ValueError('Incomplete source')
         for section in p['sections']:
             if not section.get('heading'):
@@ -69,6 +81,18 @@ def validate(posts):
             for text in section.get('paragraphs', []) + section.get('bullets', []):
                 inline(text, p['sources'])
         inline(p['answer'], p['sources'])
+        for chart in p.get('charts', []):
+            if chart.get('type') not in ['bar', 'line']:
+                raise ValueError('Chart must be bar or line')
+            if not all(chart.get(k) for k in ['title', 'unit', 'period', 'method', 'sourceIds', 'labels', 'values']):
+                raise ValueError('Incomplete chart metadata')
+            if not 2 <= len(chart['labels']) <= 12 or len(chart['labels']) != len(chart['values']):
+                raise ValueError('Chart requires 2–12 matching labels and values')
+            if not all(isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v) for v in chart['values']):
+                raise ValueError('Chart values must be finite numbers')
+            for i in chart['sourceIds']:
+                if not isinstance(i, int) or not 1 <= i <= len(p['sources']):
+                    raise ValueError('Chart source is missing')
 
 
 CSS = '''
@@ -76,6 +100,42 @@ CSS = '''
 @media(max-width:980px){.article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.reading-layout{grid-template-columns:1fr;gap:20px}.toc{position:static;max-width:760px}.featured h2{font-size:27px}}
 @media(max-width:640px){.shell{width:calc(100% - 36px)}.nav-inner{flex-wrap:wrap;padding:18px 0;gap:8px}.nav-links{width:100%;gap:20px;font-size:12px}.intro{padding-top:42px}.article-grid,.featured{grid-template-columns:1fr}.featured img{max-height:260px}.featured .card-copy{padding:24px}.article-header{padding-top:22px}.article-header .dek{font-size:17px}.prose{font-size:16px}.prose h2{font-size:25px}.reading-layout{margin-top:20px}.article-image img{aspect-ratio:16/10}.footer-inner{flex-direction:column}.category-nav{gap:8px}.category-nav a{font-size:11px}.article-grid{gap:20px}}
 '''
+CSS += '''
+.harvard-citation{font-size:.92em;white-space:normal}.references{list-style:none;padding-left:0}.references li{padding:10px 0 18px}.data-figure{margin:30px 0;padding:20px;background:#fff;border:1px solid var(--border);border-radius:12px}.data-figure h2{margin-top:0;font-size:23px}.data-figure svg{display:block;width:100%;height:auto}.data-figure figcaption{font-size:12px;line-height:1.7;color:var(--slate)}.data-figure details{font-size:13px;margin-top:15px}.data-figure table{width:100%;border-collapse:collapse;margin-top:12px}.data-figure th,.data-figure td{text-align:left;padding:8px;border-bottom:1px solid var(--border)}.evidence-date{font-size:12px;color:var(--slate)}
+'''
+
+
+def chart_figure(chart, sources, index):
+    values, labels = chart['values'], chart['labels']
+    low, high = min(0, min(values)), max(0, max(values))
+    if low == high:
+        high = low + 1
+    x0, y0, width, height = 80, 30, 600, 225
+    def y(value):
+        return y0 + height - (value - low) / (high - low) * height
+    spacing = width / len(values)
+    marks = ''
+    for i in range(5):
+        value = low + (high - low) * i / 4
+        yy = y(value)
+        marks += f'<line x1="{x0}" y1="{yy}" x2="{x0+width}" y2="{yy}" stroke="#e3e8eb"/><text x="{x0-10}" y="{yy+4}" text-anchor="end" font-size="11">{ESC(format(value, ".4g"))}</text>'
+    points = []
+    for i, (label, value) in enumerate(zip(labels, values)):
+        xx = x0 + spacing * (i + .5)
+        points.append(f'{xx},{y(value)}')
+        if chart['type'] == 'bar':
+            top, bottom = min(y(value), y(0)), max(y(value), y(0))
+            marks += f'<rect x="{xx-spacing*.3}" y="{top}" width="{spacing*.6}" height="{max(bottom-top, .5)}" fill="#287a98"><title>{ESC(label)}: {ESC(value)} {ESC(chart["unit"])}</title></rect>'
+        else:
+            marks += f'<circle cx="{xx}" cy="{y(value)}" r="4" fill="#287a98"><title>{ESC(label)}: {ESC(value)} {ESC(chart["unit"])}</title></circle>'
+        marks += f'<text x="{xx}" y="{y0+height+23}" text-anchor="middle" font-size="10">{ESC(label)}</text>'
+    if chart['type'] == 'line':
+        marks += f'<polyline points="{" ".join(points)}" fill="none" stroke="#287a98" stroke-width="2"/>'
+    title = ESC(chart['title'])
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-labelledby="chart-title-{index} chart-desc-{index}"><title id="chart-title-{index}">{title}</title><desc id="chart-desc-{index}">Values in {ESC(chart["unit"])}. Full values are in the accompanying data table.</desc><g fill="#52616c" font-family="system-ui,sans-serif">{marks}</g></svg>'
+    citations = inline(' '.join('[' + str(i) + ']' for i in chart['sourceIds']), sources)
+    table = '<details><summary>View the data table</summary><table><thead><tr><th scope="col">Period or category</th><th scope="col">' + ESC(chart['unit']) + '</th></tr></thead><tbody>' + ''.join('<tr><th scope="row">' + ESC(label) + '</th><td>' + ESC(value) + '</td></tr>' for label, value in zip(labels, values)) + '</tbody></table></details>'
+    return f'<figure class="data-figure"><h2>{title}</h2><p class="evidence-date">Unit: {ESC(chart["unit"])} · Data period: {ESC(chart["period"])}</p>{svg}<figcaption>Source: {citations}<br>Method: {ESC(chart["method"])}</figcaption>{table}</figure>'
 
 
 def write(path, text):
@@ -143,15 +203,19 @@ def article(p, posts):
     im = p['image']
     body += f'<figure class="article-image"><img src="{safe_url(im["src"])}" alt="{ESC(im["alt"])}" width="1600" height="800" fetchpriority="high"><figcaption>Illustrative photograph by <a href="{safe_url(im["page"])}" target="_blank" rel="noopener">{ESC(im["photographer"])} on Pexels</a> · <a href="https://www.pexels.com/license/">Pexels License</a></figcaption></figure>'
     body += '<div class="reading-layout">' + toc + '<div class="prose"><div class="answer"><strong>The short answer</strong><p>' + inline(p['answer'], sources) + '</p></div>'
+    if p.get('evidenceAsOf'):
+        body += '<p class="evidence-date">Evidence checked as of ' + ESC(p['evidenceAsOf']) + '. Data periods are stated separately for each chart.</p>'
+    for i, chart in enumerate(p.get('charts', []), 1):
+        body += chart_figure(chart, sources, i)
     for i, section in enumerate(p['sections'], 1):
         body += f'<section id="section-{i}"><h2>{ESC(section["heading"])}</h2>'
         body += ''.join('<p>' + inline(text, sources) + '</p>' for text in section.get('paragraphs', []))
         if section.get('bullets'):
             body += '<ul>' + ''.join('<li>' + inline(t, sources) + '</li>' for t in section['bullets']) + '</ul>'
         body += '</section>'
-    body += '<section class="sources" id="sources"><h2>Sources & further reading</h2><ol>'
-    for i, source in enumerate(sources, 1):
-        body += f'<li id="source-{i}"><a href="{safe_url(source["url"])}" target="_blank" rel="noopener">{ESC(source["title"])}</a><br>{ESC(source["publisher"])}' + (f' · {ESC(source["date"])}' if source.get('date') else '') + '</li>'
+    body += '<section class="sources" id="sources"><h2>References</h2><ol class="references">'
+    for i, source in sorted(enumerate(sources, 1), key=lambda item: (item[1]['author'].lower(), str(item[1]['year']), item[1]['title'])):
+        body += f'<li id="source-{i}">{ESC(source["author"])} ({ESC(source["year"])}). <em>{ESC(source["title"])}</em>. {ESC(source["publisher"])}. Available at: <a href="{safe_url(source["url"])}" target="_blank" rel="noopener">{ESC(source["url"])}</a> (Accessed: {ESC(source["accessed"])}).</li>'
     body += '</ol></section><p class="editorial-note">Prepared with AI assistance. Source-backed facts are linked; practical frameworks and examples are editorial analysis. Illustrative examples are not reported research findings.</p>'
     body += f'<div class="author-box"><strong>{ESC(AUTHOR)}</strong><p>Exploring sustainable finance, logistics, research and the practical use of AI.</p><a href="/">View portfolio →</a></div></div></div></article></div>'
     related = sorted([x for x in posts if x['slug'] != p['slug']], key=lambda x: x['category'] != p['category'])[:3]
@@ -171,7 +235,7 @@ def main():
         listing([p for p in posts if p['category'] == category], category)
     for p in posts:
         article(p, posts)
-    policy = '<section class="intro"><div class="shell"><div class="eyebrow">Editorial approach</div><h1>Useful ideas, traceable evidence.</h1><div class="prose"><p>Field notes connects research and practical decisions across five topics: sustainable finance and carbon markets, logistics and supply chains, research methods, applied AI, and personal development.</p><h2>Evidence before certainty</h2><p>Articles link to original research, official documentation and institutional sources where possible. Dates, geography and limits matter. Recommendations and illustrative examples are distinguished from source findings.</p><h2>AI assistance, made visible</h2><p>AI supports research and drafting. It does not replace verification. Articles do not imply firsthand experience, independent experiments or manual author review unless these have actually taken place.</p><h2>Real photographs</h2><p>Article photographs come from Pexels, with a link to the original photo, photographer credit and license. Images illustrate the topic; they are not evidence of a specific event.</p><h2>Corrections</h2><p>If a claim or citation needs correction, <a href="/#/contact">get in touch</a>. Material updates should be recorded with an updated date.</p></div></div></section>'
+    policy = '<section class="intro"><div class="shell"><div class="eyebrow">Editorial approach</div><h1>Useful ideas, traceable evidence.</h1><div class="prose"><p>Field notes connects research and practical decisions across five topics: sustainable finance and carbon markets, logistics and supply chains, research methods, applied AI, and personal development.</p><h2>Evidence before certainty</h2><p>Articles link to original research, official documentation and institutional sources where possible. Dates, geography and limits matter. Recommendations and illustrative examples are distinguished from source findings.</p><h2>Research-led, current and measurable</h2><p>The weekly mix is one how-to and six research-led analyses when evidence permits. Analysis articles use verified numerical data, charts and accessible data tables. Observation periods are distinguished from release dates; older background sources are not presented as new developments.</p><h2>Harvard references</h2><p>Sources appear as linked author–date citations, with an alphabetical Harvard reference list. Charts identify their sources, units, data periods and calculations.</p><h2>AI assistance, made visible</h2><p>AI supports research and drafting. It does not replace verification. Articles do not imply firsthand experience, independent experiments or manual author review unless these have actually taken place.</p><h2>Real photographs</h2><p>Article photographs come from Pexels, with a link to the original photo, photographer credit and license. Images illustrate the topic; they are not evidence of a specific event.</p><h2>Corrections</h2><p>If a claim or citation needs correction, <a href="/#/contact">get in touch</a>. Material updates should be recorded with an updated date.</p></div></div></section>'
     write('/blog/editorial-policy/index.html', page('Editorial approach', 'How Field notes uses sources, AI assistance and photography.', '/blog/editorial-policy/', policy, {'@context': 'https://schema.org', '@type': 'WebPage', 'name': 'Editorial approach'}))
     paths = ['/', '/blog/', '/blog/editorial-policy/'] + ['/blog/category/' + c + '/' for c in CATEGORIES]
     sitemap = ''.join('<url><loc>' + BASE + path + '</loc></url>' for path in paths)
