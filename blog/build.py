@@ -15,7 +15,7 @@ CATEGORIES = {
     'sustainable-finance-carbon-markets': 'Sustainable finance & carbon markets',
     'logistics-supply-chain': 'Logistics & supply chain',
     'research-methods': 'Research methods',
-    'applied-ai': 'Applied AI',
+    'applied-ai': 'AI & technology',
     'personal-development': 'Personal development',
 }
 ESC = lambda s: html.escape(str(s), quote=True)
@@ -178,7 +178,7 @@ def category_nav(selected=None):
 
 def listing(posts, category=None):
     title = CATEGORIES[category] if category else 'Field notes'
-    description = 'Practical perspectives on sustainable finance, supply chains, research, applied AI and personal development.'
+    description = 'Practical perspectives on sustainable finance, supply chains, research, AI and technology and personal development.'
     path = f'/blog/category/{category}/' if category else '/blog/'
     intro = f'<section class="intro"><div class="shell"><div class="eyebrow">The blog · Ideas into practice</div><h1>{ESC(title)}</h1><p>{ESC(description)}</p>{category_nav(category)}</div></section>'
     featured = card(posts[0], True) if posts and not category else ''
@@ -235,7 +235,7 @@ def main():
         listing([p for p in posts if p['category'] == category], category)
     for p in posts:
         article(p, posts)
-    policy = '<section class="intro"><div class="shell"><div class="eyebrow">Editorial approach</div><h1>Useful ideas, traceable evidence.</h1><div class="prose"><p>Field notes connects research and practical decisions across five topics: sustainable finance and carbon markets, logistics and supply chains, research methods, applied AI, and personal development.</p><h2>Evidence before certainty</h2><p>Articles link to original research, official documentation and institutional sources where possible. Dates, geography and limits matter. Recommendations and illustrative examples are distinguished from source findings.</p><h2>Research-led, current and measurable</h2><p>The weekly mix is one how-to and six research-led analyses when evidence permits. Analysis articles use verified numerical data, charts and accessible data tables. Observation periods are distinguished from release dates; older background sources are not presented as new developments.</p><h2>Harvard references</h2><p>Sources appear as linked author–date citations, with an alphabetical Harvard reference list. Charts identify their sources, units, data periods and calculations.</p><h2>AI assistance, made visible</h2><p>AI supports research and drafting. It does not replace verification. Articles do not imply firsthand experience, independent experiments or manual author review unless these have actually taken place.</p><h2>Real photographs</h2><p>Article photographs come from Pexels, with a link to the original photo, photographer credit and license. Images illustrate the topic; they are not evidence of a specific event.</p><h2>Corrections</h2><p>If a claim or citation needs correction, <a href="/#/contact">get in touch</a>. Material updates should be recorded with an updated date.</p></div></div></section>'
+    policy = '<section class="intro"><div class="shell"><div class="eyebrow">Editorial approach</div><h1>Useful ideas, traceable evidence.</h1><div class="prose"><p>Field notes connects research and practical decisions across five topics: sustainable finance and carbon markets, logistics and supply chains, research methods, AI and technology, and personal development.</p><h2>Evidence before certainty</h2><p>Articles link to original research, official documentation and institutional sources where possible. Dates, geography and limits matter. Recommendations and illustrative examples are distinguished from source findings.</p><h2>Research-led, current and measurable</h2><p>The weekly mix is one how-to and six research-led analyses when evidence permits. Analysis articles use verified numerical data, charts and accessible data tables. Observation periods are distinguished from release dates; older background sources are not presented as new developments.</p><h2>Harvard references</h2><p>Sources appear as linked author–date citations, with an alphabetical Harvard reference list. Charts identify their sources, units, data periods and calculations.</p><h2>AI assistance, made visible</h2><p>AI supports research and drafting. It does not replace verification. Articles do not imply firsthand experience, independent experiments or manual author review unless these have actually taken place.</p><h2>Real photographs</h2><p>Article photographs come from Pexels, with a link to the original photo, photographer credit and license. Images illustrate the topic; they are not evidence of a specific event.</p><h2>Corrections</h2><p>If a claim or citation needs correction, <a href="/#/contact">get in touch</a>. Material updates should be recorded with an updated date.</p></div></div></section>'
     write('/blog/editorial-policy/index.html', page('Editorial approach', 'How Field notes uses sources, AI assistance and photography.', '/blog/editorial-policy/', policy, {'@context': 'https://schema.org', '@type': 'WebPage', 'name': 'Editorial approach'}))
     paths = ['/', '/blog/', '/blog/editorial-policy/'] + ['/blog/category/' + c + '/' for c in CATEGORIES]
     sitemap = ''.join('<url><loc>' + BASE + path + '</loc></url>' for path in paths)
