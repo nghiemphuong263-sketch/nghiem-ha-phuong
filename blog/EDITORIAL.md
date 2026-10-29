@@ -7,6 +7,8 @@ The owner authorizes public publication here and the existing Netlify site. Read
 ## Weekly mix and timing
 One English article per local date, at most one how-to per ISO week in Asia/Ho_Chi_Minh. Monday is the normal how-to slot; Tuesday–Sunday publish research-led analysis. Check existing articleType and publication dates first. The existing 29 October 2026 how-to counts for that week; do not add another. If a how-to already exists in the week, publish research analysis instead. Never fill evidence gaps to meet the schedule. The 09:00 schedule starts research; publishing follows verification and deployment.
 
+The AI & technology topic covers global AI news, model and product releases, research progress, adoption/investment data, benchmarking, policy and economic implications, as well as practical applications. Do not restrict it to tutorials or applied tools. Preserve the existing internal category ID `applied-ai` for compatibility; its public display name is AI & technology. All research, freshness, chart and Harvard rules still apply.
+
 Categories: sustainable-finance-carbon-markets; logistics-supply-chain; research-methods; applied-ai; personal-development. Rotate reasonably across all five, subject to timely evidence. Research-led personal-development pieces must use measured outcomes and credible research, not generic advice.
 
 ## Freshness and research standard
