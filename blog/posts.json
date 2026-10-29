@@ -1,1 +1,91 @@
-[]
+[
+  {
+    "slug": "verify-ai-generated-research-citations",
+    "title": "How to verify AI-generated research citations",
+    "category": "applied-ai",
+    "description": "A practical workflow for checking AI-generated citations, testing whether sources support a claim, and keeping a useful evidence record for research.",
+    "excerpt": "A reference can look convincing and still fail to support the sentence beside it. Check the source, the claim and the limits before using it.",
+    "answer": "Verify an AI-generated citation in two stages: establish that the source exists, then read the relevant passage to check that it supports the claim. Keep the original wording, location and limitations in an evidence record. A correctly formatted reference is only a starting point.",
+    "publishedAt": "2026-10-29T14:25:53+07:00",
+    "published": true,
+    "image": {
+      "src": "https://images.pexels.com/photos/5985294/pexels-photo-5985294.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "page": "https://www.pexels.com/photo/person-working-on-laptop-sitting-at-wooden-table-with-books-5985294/",
+      "photographer": "cottonbro studio",
+      "alt": "A person working at a laptop beside stacks of books on a wooden table"
+    },
+    "sections": [
+      {
+        "heading": "Why a plausible reference is not enough",
+        "paragraphs": [
+          "An AI assistant can produce a polished paragraph with author names, a journal title and a DOI. The formatting makes the paragraph easy to trust before the evidence has been checked. NIST's Generative AI Profile identifies confidently presented false content as confabulation and explicitly includes fabricated citations among the risks. [1]",
+          "For a researcher, the useful question is therefore specific: which parts of this sentence can I substantiate from a source I can actually inspect? The workflow below is a practical editorial method for answering that question. It is not a validated measurement scale or a substitute for a formal systematic review."
+        ]
+      },
+      {
+        "heading": "First, establish that the source exists",
+        "paragraphs": [
+          "Treat an AI-generated reference as a lead. Search the exact title, open the publisher's record and compare the author names, publication year and journal. If a DOI is supplied, follow it and confirm that it resolves to the same work. Do not quietly replace a missing article with a different paper that happens to have a similar title.",
+          "Crossref provides a public REST API for retrieving scholarly metadata deposited by its members and other trusted sources. It can help check bibliographic details and identify a work. That is a metadata check: it does not establish that a paper's findings are correct or that it supports your particular sentence. [2]",
+          "When a reference cannot be located, mark it as unverified and remove it from the evidence used in the draft. Asking the same assistant to reassure you that its reference is real does not provide an independent record."
+        ]
+      },
+      {
+        "heading": "Then test the claim against the passage",
+        "paragraphs": [
+          "Open the full text where available. Find the passage, table or result that is supposed to support the claim. Read the surrounding context, including the population, method and limitations. An abstract may help identify a paper, but a narrow abstract should not be stretched into a claim about results you have not read.",
+          "Break broad sentences into smaller assertions. A sentence such as 'digital traceability increases trust, reduces fraud and improves sales' contains several claims. One survey about reported trust cannot, by itself, substantiate all three. Check each assertion separately, and narrow the sentence to what the source actually examines.",
+          "Record a page, section or table identifier while reading. This small step makes later checking much easier than reopening a long document and trying to remember why it was cited."
+        ]
+      },
+      {
+        "heading": "Keep a small evidence record",
+        "paragraphs": [
+          "A spreadsheet or research notebook is enough. The purpose is to preserve the path from a sentence to its evidence, rather than to collect the largest possible bibliography. For each important claim, keep these fields:"
+        ],
+        "bullets": [
+          "Draft claim: the exact sentence you intend to write.",
+          "Source and location: the original URL or DOI, plus a page, section or table.",
+          "What the source establishes: a short note in your own words.",
+          "Limits: the sample, geography, time period, method and any uncertainty relevant to your claim.",
+          "Decision: retain, narrow, qualify, replace or remove the sentence."
+        ]
+      },
+      {
+        "heading": "An illustrative example: association versus causation",
+        "paragraphs": [
+          "Imagine a hypothetical cross-sectional survey in which respondents who report clearer product information also report greater trust. An assistant turns this into: 'Providing clearer product information causes customers to buy more.' This is an invented example for explaining the check, not a reported finding.",
+          "The rewrite changes both the relationship and the outcome. An association becomes a causal effect, and reported trust becomes actual purchasing. A defensible summary would stay close to the hypothetical evidence: 'In this survey, perceived information clarity was associated with reported trust.' Any recommendation about changing a product interface would be a proposed application, with its own assumptions.",
+          "The same discipline applies when moving from a study in one country to advice for a Vietnamese business. Explain why the mechanism may be relevant, then state what still needs local testing."
+        ]
+      },
+      {
+        "heading": "Give AI a bounded role in the workflow",
+        "paragraphs": [
+          "Useful tasks include suggesting search terms, comparing passages you provide and flagging sentences that seem broader than their cited evidence. Ask for uncertainty to be retained. Avoid asking a model to fill a source gap with a confident explanation.",
+          "UNESCO's guidance on generative AI in education and research emphasizes a human-centred approach and attention to privacy. For this workflow, that means retaining responsibility for the final interpretation and considering what material you are permitted to upload to a tool. [3]",
+          "Before submitting a draft, take one paragraph and trace every substantive claim back to its source. If a reader could repeat that check without asking you what you meant, the evidence record is doing its job."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
+        "publisher": "National Institute of Standards and Technology",
+        "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+        "date": "July 2024 · section 2.2"
+      },
+      {
+        "title": "REST API",
+        "publisher": "Crossref",
+        "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+      },
+      {
+        "title": "Guidance for generative AI in education and research",
+        "publisher": "UNESCO",
+        "url": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
+        "date": "2023"
+      }
+    ]
+  }
+]
