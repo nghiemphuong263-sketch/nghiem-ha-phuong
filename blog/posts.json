@@ -73,19 +73,33 @@
         "title": "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile",
         "publisher": "National Institute of Standards and Technology",
         "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
-        "date": "July 2024 · section 2.2"
+        "date": "July 2024 · section 2.2",
+        "accessed": "29 October 2026",
+        "author": "Autio, C., Schwartz, R., Dunietz, J., Jain, S., Stanley, M., Tabassi, E., Hall, P. and Roberts, K.",
+        "citeAuthor": "Autio et al.",
+        "year": "2024"
       },
       {
         "title": "REST API",
         "publisher": "Crossref",
-        "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/"
+        "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+        "accessed": "29 October 2026",
+        "author": "Crossref",
+        "citeAuthor": "Crossref",
+        "year": "n.d."
       },
       {
         "title": "Guidance for generative AI in education and research",
         "publisher": "UNESCO",
         "url": "https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research",
-        "date": "2023"
+        "date": "2023",
+        "accessed": "29 October 2026",
+        "author": "Miao, F. and Holmes, W.",
+        "citeAuthor": "Miao and Holmes",
+        "year": "2023"
       }
-    ]
+    ],
+    "articleType": "how-to",
+    "updatedAt": "2026-10-29T07:37:56.825Z"
   }
 ]
