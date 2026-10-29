@@ -74,6 +74,12 @@
 .project-thumb{background:#f1f5f5;padding:12px;display:grid;place-items:center}.project-thumb img{object-fit:contain;width:100%;height:100%;min-height:0}.project-card:hover .project-thumb img{transform:none}.dashboard-thumb{background:#fff;padding:4px}.hero-project-image img{aspect-ratio:auto;height:auto;object-fit:contain}.image-open-link{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--blue)}.evidence-note{font-size:13px;color:var(--slate)}.project-card{display:block}.project-card:focus-visible{outline:3px solid var(--blue);outline-offset:4px}.hero-project-image a{display:block}
 
 .case-status{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);background:#e5eff2;padding:8px 12px;border-radius:8px;margin-bottom:0}.case-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:14px;background:#fff}.case-table{width:100%;border-collapse:collapse;font-size:14px;text-align:left;min-width:620px}.case-table th{background:#edf4f6;color:var(--navy);font-size:12px;padding:17px 20px;vertical-align:top}.case-table td{padding:20px;vertical-align:top;border-top:1px solid var(--border);line-height:1.75;color:#45525d}.case-table td:first-child{width:23%;font-weight:700;color:var(--ink)}.case-table td:nth-child(2){width:34%}.analysis-reading{max-width:850px}.analysis-part+ .analysis-part{margin-top:54px;padding-top:44px;border-top:1px solid var(--border)}.analysis-part h2{font-size:31px;line-height:1.3;max-width:760px}.analysis-part p{font-size:17px;line-height:1.95;color:#45525d}.case-boundary{border-left:3px solid var(--blue);padding:22px 28px;background:#eaf2f4;border-radius:0 12px 12px 0;max-width:950px}.case-boundary h3{font-size:19px}.case-boundary p{font-size:14px;line-height:1.85;color:#45525d;margin:0}@media(max-width:720px){.analysis-part h2{font-size:25px}.analysis-part p{font-size:16px}.case-table th,.case-table td{padding:14px}.case-boundary{padding:20px}}
+
+#certificate-viewer{width:min(1100px,96vw);max-height:94vh;padding:18px;border:1px solid var(--border);border-radius:14px;background:#fff;color:var(--ink)}
+#certificate-viewer::backdrop{background:rgba(15,25,35,.78)}
+.certificate-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.certificate-toolbar button{border:1px solid var(--border);border-radius:8px;background:var(--ivory);padding:8px 14px;cursor:pointer;flex-shrink:0}
+#certificate-viewer img{display:block;max-width:100%;height:auto;margin:auto}
 </style>
 </head>
 <body>
@@ -1989,7 +1995,7 @@ function home(){
    <div class="section-head"><div><div class="eyebrow">Recognition & credentials</div><h2>Learning put to the test.</h2><p>Academic research, business cases, and analytics competitions, alongside continued professional learning.</p></div><a class="text-link" href="https://www.linkedin.com/in/nghiemphuong/" target="_blank" rel="noopener">View LinkedIn ↗</a></div>
    <div class="recognition-summary"><span><b>${awards.length}</b> competition recognitions</span><span><b>4.0 / 4.0</b> GPA</span><span>Research · Strategy · Analytics</span></div>
    <div class="awards-grid">${awards.filter(a=>!["Top 10","Top 15"].includes(a[0])).map(awardCard).join("")}</div><div class="recognition-shortlist">${awards.filter(a=>["Top 10","Top 15"].includes(a[0])).map(awardCard).join("")}</div>
-   <div class="credentials"><div><div class="eyebrow">Continued learning</div><h3>Professional credentials</h3></div><div class="cert-grid">${certs.map(c=>`<a class="cert-card" href="${drive(c.id)}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="${c.image}" alt="${c.title} certificate"><div class="cert-body"><strong>${c.title}</strong><span>${c.issuer}</span><span class="text-link" style="display:block;margin-top:8px">View certificate ↗</span></div></a>`).join("")}</div></div>
+   <div class="credentials"><div><div class="eyebrow">Continued learning</div><h3>Professional credentials</h3></div><div class="cert-grid">${certs.map(c=>`<a class="cert-card" href="${drive(c.id)}" data-certificate-src="${c.image}" data-certificate-title="${c.title}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="${c.image}" alt="${c.title} certificate"><div class="cert-body"><strong>${c.title}</strong><span>${c.issuer}</span><span class="text-link" style="display:block;margin-top:8px">View certificate ↗</span></div></a>`).join("")}</div></div>
  </div></section>
 
 
@@ -2041,6 +2047,32 @@ function projectDetail(p){
  ${p.contribution?`<section class="case-section white"><div class="shell case-grid"><div><div class="case-index">05 · MY CONTRIBUTION</div><h3>What I was responsible for</h3></div><div class="case-copy"><p>${p.contribution}</p></div></div></section>`:""}
  ${!p.analysisSections&&p.learned?.length?`<section class="case-section"><div class="shell case-grid"><div><div class="case-index">06 · REFLECTION</div><h3>What I learned</h3></div><div class="case-copy"><div class="learning"><h3>Beyond the final deliverable</h3>${p.learned.map(x=>`<p>${x}</p>`).join("")}</div></div></div></section>`:""}<section class="case-section"><div class="shell"><p class="evidence-note">${p.evidenceNote||""}</p><div class="detail-nav"><button data-project="${prev.slug}">← ${prev.title}</button><button data-route="${researchProjects.includes(p)?'#/':'#/projects'}">${researchProjects.includes(p)?'Home':'All projects'}</button><button data-project="${next.slug}">${next.title} →</button></div></div></section>`;
 }
+
+function openCertificate(src,title){
+ let viewer=document.getElementById('certificate-viewer');
+ if(!viewer){
+  viewer=document.createElement('dialog');
+  viewer.id='certificate-viewer';
+  viewer.setAttribute('aria-label','Certificate preview');
+  viewer.innerHTML='<div class="certificate-toolbar"><strong id="certificate-title"></strong><button type="button" aria-label="Close certificate">Close ×</button></div><img alt="">';
+  document.body.appendChild(viewer);
+  viewer.querySelector('button').onclick=()=>viewer.close();
+  viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close()});
+ }
+ viewer.querySelector('strong').textContent=title||'Certificate';
+ viewer.querySelector('img').src=src;
+ viewer.querySelector('img').alt=title||'Certificate';
+ viewer.showModal();
+}
+document.addEventListener('click',event=>{
+ const link=event.target.closest('a');
+ if(!link)return;
+ const src=link.dataset.certificateSrc||link.getAttribute('href');
+ if(!src||!src.startsWith('data:image/'))return;
+ event.preventDefault();
+ openCertificate(src,link.dataset.certificateTitle||link.querySelector('img')?.alt||'Certificate');
+});
+
 function setActive(section){
  document.querySelectorAll("[data-nav]").forEach(x=>x.classList.toggle("active",x.dataset.nav===section));
 }
