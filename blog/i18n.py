@@ -69,7 +69,12 @@ def build(root,base):
   p=Localizer(d,base);p.feed(en)
   dest=root/'vi'/f.relative_to(root);dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(''.join(p.out))
  # The portfolio is rendered by the same router and dictionary, including dialogs.
- en=(root/'index.html').read_text();vi=en.replace('<html lang="en">','<html lang="vi">')
+ import hashlib
+ version=hashlib.sha256((root/'assets/i18n-vi.json').read_bytes()).hexdigest()[:12]
+ en=(root/'index.html').read_text()
+ en=re.sub(r'/assets/i18n-vi\.js(?:\?v=[^\"]*)?', '/assets/i18n-vi.js?v='+version, en)
+ (root/'index.html').write_text(en)
+ vi=en.replace('<html lang="en">','<html lang="vi">')
  vi=vi.replace('<head>','<head><base href="/">')
  vi=vi.replace('<title>Nghiêm Hà Phương | Sustainable Finance, Logistics &amp; Operations</title>','<title>'+d.get('Nghiêm Hà Phương | Sustainable Finance, Logistics & Operations','')+'</title>')
  for s in ['Nghiêm Hà Phương | Sustainable Finance, Logistics & Operations','Portfolio of Nghiêm Hà Phương — sustainable finance, carbon markets, logistics, international trade, and operations analysis.']:vi=vi.replace(s,d[s])
