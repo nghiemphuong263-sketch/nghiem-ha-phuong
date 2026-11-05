@@ -251,5 +251,129 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "climate-finance-emissions-gap-2026",
+    "title": "Climate finance needs an emissions test",
+    "category": "sustainable-finance-carbon-markets",
+    "description": "The 2026 UNEP emissions gap, WMO atmospheric observations and World Bank carbon-pricing data show why finance needs a test of delivered emissions cuts.",
+    "excerpt": "Carbon pricing can raise revenue while climate targets remain out of reach. Recent UN evidence makes the case for measuring what finance changes on the ground.",
+    "answer": "Climate finance should be assessed against delivered emissions outcomes as well as money raised. UNEP's October 2026 assessment puts the 2035 reduction under full national pledges at 11–15%, compared with 45% on its lowest-possible-overshoot pathway, all relative to 2025. The resulting 30–34 percentage-point gap is an ambition gap under a modelled comparison, not a dollar estimate of missing finance. [1]",
+    "publishedAt": "2026-11-05T15:17:25+07:00",
+    "published": true,
+    "articleType": "research",
+    "evidenceAsOf": "2026-11-05",
+    "image": {
+      "src": "https://images.pexels.com/photos/6876536/pexels-photo-6876536.jpeg?auto=compress&dpr=1&h=750&w=1260",
+      "page": "https://www.pexels.com/photo/solar-panels-on-green-grass-field-under-the-blue-sky-6876536/",
+      "photographer": "Quang Nguyen Vinh",
+      "alt": "Rows of blue solar panels under a bright sky; illustrative stock photography, not a project evaluated in this article",
+      "license": "https://www.pexels.com/license/"
+    },
+    "sections": [
+      {
+        "heading": "A recent climate assessment changes the question",
+        "paragraphs": [
+          "UNEP's 21 October release presents a pathway that seeks to limit the size and duration of warming above 1.5°C and return to that level by 2100, with about a 50% chance. Its figures are conditional model results, not a prediction that countries will deliver those cuts. [1]",
+          "For climate finance, this raises a practical question: which evidence would show that a larger financial system is producing a smaller emissions problem? Counting funds, policies and projects answers part of it. Those measures describe activity. An outcome assessment must also examine what changed, when it changed and what would probably have happened without the intervention.",
+          "The distinction matters when a strong financial headline becomes shorthand for climate success. This article compares three different kinds of evidence. They cannot be combined into one score, but they can help expose the questions a score might conceal."
+        ]
+      },
+      {
+        "heading": "The 2035 comparison: a shared baseline makes the gap visible",
+        "paragraphs": [
+          "Figure 1 reproduces UNEP's 2035 benchmarks using the same 2025 baseline. Subtracting the pledge range from the pathway reduction gives 45 − 15 = 30 and 45 − 11 = 34 percentage points. The bars show range endpoints; they are not separate forecasts with assigned probabilities. [1]",
+          "This calculation describes a difference in ambition even if the pledges are fully implemented. It does not quantify the separate risk that implementation falls short. A plan can therefore be insufficient on paper and still face further delivery problems.",
+          "Nor does the gap identify a financing bill. Translating percentage points into money would require emissions quantities, sectoral options, timing and costs. Different interventions could deliver different reductions at different prices. Presenting the chart as proof of a particular funding requirement would go beyond its evidence."
+        ]
+      },
+      {
+        "heading": "Atmospheric observations are a different kind of check",
+        "paragraphs": [
+          "WMO's bulletin, published on 27 October, reports a globally averaged surface CO2 concentration of 426.8 ± 0.2 parts per million for 2025, a record in its analysis. This is an observation of atmospheric concentration, not the annual emissions total or a measurement of 2026 project performance. [2]",
+          "The distinction prevents two opposite mistakes. Rising concentration does not by itself prove that a particular funded project failed. Equally, a successful project does not establish that the global transition is proceeding fast enough. Project accounting and the atmospheric record operate at different scales.",
+          "I would use these observations as a reminder to keep financial claims tied to physical outcomes. A portfolio may expand its clean-energy holdings while its wider exposure to emissions also grows. Evaluating both sides would require a consistent boundary and a clear explanation of what is included."
+        ]
+      },
+      {
+        "heading": "Revenue is evidence of a financial mechanism, not its final effect",
+        "paragraphs": [
+          "The World Bank's 19 May 2026 release reports more than US$107 billion of carbon-pricing revenue in 2025 and direct pricing coverage of just over 29% of global greenhouse gas emissions. These are older background figures, not a November policy update. They describe revenue and coverage, rather than emissions avoided because of pricing. [3]",
+          "A higher revenue total can have several interpretations. It may reflect a higher price, broader coverage, or a larger taxable emissions base. The number alone cannot identify their contributions. It also does not show how much revenue was spent on climate measures or how effective that spending was.",
+          "The same caution applies to coverage. Being subject to a price is different from reducing emissions in response to it. An outcome evaluation would need to examine the policy design, the response over time and credible alternative explanations. The World Bank figures establish scale; they do not supply that causal evaluation."
+        ]
+      },
+      {
+        "heading": "Three tests for a stronger climate-finance claim",
+        "paragraphs": [
+          "First, define the physical outcome. For a hypothetical factory-efficiency project, that could mean measured energy use and emissions within a stated production boundary. If output changes, reporting only the total could hide whether the process became more efficient. Reporting only intensity could hide growth in the total. Both may be relevant.",
+          "Second, explain the comparison. A projected reduction needs an explicit baseline and assumptions about what would otherwise occur. If the baseline is generous, a project can appear more effective without changing its actual operation. An assessment should make that sensitivity visible rather than burying it in a single headline estimate.",
+          "Third, match the evidence to the claim being made. Evidence of a loan disbursement supports a financing claim. Evidence of equipment installation supports an implementation claim. Evidence of sustained operation and a defensible comparison is needed for a stronger emissions claim. Progress at one stage should not silently stand in for completion of the next.",
+          "These tests are an analytical framework proposed here, not findings that any named project or institution has failed. They also apply when evaluating credit-based revenue: financial receipts and the underlying emissions claim need separate scrutiny."
+        ]
+      },
+      {
+        "heading": "What the evidence can support now",
+        "paragraphs": [
+          "For a business preparing a transition proposal, I would ask for a dated chain of evidence from expenditure to installation, operation and measured results. The proposal should state what remains estimated and who is responsible for checking it. That makes uncertainty reviewable without pretending that every outcome can be known in advance.",
+          "The broader conclusion is that financing scale and climate effectiveness should be reported together. Revenue and coverage describe the reach of a mechanism; a modelled pathway describes a conditional destination; atmospheric measurements describe the physical system. Their value lies in answering different questions clearly.",
+          "This is secondary analysis of published institutional evidence. It does not estimate a project return, recommend an investment or claim that finance alone explains the emissions gap. The next useful evidence would show which interventions produced sustained reductions, at what cost, and under which conditions."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "author": "United Nations Environment Programme",
+        "citeAuthor": "UNEP",
+        "year": "2026",
+        "title": "New UNEP report lays out emission cuts needed for return to 1.5°C",
+        "publisher": "UNEP",
+        "url": "https://www.unep.org/en/news-and-stories/press-release/new-unep-report-lays-out-emission-cuts-needed-return-15degc",
+        "accessed": "5 November 2026",
+        "date": "21 October 2026; institutional summary of the Emissions Gap Report 2026"
+      },
+      {
+        "author": "World Meteorological Organization",
+        "citeAuthor": "WMO",
+        "year": "2026",
+        "title": "WMO Greenhouse Gas Bulletin – No. 22",
+        "publisher": "WMO",
+        "url": "https://public.wmo.int/resources/publication-series/greenhouse-gas-bulletin/no-22",
+        "accessed": "5 November 2026",
+        "date": "27 October 2026; publication-page summary of 2025 observations"
+      },
+      {
+        "author": "World Bank",
+        "citeAuthor": "World Bank",
+        "year": "2026",
+        "title": "Direct carbon pricing covers nearly one third of global emissions",
+        "publisher": "World Bank",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/05/19/direct-carbon-pricing-covers-nearly-one-third-of-global-emissions",
+        "accessed": "5 November 2026",
+        "date": "19 May 2026; background release"
+      }
+    ],
+    "charts": [
+      {
+        "type": "bar",
+        "title": "Figure 1. Global emissions-reduction benchmarks for 2035",
+        "unit": "Percent below 2025 global GHG emissions",
+        "period": "Modelled 2035 outcomes relative to 2025; UNEP release 21 October 2026",
+        "method": "Published percentages reproduced from UNEP's institutional report summary. NDC low/high are endpoints of the 11–15% reduction range under full national pledges, not observed outcomes or separate probability-weighted scenarios. Pathway is the 45% cut in the lowest-possible 1.5°C overshoot scenario. Difference: 45−15 to 45−11 = 30–34 percentage points. No dollar funding gap is inferred.",
+        "sourceIds": [
+          1
+        ],
+        "labels": [
+          "NDC: low",
+          "NDC: high",
+          "Pathway"
+        ],
+        "values": [
+          11,
+          15,
+          45
+        ]
+      }
+    ]
   }
 ]
