@@ -248,6 +248,8 @@ def main():
     from email.utils import format_datetime
     items = ''.join('<item><title>' + ESC(p['title']) + '</title><link>' + BASE + '/blog/' + p['slug'] + '/</link><guid isPermaLink="true">' + BASE + '/blog/' + p['slug'] + '/</guid><description>' + ESC(p['excerpt']) + '</description><pubDate>' + format_datetime(datetime.fromisoformat(p['publishedAt'])) + '</pubDate></item>' for p in posts)
     write('/blog/feed.xml', '<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>' + ESC(AUTHOR) + ' — Field notes</title><link>' + BASE + '/blog/</link><description>Research, systems and practical decisions.</description><language>en</language>' + items + '</channel></rss>')
+    from i18n import build as build_languages
+    build_languages(ROOT, BASE)
     print(f'Built {len(posts)} articles, 5 topic pages, sitemap and RSS feed.')
 
 
