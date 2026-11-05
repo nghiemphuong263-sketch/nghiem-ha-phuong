@@ -105,6 +105,8 @@ CSS += '''
 '''
 
 
+CSS += "\n/* Blog index: full-width lead story and compact article rows. */\n.listing-page .intro{padding:50px 0 24px}\n.listing-page .intro-heading{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end}\n.listing-page h1{margin:12px 0 0;font-size:clamp(42px,5.5vw,72px)}\n.listing-page .intro-heading p{margin:0 0 4px;max-width:470px;font-size:15px;line-height:1.8}\n.listing-page .browse-tools{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:32px;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}\n.listing-page .category-nav{margin:0;gap:8px}\n.listing-page .category-nav a{font-size:11px;padding:7px 11px}\n.listing-page .search-wrap{flex:0 0 190px}\n.listing-page #search{width:100%;margin:0;padding:9px 12px;font-size:12px;border-radius:4px}\n.listing-page .featured{display:block;border:0;border-radius:0;background:transparent;margin:8px 0 40px}\n.listing-page .featured>a{display:block;overflow:hidden;border-radius:6px}\n.listing-page .featured img{width:100%;height:auto;aspect-ratio:21/9;max-height:440px;object-fit:cover}\n.listing-page .featured .card-copy{padding:24px 0 30px;border-bottom:1px solid var(--border);display:block}\n.listing-page .featured h2{max-width:860px;margin:12px 0;font-size:clamp(28px,3.5vw,43px);line-height:1.22}\n.listing-page .featured .card-copy p{max-width:780px;font-size:15px;margin-bottom:14px}\n.listing-page .featured .read{display:inline-block;margin-top:16px}\n.listing-page .article-grid{display:block;margin-bottom:64px}\n.listing-page .article-card{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:48px;align-items:center;border:0;border-bottom:1px solid var(--border);border-radius:0;background:transparent;padding:28px 0}\n.listing-page .article-card>a{grid-column:2;grid-row:1;display:block;border-radius:4px}\n.listing-page .article-card img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}\n.listing-page .article-card .card-copy{grid-column:1;grid-row:1;display:block;padding:0;max-width:700px}\n.listing-page .article-card h2{font-size:27px;margin:10px 0;line-height:1.3}\n.listing-page .article-card .card-copy p{margin-bottom:12px}\n.listing-page .article-card .read{display:inline-block;margin-top:12px}\n.listing-page #no-results{padding:30px 0 64px}\n@media(max-width:1050px){.listing-page .browse-tools{align-items:flex-start}.listing-page .category-nav{flex:1}.listing-page .intro-heading{gap:36px}.listing-page .article-card{gap:28px;grid-template-columns:minmax(0,1fr) 240px}}\n@media(max-width:640px){.listing-page .intro{padding-top:32px}.listing-page .intro-heading{grid-template-columns:1fr;gap:16px}.listing-page .intro-heading p{font-size:14px}.listing-page .browse-tools{flex-direction:column;gap:16px;margin-top:24px;padding:16px 0}.listing-page .search-wrap{flex:auto;width:100%}.listing-page .featured img{aspect-ratio:16/10;max-height:none}.listing-page .featured .card-copy{padding-top:20px}.listing-page .featured h2{font-size:30px}.listing-page .article-card{grid-template-columns:1fr;gap:20px;padding:24px 0}.listing-page .article-card>a{grid-column:1;grid-row:1}.listing-page .article-card .card-copy{grid-column:1;grid-row:2}.listing-page .article-card h2{font-size:25px}}\n"
+
 def chart_figure(chart, sources, index):
     values, labels = chart['values'], chart['labels']
     low, high = min(0, min(values)), max(0, max(values))
@@ -178,20 +180,21 @@ def category_nav(selected=None):
 
 def listing(posts, category=None):
     title = CATEGORIES[category] if category else 'Field notes'
-    description = 'Practical perspectives on sustainable finance, supply chains, research, AI and technology and personal development.'
+    description = 'Research and perspectives on finance, supply chains, AI and technology, research methods, and personal development.'
     path = f'/blog/category/{category}/' if category else '/blog/'
-    intro = f'<section class="intro"><div class="shell"><div class="eyebrow">The blog · Ideas into practice</div><h1>{ESC(title)}</h1><p>{ESC(description)}</p>{category_nav(category)}</div></section>'
+    intro = f'<section class="intro"><div class="shell"><div class="intro-heading"><div><div class="eyebrow">The blog · Ideas into practice</div><h1>{ESC(title)}</h1></div><p>{ESC(description)}</p></div><div class="browse-tools">{category_nav(category)}<div class="search-wrap"><label class="skip" for="search">Search articles</label><input type="search" id="search" placeholder="Search articles…" aria-label="Search articles"></div></div></div></section>'
     featured = card(posts[0], True) if posts and not category else ''
     rest = posts[1:] if featured else posts
     content = f'<div class="shell">{featured}'
     if rest:
-        content += '<label class="skip" for="search">Search articles</label><input type="search" id="search" placeholder="Search articles on this page…"><div class="article-grid">' + ''.join(card(p) for p in rest) + '</div><p id="no-results" class="hidden">No matching articles.</p>'
-        content += '''<script>document.getElementById('search').addEventListener('input',function(){let visible=0;document.querySelectorAll('[data-search]').forEach(card=>{if(card.classList.contains('featured'))return;const match=card.dataset.search.includes(this.value.toLowerCase().trim());card.classList.toggle('hidden',!match);if(match)visible++});document.getElementById('no-results').classList.toggle('hidden',visible>0)});</script>'''
-    elif not posts:
+        content += '<div class="article-grid">' + ''.join(card(p) for p in rest) + '</div>'
+    if not posts:
         content += '<div class="empty"><h2>A space for the next question.</h2><p>Articles in this topic will appear here as they are published. Explore the other topics in the meantime.</p><a href="/blog/">Browse all articles →</a></div>'
-    content += '</div>'
+    content += '<p id="no-results" class="hidden" role="status">No matching articles.</p></div>'
+    content += """<script>document.getElementById('search').addEventListener('input',function(){let visible=0;document.querySelectorAll('.listing-page [data-search]').forEach(card=>{const match=card.dataset.search.includes(this.value.toLowerCase().trim());card.classList.toggle('hidden',!match);if(match)visible++});document.getElementById('no-results').classList.toggle('hidden',visible>0)});</script>"""
     schema = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': title, 'url': BASE + path, 'description': description, 'mainEntity': {'@type': 'ItemList', 'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': BASE + '/blog/' + p['slug'] + '/', 'name': p['title']} for i, p in enumerate(posts)]}}
-    write(path + 'index.html', page(title, description, path, intro + content, schema, posts[0]['image']['src'] if posts else None))
+    body = '<div class="listing-page">' + intro + content + '</div>'
+    write(path + 'index.html', page(title, description, path, body, schema, posts[0]['image']['src'] if posts else None))
 
 
 def article(p, posts):
