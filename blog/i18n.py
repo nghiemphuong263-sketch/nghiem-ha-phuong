@@ -18,7 +18,7 @@ class Localizer(HTMLParser):
   core=s.strip();return s.replace(core,self.d.get(core,core)) if core else s
  def url(self,s):
   if s.startswith(self.base+'/') and not s.startswith(self.base+'/vi/'):return self.base+'/vi/'+s[len(self.base)+1:]
-  if s=='/' or s.startswith('/blog/'):return '/vi'+s
+  if s=='/' or s.startswith('/#') or s.startswith('/blog/'):return '/vi'+s
   return s
  def handle_decl(self,s):self.out.append('<!'+s+'>')
  def handle_starttag(self,tag,attrs):
