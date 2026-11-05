@@ -54,6 +54,12 @@ class Localizer(HTMLParser):
 
 def build(root,base):
  d=json.loads((root/'assets/i18n-vi.json').read_text())
+ # Fail the build if a new article is missing its essential Vietnamese content.
+ for post in json.loads((root/'blog/posts.json').read_text()):
+  if post.get('published',True) is False:continue
+  required=[post[k] for k in ('title','description','excerpt')]+[post['image']['alt']]+[section['heading'] for section in post['sections']]
+  missing=[text for text in required if text not in d or d[text]==text]
+  if missing:raise ValueError('Missing Vietnamese translations for '+post['slug']+': '+repr(missing))
  (root/'assets/i18n-vi.js').write_text('window.SITE_VI='+json.dumps(d,ensure_ascii=False)+';\n')
  for f in sorted((root/'blog').rglob('index.html')):
   path='/'+str(f.relative_to(root).parent)+'/'
