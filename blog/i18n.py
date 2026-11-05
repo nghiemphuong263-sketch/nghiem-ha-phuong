@@ -38,7 +38,12 @@ class Localizer(HTMLParser):
   if tag=='a' and dict(attrs).get('lang')=='vi':result.append('aria-current="true"')
   self.out.append('<'+tag+(' '+' '.join(result) if result else '')+'>')
   if tag in ('script','style'):self.raw='schema' if is_schema else tag
- def handle_startendtag(self,t,a):self.handle_starttag(t,a)
+ def handle_startendtag(self,t,a):
+  # SVG shapes are not HTML void elements. Keep their closing tags so the
+  # browser does not nest later chart marks inside a line or rectangle.
+  self.handle_starttag(t,a)
+  if t not in {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}:
+   self.handle_endtag(t)
  def handle_endtag(self,t):self.out.append('</'+t+'>');self.raw=None if t in ('script','style') else self.raw
  def handle_data(self,s):
   if self.raw=='schema':
