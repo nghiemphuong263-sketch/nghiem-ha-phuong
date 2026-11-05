@@ -101,5 +101,155 @@
     ],
     "articleType": "how-to",
     "updatedAt": "2026-10-29T07:37:56.825Z"
+  },
+  {
+    "slug": "air-cargo-peak-season-rates-capacity-2026",
+    "title": "Why air cargo rates can rise while volumes fall",
+    "category": "logistics-supply-chain",
+    "description": "November 2026 analysis of IATA and WorldACD data: regional capacity pressure, diverging Asia routes and what peak-season rates mean for shippers.",
+    "excerpt": "October spot rates rose even as weekly cargo volumes fell. September airline data help explain why a global demand headline is a weak guide to booking space.",
+    "answer": "Air cargo prices reflect the availability and cost of usable capacity on a specific route, not just total shipment volumes. WorldACD's latest weekly release shows rising rates alongside falling tonnages. Regional airline data also show uneven capacity pressure. These observations support closer route-level planning; they do not establish a single cause for price increases. [3]",
+    "publishedAt": "2026-11-05T14:44:06+07:00",
+    "published": true,
+    "articleType": "research",
+    "evidenceAsOf": "2026-11-05",
+    "image": {
+      "src": "https://images.pexels.com/photos/9749472/pexels-photo-9749472.jpeg?auto=compress&dpr=1&h=750&w=1260",
+      "page": "https://www.pexels.com/photo/boxes-being-loaded-onto-an-airplane-9749472/",
+      "photographer": "Ethan Nguyen",
+      "alt": "Pallets of boxed cargo beside a loader at an aircraft cargo door; an illustrative stock photograph, not the reported 2026 events",
+      "license": "https://www.pexels.com/license/"
+    },
+    "sections": [
+      {
+        "heading": "The November question: is softer volume making freight cheaper?",
+        "paragraphs": [
+          "WorldACD's release dated 2 November reports that global spot rates increased 5% week on week in week 43, while tonnages fell 2%. The observation window is 19–25 October 2026, not the first week of November. It is a recent publication about an earlier trading period. [3]",
+          "For a shipper preparing a time-sensitive order, the question is whether a weaker volume headline creates room to negotiate. My reading is that it provides too little information on its own. The relevant constraint is the space that can carry a particular shipment, on the required departure, with an acceptable connection and arrival date. A market can become quieter in aggregate while the service a customer needs remains expensive.",
+          "This article combines a monthly structural view with a weekly pricing check. It does not forecast an individual airline's next quotation or claim access to live booking inventory."
+        ]
+      },
+      {
+        "heading": "September shows where utilization tightened",
+        "paragraphs": [
+          "IATA's 29 October release reports September cargo traffic growth of 7.7% year on year against capacity growth of 2.7%. Those measures are cargo tonne-kilometres and available cargo tonne-kilometres respectively: distance-weighted traffic and capacity, rather than simple shipment counts. [1]",
+          "The accompanying analysis records a global cargo load factor of 47.9%, up 2.2 percentage points. Figure 1 shows the regional changes. These are airline groups classified by registration, not the origins of all shipments leaving each region. [2]",
+          "An increase in utilization can indicate that demand has absorbed capacity faster than it has been added. It does not measure the probability that tomorrow's shipment will be rolled. Aircraft schedules, direction of travel and the suitability of available space still matter. Treat this chart as a prompt for more detailed investigation, rather than a league table of which destination is hardest to serve.",
+          "A year-on-year improvement also differs from an absolute level. A group starting from lower utilization can show a large increase and still have a lower final load factor. Comparing only the change would hide that distinction."
+        ]
+      },
+      {
+        "heading": "The weekly rate check gives a different operational signal",
+        "paragraphs": [
+          "WorldACD reports week-43 Asia Pacific spot averages of US$7.43 per kg to the US and US$5.10 per kg to Europe, shown in Figure 2. The difference is US$2.33 per kg. Meanwhile, its Asia Pacific-to-EU chargeable weight was down 16% year on year, compared with growth of 9% to the US. [3]",
+          "The rate comparison uses Europe; the volume comparison uses the EU. Those geographic labels must remain separate. The published averages are also market observations, not offers for an identical commodity, airport pair or service commitment.",
+          "The pricing spread is therefore a reason to question assumptions about interchangeable capacity. It is not evidence that a shipper could save exactly US$2.33 per kg by choosing another destination. A valid comparison would hold the shipment and delivery requirement constant, then evaluate feasible routings to the same destination.",
+          "Falling weekly volumes and rising weekly rates can coexist for several reasons: changes in the mix of shipments, concentration on particular departures, or changes in operating costs. These are possible mechanisms, not effects isolated by the two reports. Neither dataset supplies a controlled test that separates them."
+        ]
+      },
+      {
+        "heading": "Why stronger revenue does not establish stronger margins",
+        "paragraphs": [
+          "IATA's September analysis records jet fuel prices 103.4% above their year-earlier level, while cargo yields increased 25.9%. These are changes in different price measures, not a calculation of airline profit. [2]",
+          "A common analytical mistake would be to subtract those percentages and call the result a margin decline. That would require fuel's share of costs, the revenue base and changes in other expenses. A carrier's hedging, network and customer mix would also affect the result.",
+          "For procurement, I would separate a quote into the base rate, applicable surcharges and service conditions before comparing alternatives. This is a proposed decision framework, not a finding that a specific supplier is overcharging. The cost of an unreliable connection could outweigh a small saving in the quoted transport rate."
+        ]
+      },
+      {
+        "heading": "What I would test before committing peak-season capacity",
+        "paragraphs": [
+          "For a Vietnam-based exporter, the useful next step is a shipment-level comparison. Define the latest acceptable arrival, cargo readiness, dimensions and handling requirements. Ask which departures are actually confirmed and which remain subject to space. A regional growth rate cannot answer those questions.",
+          "I would compare a flexible booking option with any fixed allocation using the same expected shipment profile. Record the total quoted cost and what happens if cargo is late, resized or cancelled. The preferred option should follow from the delivery requirement and the commercial terms, not from an assumption that every growing market needs a larger fixed commitment.",
+          "Track the subsequent outcome: quoted versus paid cost, confirmed versus flown departure, and promised versus actual arrival. That creates a local evidence base for the next booking decision. It also gives a way to challenge this article's interpretation if market pressure does not appear in the routes being used."
+        ]
+      },
+      {
+        "heading": "Method and limits",
+        "paragraphs": [
+          "The charts reproduce published observations without seasonal adjustment or extrapolation. Figure 1 uses IATA's September year-on-year load-factor changes; Figure 2 uses WorldACD's week-43 spot averages. The US–Europe rate spread is calculated as 7.43 − 5.10 = US$2.33 per kg. The monthly and weekly series are not joined into a trend.",
+          "The sources measure different populations and units. IATA describes scheduled airline traffic and capacity; WorldACD reports transaction-based market trends. Their results offer complementary views rather than independent estimates of the same variable. Publication lag, shipment mix and aggregation limit what can be inferred about a current quotation.",
+          "The strongest conclusion is a decision rule: check the relevant route and service before translating a global demand story into a purchasing decision. Any claim about future prices needs fresher evidence than these observations provide."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "author": "International Air Transport Association",
+        "citeAuthor": "IATA",
+        "year": "2026a",
+        "title": "Air cargo demand accelerates in September, up 7.7%",
+        "publisher": "IATA",
+        "url": "https://www.iata.org/en/pressroom/2026-releases/10-29-air-cargo-demand-accelerates-september/",
+        "accessed": "5 November 2026",
+        "date": "29 October 2026"
+      },
+      {
+        "author": "International Air Transport Association",
+        "citeAuthor": "IATA",
+        "year": "2026b",
+        "title": "Air cargo market analysis: September 2026",
+        "publisher": "IATA",
+        "url": "https://www.iata.org/en/iata-repository/publications/economic-reports/air-cargo-market-analysis-september-2026/",
+        "accessed": "5 November 2026",
+        "date": "September 2026 observations; public release linked 29 October 2026"
+      },
+      {
+        "author": "WorldACD Market Data",
+        "citeAuthor": "WorldACD",
+        "year": "2026",
+        "title": "WorldACD weekly air cargo trends 2026 – week 43: Rates rise from several regions as peak season builds",
+        "publisher": "WorldACD Market Data",
+        "url": "https://www.worldacd.com/trend-reports/weekly/worldacd-weekly-air-cargo-trends-2026-week-43/",
+        "accessed": "5 November 2026",
+        "date": "2 November 2026"
+      }
+    ],
+    "charts": [
+      {
+        "type": "bar",
+        "title": "Figure 1. Change in cargo load factor by airline region",
+        "unit": "Percentage points, year on year",
+        "period": "September 2026 versus September 2025",
+        "method": "Reported changes reproduced from IATA's September release regional table and accompanying analysis, pp. 2–3. N. America = North America; Asia-Pac. = Asia-Pacific; Lat. Am. = Latin America and Caribbean. Airline registration defines the regions; values are changes, not load-factor levels. Negative values mean lower utilization.",
+        "sourceIds": [
+          1,
+          2
+        ],
+        "labels": [
+          "N. America",
+          "Europe",
+          "Africa",
+          "Asia-Pac.",
+          "Lat. Am.",
+          "Middle East"
+        ],
+        "values": [
+          4.3,
+          3.2,
+          2.7,
+          1.7,
+          -0.3,
+          -1.4
+        ]
+      },
+      {
+        "type": "bar",
+        "title": "Figure 2. Asia Pacific outbound spot rates by destination",
+        "unit": "US dollars per kg",
+        "period": "Week 43: 19–25 October 2026; published 2 November 2026",
+        "method": "WorldACD reported market averages, reproduced without adjustment. US and Europe are destination markets, not matched airport-pair quotations. Europe is the source's rate-market label and is not substituted for the EU volume geography. Values do not predict an individual shipment quotation.",
+        "sourceIds": [
+          3
+        ],
+        "labels": [
+          "To US",
+          "To Europe"
+        ],
+        "values": [
+          7.43,
+          5.1
+        ]
+      }
+    ]
   }
 ]
