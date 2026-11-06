@@ -375,5 +375,134 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "ai-adoption-gap-business-value-2026",
+    "title": "AI adoption is spreading. Business value still needs a separate test.",
+    "category": "applied-ai",
+    "articleType": "research",
+    "published": true,
+    "publishedAt": "2026-11-06T09:05:10+07:00",
+    "evidenceAsOf": "2026-11-06",
+    "description": "New OECD evidence and a UK business survey reveal why AI adoption, firm size and reported productivity need different measures.",
+    "excerpt": "The OECD’s new outlook puts AI use at 20% of firms and 52% of large firms in 2025. The gap raises a practical question: what would count as evidence that adoption is paying off?",
+    "answer": "AI use is expanding unevenly, but an adoption rate cannot establish a productivity gain. The useful comparison separates access, integration and measured outcomes, while keeping survey populations and observation periods explicit.",
+    "image": {
+      "src": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "page": "https://www.pexels.com/photo/colleagues-shaking-each-other-s-hands-3184291/",
+      "photographer": "fauxels",
+      "license": "https://www.pexels.com/license/",
+      "alt": "Colleagues meeting around a table and shaking hands; an illustrative workplace photograph."
+    },
+    "sections": [
+      {
+        "heading": "A new release, with an older observation window",
+        "paragraphs": [
+          "Can wider AI use deliver broad business gains when adoption remains concentrated? The OECD outlook released on 5 November 2026 makes that question concrete: its 2025 figures put AI use at 20% of enterprises with at least 10 employees, against 52% of large enterprises with at least 250 employees. These are observations about 2025, not a reading of business conditions this week. [1]",
+          "The distinction matters for a purchasing decision today. A delayed statistical picture can identify a structural problem, but it cannot tell a manager whether a particular tool has improved since the survey. This article analyses published secondary evidence; it does not estimate a new causal effect or report an original business experiment."
+        ]
+      },
+      {
+        "heading": "What the size gap actually measures",
+        "paragraphs": [
+          "Using the rounded published values, the gap is 52 − 20 = 32 percentage points; the ratio is 52 / 20 = 2.6. Large firms therefore have 2.6 times the adoption rate of the all-firm group. That denominator already includes large firms. It is not a direct large-versus-small comparison, and the chart deliberately avoids labelling the 20% bar as small businesses. [2]",
+          "The report also records cloud use above half of firms and above 80% of large firms. That pattern suggests a useful analytical separation: having digital infrastructure and adopting AI are different stages. It does not establish that buying cloud services causes AI adoption. Sector mix, management choices and skills could influence both. [2]",
+          "For a smaller operator, copying a large company’s software list would be a weak response. The relevant unit of analysis is a workflow: where information enters, who checks it and what happens when an output is wrong. A model that drafts quickly may still create work elsewhere if someone must reconcile inconsistent records. This is an operational hypothesis to test, rather than a finding established by the adoption chart."
+        ]
+      },
+      {
+        "heading": "The UK provides counterevidence to a simple cost story",
+        "paragraphs": [
+          "A separate UK survey, released on 29 October, interviewed 3,503 businesses between 7 January and 21 April 2026. It reports adoption of 32%, compared with 16% in 2025. Among adopters, 50% reported an overall productivity increase. Operating costs were unchanged for 64%, lower for 24% and higher for 9%. These are respondents’ reports, not independently measured treatment effects. [3]",
+          "The cost categories total 97%, so the chart retains the published values without renormalising them or inventing a label for the remaining 3%. The survey also finds capability barriers and describes implementation effort as an important cost. Its population and 2026 fieldwork differ from the OECD comparison; placing the adoption percentages in one ranking would imply comparability that has not been established. [3]",
+          "Unchanged costs do not automatically mean failure. Time saved could improve service, reduce overtime or absorb more demand without immediately reducing a budget. Conversely, a reported productivity gain does not establish higher profit. Quality losses, checking time and recurring fees belong in the same assessment. The evidence supports asking a more specific performance question, rather than assuming either success or disappointment."
+        ]
+      },
+      {
+        "heading": "What these surveys cannot settle",
+        "paragraphs": [
+          "The most important limitation is the distance between a yes-or-no adoption question and the intensity of use. Two firms can both answer yes while one experiments occasionally and the other changes a core process. Neither chart measures that difference. Nor does the evidence identify how much of any observed advantage comes from AI rather than the resources and practices that helped a firm adopt it.",
+          "The OECD figures also cannot be treated as a Vietnamese adoption estimate. Applying the argument locally requires checking business scale, task mix, data quality and legal requirements. A useful local study would make those differences visible before borrowing an international benchmark. For readers choosing a tool now, the practical consequence is to treat external adoption statistics as context and demand a clearly defined outcome from the proposed deployment."
+        ]
+      },
+      {
+        "heading": "A decision needs an outcome and a denominator",
+        "paragraphs": [
+          "Consider a hypothetical team using AI to prepare shipment updates. The testable outcome could be staff minutes per accurate update, including review and correction. Comparing drafting time alone would omit the work needed to make the message usable. The team should also track errors and customer follow-up, because a faster message that generates confusion may shift effort to another department. This example is proposed analysis, not a surveyed result.",
+          "A credible comparison would keep task difficulty and the definition of completion stable. Where possible, concurrent comparison groups are more informative than a simple before-and-after average, which can move with demand, staffing or seasonality. Any result should state which tasks were included and whether workers could choose when to use AI. Selection into easier tasks can otherwise make the tool appear more effective.",
+          "For policy, the same logic favours separating tool access from the ability to deploy it well. Support aimed only at subscriptions may miss data preparation, staff learning and accountability. That is an implication of the measurement problem, not proof that any specific subsidy will work. The next useful evidence would connect adoption depth to independently checked outcomes, with transparent costs and comparable firms. Until then, adoption is a signal of diffusion and a starting point for evaluation."
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "type": "bar",
+        "title": "AI use: large firms versus all covered firms",
+        "unit": "% of enterprises",
+        "period": "2025; OECD release: 5 November 2026",
+        "method": "Rounded rates as published by OECD. All covered firms have 10+ employees; large firms have 250+. The all-firm group includes large firms. Difference: 32 percentage points; ratio: 2.6. This is not a small-versus-large comparison.",
+        "labels": [
+          "All covered firms",
+          "Large firms"
+        ],
+        "values": [
+          20,
+          52
+        ],
+        "sourceIds": [
+          1,
+          2
+        ]
+      },
+      {
+        "type": "bar",
+        "title": "Reported operating-cost effects among UK AI adopters",
+        "unit": "% of AI adopters",
+        "period": "UK survey: 7 January–21 April 2026; release: 29 October 2026",
+        "method": "Published self-reported categories; values total 97%. No residual category is inferred and no normalisation is applied. The full survey interviewed 3,503 businesses; this chart concerns adopters, not the full sample. No causal effect is established.",
+        "labels": [
+          "Lower costs",
+          "No immediate effect",
+          "Higher costs"
+        ],
+        "values": [
+          24,
+          64,
+          9
+        ],
+        "sourceIds": [
+          3
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "author": "OECD",
+        "citeAuthor": "OECD",
+        "year": "2026a",
+        "title": "AI adoption accelerates across the OECD, but major gaps persist among businesses and generations",
+        "publisher": "OECD",
+        "url": "https://www.oecd.org/en/about/news/press-releases/2026/11/oecd-digital-economy-and-society-outlook-2026.html",
+        "accessed": "6 November 2026"
+      },
+      {
+        "author": "OECD",
+        "citeAuthor": "OECD",
+        "year": "2026b",
+        "title": "OECD Digital Economy and Society Outlook 2026: Digital technology diffusion and the economy",
+        "publisher": "OECD Publishing",
+        "url": "https://www.oecd.org/en/publications/oecd-digital-economy-and-society-outlook-2026_022ed474-en/full-report/digital-technology-diffusion-and-the-economy_b355e780.html",
+        "accessed": "6 November 2026"
+      },
+      {
+        "author": "Department for Business, Innovation, Science and Trade",
+        "citeAuthor": "Department for Business, Innovation, Science and Trade",
+        "year": "2026",
+        "title": "AI adoption survey report 2026: executive summary",
+        "publisher": "UK Government",
+        "url": "https://www.gov.uk/government/publications/ai-adoption-survey-2026/ai-adoption-survey-report-2026-executive-summary",
+        "accessed": "6 November 2026"
+      }
+    ]
   }
 ]
