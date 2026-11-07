@@ -504,5 +504,129 @@
         "accessed": "6 November 2026"
       }
     ]
+  },
+  {
+    "slug": "training-hours-learning-outcomes-evidence-2026",
+    "title": "What training hours miss about learning",
+    "category": "research-methods",
+    "articleType": "research",
+    "published": true,
+    "publishedAt": "2026-11-07T09:07:38+07:00",
+    "evidenceAsOf": "2026-11-07",
+    "description": "A new Japanese residency study shows why training duration, exam performance and educational value need separate measures.",
+    "excerpt": "A study published on 5 November links longer teaching rounds with slightly lower examination scores. Reading it as evidence to cut training would miss the study’s central measurement problem.",
+    "answer": "Hours describe exposure to an activity, while learning requires evidence of what changed. The new study questions duration as a stand-alone indicator; its observational design cannot show that longer rounds caused lower scores or identify an optimal training schedule.",
+    "image": {
+      "src": "https://images.pexels.com/photos/5124870/pexels-photo-5124870.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "page": "https://www.pexels.com/photo/person-writing-on-spiral-notebook-5124870/",
+      "photographer": "cottonbro studio",
+      "license": "https://www.pexels.com/license/",
+      "alt": "Hands writing in a spiral planner beside books and a pen; illustrative study-planning photograph."
+    },
+    "sections": [
+      {
+        "heading": "The question behind a training-hours target",
+        "paragraphs": [
+          "Does spending longer in a learning activity mean learning more? A Japanese study published on 5 November 2026 provides a useful test of that assumption. It analysed 6,347 first- and second-year postgraduate residents, linking their reported weekly internal medicine attending-round time with examination results. These rounds combine patient review and teaching under a supervising physician. [1]",
+          "The release is recent; the observations are older. The examination was called the 2023 General Medicine In-Training Examination, but took place on 17–30 January 2024, followed by a survey. The paper is an accepted article in press, subject to final editing. Its value now is methodological: it reveals what an hours-based indicator leaves unexplained, rather than describing today’s training conditions. [1]"
+        ]
+      },
+      {
+        "heading": "Small score differences, with an important denominator",
+        "paragraphs": [
+          "Table 1 reports mean internal medicine scores of 19.6, 20.0, 19.8, 19.5 and 19.3 across the five duration groups shown above. The domain contains 40 questions. The raw gap between the 1–2-hour and at-least-11-hour groups is therefore 20.0 − 19.3 = 0.7 points out of 40. These are group means, not individual progress scores. [1]",
+          "The adjusted comparisons tell a similar, qualified story. Relative to 1–2 hours, the estimated differences were −0.47 points for 6–10 hours (95% confidence interval −0.77 to −0.17) and −0.70 for at least 11 hours (−1.22 to −0.19). The models accounted for hospital clustering and measured characteristics, including training stage, workload and self-study time. Adjustment improves comparison; it does not create random assignment. [1]",
+          "A confidence interval describes uncertainty under the model’s assumptions; it does not include every possible source of bias. The two adjusted estimates also do not supply a direct test of the difference between the higher-duration groups. Ranking their point estimates is therefore not enough to establish that each extra hour worsens performance. Educational importance needs a separate judgement about the size of the difference and what the test represents."
+        ]
+      },
+      {
+        "heading": "Why the result does not justify cutting hours",
+        "paragraphs": [
+          "One possible explanation is that learners needing more support receive more supervision. Another is that long rounds reflect demanding clinical work rather than extra teaching. Both could produce a negative association without longer teaching causing harm. The study could not establish the temporal relationship, and roughly 30% of examination participants were excluded. Self-reported time and unmeasured differences remain limitations. [1]",
+          "Nor does a written examination capture everything rounds might teach. Communication, practical examination skills and teamwork can have value without appearing in this score. The paper also reports that longer rounds during general internal medicine rotations were not consistently associated with lower scores. That counterevidence makes a universal claim about training duration especially weak. The findings do not identify 1–2 hours as an optimum. [1]"
+        ]
+      },
+      {
+        "heading": "Activity time and learning content are different variables",
+        "paragraphs": [
+          "Older direct observation helps explain the measurement problem. A study published in 2013 observed 90 rounding days at four teaching hospitals during July 2010–March 2012. Among 807 patient encounters, feedback occurred in 11.0% and teaching on learner-identified topics in 3.2%. This is historical background from a different setting, not a current estimate or a benchmark for Japan. [2]",
+          "The implication is about the definition of exposure. Two people can record an hour of the same scheduled activity while receiving very different opportunities to explain, practise or receive feedback. An attendance log cannot distinguish those experiences. That is a reason to examine what happens inside a session, not evidence that any particular teaching technique would solve the problem in every setting."
+        ]
+      },
+      {
+        "heading": "A change in attention is not automatically a learning gain",
+        "paragraphs": [
+          "A related experimental paper, published on 20 October 2026, offers a useful comparison within the past month. Albert and colleagues studied recorded lectures in two experiments with 113 and 100 participants. A prompt to increase effort improved reported attention in one experiment and reduced reported mind wandering in the other. Evidence of a retention change appeared in Experiment 2 but not Experiment 1. [3]",
+          "The experimental manipulation supports a stronger causal comparison for that specific prompt than the rounds study supports for duration. It still does not establish lasting skill development or transfer to a workplace. The two papers should not be pooled into one effect estimate: their populations, interventions and outcomes differ. Together, they illustrate why participation, attention, immediate recall and practical competence should remain separate measures."
+        ]
+      },
+      {
+        "heading": "What a more useful evaluation would ask",
+        "paragraphs": [
+          "For a university course or workplace programme, the defensible question is what learners can do afterwards that they could not do before. A hypothetical operations-training evaluation might assess whether participants can diagnose a new delivery exception accurately, rather than count completed video hours. It would need a clear scoring rule and a comparable task, not an easier post-training exercise presented as progress.",
+          "If the purpose is to estimate the programme’s effect, a comparison group and baseline measurement would help separate learning from prior ability and changes elsewhere. A later assessment could test retention. These are proposed design choices, not results of the Japanese study. Its most useful lesson for research is to match the indicator to the claim: time can document provision, while a claim about learning needs an outcome that actually measures it."
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "type": "bar",
+        "title": "Mean internal medicine score by weekly attending-round time",
+        "unit": "mean score, out of 40 points",
+        "period": "Japan, 2023 GM-ITE administered 17–30 January 2024; paper published 5 November 2026",
+        "method": "Source: Table 1, internal medicine score row. Unadjusted means in all five reported duration groups; n = 291, 2,797, 2,084, 917 and 258 respectively (total 6,347). Group SDs: 4.4, 4.2, 4.1, 4.0 and 4.2. No transformation; bars start at zero. The chart shows neither individual learning gains nor adjusted causal effects. Adjusted estimates and confidence intervals are discussed separately in the text.",
+        "labels": [
+          "None",
+          "1–2 h/week",
+          "3–5 h/week",
+          "6–10 h/week",
+          "≥11 h/week"
+        ],
+        "values": [
+          19.6,
+          20,
+          19.8,
+          19.5,
+          19.3
+        ],
+        "sourceIds": [
+          1
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "author": "Nagasaki, K., Nishizaki, Y., Shimizu, T., Yamamoto, Y., Shikino, K., Kobayashi, H. and Tokuda, Y.",
+        "citeAuthor": "Nagasaki et al.",
+        "year": "2026",
+        "title": "Association between time spent on internal medicine attending rounds and in training examination scores among resident physicians in Japan",
+        "publisher": "Scientific Reports, article in press. Springer Nature",
+        "url": "https://www.nature.com/articles/s41598-026-79280-w",
+        "accessed": "7 November 2026",
+        "doi": "10.1038/s41598-026-79280-w",
+        "fullText": "https://www.nature.com/articles/s41598-026-79280-w_reference.pdf"
+      },
+      {
+        "author": "Stickrath, C., Noble, M., Prochazka, A., Anderson, M., Griffiths, M., Manheim, J., Sillau, S. and Aagaard, E.",
+        "citeAuthor": "Stickrath et al.",
+        "year": "2013",
+        "title": "Attending Rounds in the Current Era: What Is and Is Not Happening",
+        "publisher": "JAMA Internal Medicine, 173(12), pp. 1084–1089. American Medical Association",
+        "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1685887",
+        "accessed": "7 November 2026",
+        "doi": "10.1001/jamainternmed.2013.6041"
+      },
+      {
+        "author": "Albert, D.A., Heitzner, J. and Smilek, D.",
+        "citeAuthor": "Albert et al.",
+        "year": "2026",
+        "title": "Simple calls to increase effort influence attention, mind wandering, and learning during online lectures",
+        "publisher": "Scientific Reports, article in press. Springer Nature",
+        "url": "https://www.nature.com/articles/s41598-026-57274-y",
+        "accessed": "7 November 2026",
+        "doi": "10.1038/s41598-026-57274-y",
+        "fullText": "https://www.nature.com/articles/s41598-026-57274-y_reference.pdf"
+      }
+    ]
   }
 ]
